@@ -1,0 +1,34 @@
+# Content calibration log
+
+_Created 2026-09-21 for the reconcile skill. This is the staging area for single-instance craft signals: a change Brett (or, in the pilot, Alyza or Michelle) made to a draft that reveals a preference but has only happened once. Nothing here is a rule. When the same signal appears a second time, the reconcile skill proposes a rule in the right file and the entry here is marked promoted. Entries older than 90 days with no second occurrence are dropped at the quarterly audit. Tag: Shared Core._
+
+## How to read an entry
+
+One line each: date, the deliverable type, the signal in plain words, the evidence (draft to final, short), and status (staged, promoted to [file], dropped).
+
+## Staged
+
+- 2026-10-13 | LinkedIn operator lesson | A plain definition beat the comparison | Draft: assembly line, 10 cars a day vs demand for 100. Final: "There's a business principle called the Theory of Constraints. The idea is simple: every business has a limiting factor..." | staged
+- 2026-10-13 | LinkedIn operator lesson | A line that implies the detail beats spelling it out | Draft: "That meant we stopped outreach, we turned down clients, and I moved my own time into hiring, training, and onboarding." Final: cut; "Turning away revenue is never easy" carries it | promoted to content-frameworks.md 4.5 (second occurrence 2026-10-19: "That sounds safe, but his message blended in..." and "That meant giving up the rest of the audience" became "which meant he was remembered by no one")
+
+- 2026-10-19 | LinkedIn REACH principle | Examples show the mechanism and stay on the running example | Draft: "You could film a short video at a restaurant parents love"; step 4 empty nesters. Final: "Feature a popular family-friendly restaurant in a short video and tag the business. When they share it, you're introduced to more people who fit your ideal client profile."; step 4 families in neighboring communities | staged
+- 2026-10-19 | LinkedIn REACH principle | When the story implies the cause, state it | Draft: "Today he's widely considered an expert in that space." (sequence only, after v5 editor flagged causation). Final: "That focus positioned him as the go-to expert in his market and built a powerful network of referral partners" | staged
+
+- 2026-10-27 | LinkedIn reel narrative (operator lesson) | Hook leads with the reader's outcome and a promise of how, not a credential | Draft v2: "Building businesses since 2000 has taught us that any successful organization stands on three legs..." Brett: "If you want long-term, stable growth, you need to find and keep A players. This is how we've done it." | promoted 2026-10-28 to content-frameworks.md 4.3a (saved 2026-10-29)
+- 2026-10-27 | LinkedIn reel narrative | Set up the metaphor before naming its parts | Draft v2 named "three legs" with the stool only implied; Brett: reference the stool as a metaphor before the three legs | staged
+- 2026-10-27 | LinkedIn reel narrative | The text extends the video and goes deeper on its points; restating the clip fails | Draft v2 walked the clip's three points in its own words; Brett: "It needs to feel like an extension that can go deeper on the points that were highlighted in the video." | staged
+
+- 2026-10-28 | LinkedIn reel narrative | A private metaphor needs explaining, so it can't open a post | v5 hook: "I spent years and several companies trying to turn a point guard into a center." Brett: no context, his own metaphor, not a good way to hook the reader | promoted 2026-10-28 to content-frameworks.md 4.3a (saved 2026-10-29)
+- 2026-10-28 | LinkedIn reel narrative | Brett's voice: short declaratives, one-word section labels, "we only", his ego named, a specific pattern from experience | Draft v5 leg one ("Leg one is talent acquisition. We look for A players...") vs Brett: "Talent. We only hire A players... it took my ego a long time to accept that... I might get a spike in performance for a couple of weeks or even a few months, but they always return to their baseline." | staged
+- 2026-10-28 | LinkedIn reel narrative | Order a framework by the business stage it serves | Draft: talent acquisition, business model, culture. Brett: talent, culture, model (acquisition, retention, growth) | staged
+
+## Promoted
+
+- 2026-10-13 LinkedIn operator lesson, "A line that implies the detail beats spelling it out": promoted 2026-10-19 to content-frameworks.md 4.5 (see Staged entry).
+- 2026-10-28 | All content in Brett's voice | "I," "we," and "you" are contextual and interchangeable; "we" is his preference, not a hard rule | Editor flagged a "you" Yes-Question in an operator lesson as breaking the "we" voice. Brett: "we're drawing too much of a hard line on this." | promoted 2026-10-28 to voice-principles.md (point of view line); content-frameworks.md section 2 and 3.1 and hook rule item 10 handed to the COO
+- 2026-10-29 | LinkedIn reel caption | Brett keeps his own "we" line as the hook's value line over a reader-facing command | Editor flagged v1 line 2 "So we stopped building A players and started finding them." as about us; v2 "Hire people who come wired with their own standards, because coaching fades." as a command; Brett picked his v8 line | staged
+- 2026-10-29 | LinkedIn reel caption | Captions built by slotting interview answers into hook, beats, landing read forced and uncompelling | Brett on narratives 7 to 10 (8 and 9 had editor PASS): "All of these are trying to force the answers given to your questions." 7: "not compelling and well written"; he named the real point: leading a volunteer army shaped his leadership style today | staged
+- 2026-10-29 | LinkedIn reel caption | Brett writes captions shorter and punchier than the rulebook's full-sentence rule allows: fragments for emphasis ("And model it."), "=" shorthand, a contrast opener | Drafts: full-sentence, 20 to 60 words; Brett's 8: "Everything you do in public, online or off, good or bad. That's your brand."; 9: "Direct response = buy now."; 10: "No one likes to fail, but no one grows without failure. That's why we encourage it. And model it." | staged
+- 2026-10-29 | LinkedIn reel caption | Brett leads with the general truth, then his practice, then the payoff, rather than quoting the clip's line 1 | Drafts opened on the clip's first words (4.3a item 14); Brett opened 8 on a definition, 9 on "only two types of marketing", 10 on a universal ("No one likes to fail") | staged
+- 2026-10-29 | LinkedIn reel caption | A clip's first line may be someone else's words; confirm whose voice before quoting it as Brett's | Ep 1 R2 "You need to learn how to lead a volunteer army" was his mentor's advice, not his command | staged
+- 2026-10-29 | LinkedIn reel caption | When a clip opens on a quoted line, Brett quotes it at the top of the caption and attributes it, then gives the lesson | Brett's 7: opens with the mentor's line in quotes, then "This was the advice my mentor gave me" | staged

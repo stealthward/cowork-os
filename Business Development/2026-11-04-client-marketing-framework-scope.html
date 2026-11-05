@@ -1,0 +1,118 @@
+<title>Client Marketing Framework Scope</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one centered reading column, a slim status strip on top, tables for the parts and roles, a numbered sequence because order matters */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2230; --muted: #5a6475; --line: #d9dee6;
+  --accent: #1f5c8a; --accent-soft: #e6eef6; --flag: #9a5b12; --flag-soft: #fbf1e3;
+  --display: "Libre Franklin", "Segoe UI", Arial, sans-serif;
+  --body: "Libre Franklin", "Segoe UI", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11151c; --surface: #181e27; --fg: #e5e9ef; --muted: #9aa4b3; --line: #2b3441;
+  --accent: #7fb3dd; --accent-soft: #1c2b3a; --flag: #e3b06b; --flag-soft: #2c2318; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #11151c; --surface: #181e27; --fg: #e5e9ef; --muted: #9aa4b3; --line: #2b3441;
+  --accent: #7fb3dd; --accent-soft: #1c2b3a; --flag: #e3b06b; --flag-soft: #2c2318; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 48px; }
+main { max-width: 820px; margin: 0 auto; display: grid; gap: 28px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1.15; margin: 4px 0 8px; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 700; font-size: 18px; margin: 0 0 10px; text-wrap: balance; }
+p { margin: 0 0 8px; max-width: 68ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.goal { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; }
+.goal strong { color: var(--accent); }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--surface); }
+th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+th { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--accent-soft); }
+td:first-child { font-weight: 600; white-space: nowrap; }
+.gap { color: var(--flag); font-weight: 600; }
+ol, ul { margin: 0; padding-left: 22px; display: grid; gap: 6px; max-width: 70ch; }
+.decisions { background: var(--flag-soft); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; }
+.decisions li strong { display: block; }
+.rec { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+footer { font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+@media (max-width: 520px) { h1 { font-size: 24px; } td:first-child { white-space: normal; } }
+</style>
+
+<main>
+<header>
+  <div class="eyebrow">Initiative 6 · CMO one-pager · for Brett's approval</div>
+  <h1>Client Marketing Framework Scope</h1>
+  <div class="meta"><span>2026-11-04</span><span>Status: scoping, no finish line set</span><span>Workstation: Business Development (framework), Content &amp; Authority (execution)</span></div>
+</header>
+
+<section class="goal">
+  <h2>Goal</h2>
+  <p>One framework file the team runs to attract and keep <strong>mid-tier producers</strong> (agents doing 8+ list sides a year) without Brett pursuing them. Two lanes: <strong>RTM captures</strong> (acquisition, retention, media) and <strong>Five Star monetizes</strong> (branding and awareness). Brett writes positioning, offers, and content pillars; Elizabeth and the production team execute on the FSE Social Calendar and partner channels.</p>
+  <p><strong>Avatar:</strong> persona 2 only. This is company content, so calls to action stay. Nothing here touches persona 1, the partner campaign, or the Five Star partner structure.</p>
+</section>
+
+<section>
+  <h2>What the framework holds</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Part</th><th>Contents</th><th>Writes it</th><th>Seed on file</th></tr></thead>
+    <tbody>
+      <tr><td>1. Positioning</td><td>One statement per lane: who it is for, the problem, the promise</td><td>Brett, from a CMO interview</td><td>RTM: website copy (StoryBrand) and the Agent Magnet avatar. <span class="gap">Five Star lane: nothing on file beyond "branding and awareness"</span></td></tr>
+      <tr><td>2. Offer architecture</td><td>Media as the incentive, escrow commitment as the close, retainers only above escrow volume, what may be said publicly</td><td>Brett confirms</td><td>Product library positioning rules, BD CLAUDE.md rule 6</td></tr>
+      <tr><td>3. Content pillars</td><td>Starting set: competition, expense, confusion about marketing, lost listings</td><td>Brett</td><td>Agent Magnet messaging approach</td></tr>
+      <tr><td>4. Product campaign map</td><td>Eight products by funnel stage (Awareness, Consideration, Conversion, Retention) and pain point; one campaign per product</td><td>CMO drafts, Brett approves</td><td>rtm-product-library.md, Marketing Stages doc</td></tr>
+      <tr><td>5. Channels and presenters</td><td>Default cadence: Instagram 5 to 7 a week, Facebook 4 to 6, YouTube 2 to 3, LinkedIn 3 to 4. Presenters: Brett and Mark</td><td>CMO drafts</td><td>Agent Magnet defaults, presenter personas</td></tr>
+      <tr><td>6. Rules</td><td>Peer success only (no consumer-facing content), generic competitor references, credits and Producer's Circle never public, escrow-first, no one-off paid work</td><td>Carried over</td><td>Agent Magnet red lines</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Out of scope</h2>
+  <ul>
+    <li>Brett's own give-first content and the partner campaign (persona 1).</li>
+    <li>Paid ads, lead magnets, and the scorecards. The REACH funnel opens after REACH launches (end of Q1 2027).</li>
+    <li>Whether The Factory moves to rotating mid-tier hosts (undecided in growth-strategy.md).</li>
+    <li>Producing or posting anything. The CMO plans; the team executes.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Sequence</h2>
+  <ol>
+    <li>Brett approves this scope.</li>
+    <li>Positioning interview, one sitting, in the question tool. The CMO drafts both lane statements from Brett's answers; Brett has the final word.</li>
+    <li>The CMO drafts parts 2 to 6 from the seed material. Brett reviews once.</li>
+    <li>Saved as the framework file in a new project folder, Business Development/Client Marketing Framework/ (MEMORY.md projects table and the guide's File Map updated the same session). It replaces the Agent Magnet GPT, which stops working after December 11 unless migrated (editor notice, export of 2026-09-24).</li>
+    <li>First product campaign plan, handed to Elizabeth as the single source. The team executes.</li>
+    <li>The remaining products follow, one campaign at a time, in the order Brett sets.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Who does what</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Who</th><th>Does</th></tr></thead>
+    <tbody>
+      <tr><td>Brett</td><td>Answers the positioning interview, approves parts 1 to 6, sets the finish line and campaign order</td></tr>
+      <tr><td>CMO</td><td>Runs the interview, drafts the framework and each campaign plan, checks them against the rules</td></tr>
+      <tr><td>Workers</td><td>Editor checks hard rules on the positioning lines; research-sidekick pulls benchmarks for a campaign when one is planned</td></tr>
+      <tr><td>Team</td><td>Elizabeth, Mark, and production schedule, shoot, edit, and post on the FSE Social Calendar</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="decisions">
+  <h2>Decisions (Brett, 2026-11-04: 1 to 3 decided as recommended; 4 after the interview)</h2>
+  <ol>
+    <li><strong>Start now or wait for REACH?</strong><span class="rec">Recommended: start now, organic company content only. Paid acquisition waits for the REACH funnel.</span></li>
+    <li><strong>What does the Five Star lane sell?</strong><span class="rec">Recommended: define it in the positioning interview. Nothing on file says it yet, and the CMO will not guess.</span></li>
+    <li><strong>First product campaign</strong><span class="rec">Recommended: List It Live. Every client gets it for every listing, and it has the strongest proof on file (5,000+ properties featured, 10,000+ views per episode).</span></li>
+    <li><strong>Finish line</strong><span class="rec">Recommended: set it after the interview, once the size of the Five Star lane is known.</span></li>
+  </ol>
+</section>
+
+<footer>Sources: initiatives.md (initiative 6), growth-strategy.md, audience-personas.md (persona 2), rtm-product-library.md, the Agent Magnet GPT export and its Marketing Stages and Marketing Personas docs, Business Development MEMORY.md and CLAUDE.md. No figures beyond those sources. No workers dispatched for this scope.</footer>
+</main>

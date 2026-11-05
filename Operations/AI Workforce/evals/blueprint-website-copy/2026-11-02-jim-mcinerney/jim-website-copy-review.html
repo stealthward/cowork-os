@@ -1,0 +1,196 @@
+<title>Jim McInerney Website Copy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: review notes first, then each page as a copy-deck card a web designer could build from, then the audit. */
+:root {
+  --bg: #f3f5f6; --surface: #ffffff; --sunk: #e8ecef; --fg: #18222a; --muted: #5a6872; --line: #d3dbe0;
+  --accent: #1f5f7a; --accent-soft: #dcebf2; --warn: #8a5a00; --warn-soft: #f6ebd3;
+  --display: "Fraunces", Georgia, serif; --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11171b; --surface: #182128; --sunk: #1e2930; --fg: #e2e9ee; --muted: #97a6b0; --line: #2c3a43;
+  --accent: #7cc3e0; --accent-soft: #1b3240; --warn: #e9b860; --warn-soft: #3a2e16; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #11171b; --surface: #182128; --sunk: #1e2930; --fg: #e2e9ee; --muted: #97a6b0; --line: #2c3a43;
+  --accent: #7cc3e0; --accent-soft: #1b3240; --warn: #e9b860; --warn-soft: #3a2e16; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 36px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 26px; }
+.eyebrow { font: 600 12px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 600 clamp(28px, 5vw, 40px)/1.1 var(--display); margin: 6px 0 8px; text-wrap: balance; }
+h2 { font: 600 22px/1.2 var(--display); margin: 0 0 10px; }
+h3 { font: 600 20px/1.2 var(--display); margin: 0 0 6px; color: var(--accent); }
+p { margin: 0 0 8px; max-width: 68ch; }
+.lede { color: var(--muted); }
+.decide { background: var(--warn-soft); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.decide ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.note { color: var(--muted); font-size: 14.5px; }
+.page { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: grid; gap: 4px; min-width: 0; }
+.seo { font-size: 14px; color: var(--muted); }
+.seo span { font-weight: 600; color: var(--fg); }
+.seo em { font-style: normal; font-size: 12px; background: var(--sunk); padding: 1px 7px; border-radius: 999px; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.lab { margin-top: 16px; font: 600 11px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; }
+.h1c { font: 600 clamp(24px, 4vw, 30px)/1.2 var(--display); text-wrap: balance; margin: 4px 0 8px; }
+.h2c { font: 600 20px/1.25 var(--display); text-wrap: balance; margin: 2px 0 6px; }
+.hl { font: 600 18px/1.3 var(--display); font-style: italic; margin: 4px 0; }
+.q { border-left: 3px solid var(--accent); padding-left: 14px; color: var(--fg); }
+.cr { color: var(--muted); font-size: 14px; }
+.btn { display: inline-block; background: var(--accent); color: var(--bg); font-weight: 600; font-size: 14px; padding: 8px 16px; border-radius: 999px; margin: 6px 0; }
+ul, ol { margin: 0 0 8px; padding-left: 22px; display: grid; gap: 4px; max-width: 68ch; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); margin-bottom: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 11px; border-bottom: 1px solid var(--line); }
+th { background: var(--sunk); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+details[open] > summary { margin-bottom: 12px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">blueprint-website-copy · test 1 · not for the client</div>
+    <h1>Jim McInerney website copy</h1>
+    <p class="lede">The CMO wrote this in one pass from site-facts.md: a homepage and three service pages. The editor checked hard rules (FIX, 4 items, all applied). The fact-checker checked 57 claims and flagged 7 on the first run; all are fixed. The re-run checked 56 claims, and the one flag it raised (the office address) is now marked for the client to confirm. Eleven claims are your approved test guesses.</p>
+  </header>
+
+  <section class="decide">
+    <h2>For you to check</h2>
+    <ul>
+      <li><strong>Years and career volume.</strong> On 10/30 your facts gate said "state the year, never a count" and "leave volume out". Later the same day you approved best guesses P1 (more than $365 million) and P2 (more than 25 years) for the bios. The site uses P1 and P2 so it matches the approved bios. Both the editor and the fact-checker flagged this conflict.</li>
+      <li><strong>Sections merged.</strong> On every page, authority and differentiation share one guide section, and risk reduction sits inside the process. That follows your rule that seven sections is not a requirement.</li>
+      <li><strong>Testimonials.</strong> These are six exact excerpts from Jim's Google reviews. None names another team member.</li>
+      <li><strong>Client questions before anything goes live</strong> (the full list is in site-facts.md): brokerage, the Spindrift sale, whether the profiles are team or solo, whether $365M is Jim's figure or the team's, the three steps in Jim's words, his direct line, the office address, and permission to quote reviewers by name.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Copy deck</h2>
+    <div class="note"><p class="p">Voice: Jim in first person, solo, team in the background (Brett, 2026-10-30); luxury understated. Sections the standard lists that this deck merges: authority and differentiation sit in one guide section on each page, and risk reduction sits in the process (the hero and the next step are always present). Testimonials are exact excerpts from `gbp-reviews-2026-10-16.md` (site-facts.md T1 to T6).</p>
+</article></div><article class="page"><h3>Page 1: Homepage</h3>
+<div class="seo"><span>SEO title</span> La Jolla Luxury Real Estate Agent | Jim McInerney <em>49 chars</em></div>
+<div class="seo"><span>Meta description</span> Buy, sell, or build in La Jolla with a native who checks zoning, coastal review, and entitlement first. Schedule a consultation. <em>128 chars</em></div>
+<div class="lab">Hero</div>
+<p class="h1c">Buy, sell, or build in La Jolla knowing what the property can become</p>
+<p class="p">I represent sellers, buyers, and developers of luxury homes and lots in La Jolla and along the San Diego coast. Before you set a price or make an offer, I help you see what zoning, Coastal Commission review, and entitlement will allow.</p>
+<div><span class="btn">Schedule a consultation</span></div>
+<div class="lab">Problem</div>
+<p class="h2c">In La Jolla, what you can build shapes what a property is worth</p>
+<p class="p">A home here is valued for what it is today and for what it is allowed to become. Before you commit, you are probably asking:</p>
+<ul><li>What can actually be built on this lot?</li><li>Will coastal review change my plans or my timeline?</li><li>Is this price based on the house, or on what the lot allows?</li><li>Will anyone catch the problem before it costs me?</li></ul>
+<p class="p">One detail in zoning or coastal review can change a price or a plan. You should know before you commit, not after.</p>
+<div class="lab">Testimonial</div>
+<p class="hl">&quot;Jim&#x27;s knowledge of the local market was invaluable.&quot;</p>
+<p class="q">&quot;As a La Jolla expert, Jim&#x27;s knowledge of the local market was invaluable. His understanding of pricing, buyer expectations, and the unique challenges that can come with selling in La Jolla helped us achieve a successful outcome.&quot;</p>
+<p class="cr">Dillon Morgan, seller (Google review)</p>
+<div class="lab">Guide: authority and differentiation</div>
+<p class="h2c">A La Jolla native who reads the lot, not just the listing</p>
+<p class="p">I grew up in La Jolla, went to La Jolla High School, and have spent more than 25 years in real estate. I understand how zoning, Coastal Commission review, and entitlement shape what a property is worth, and when a project calls for it, I work alongside architects, builders, and contractors. I specialize in taking dirt to dream.</p>
+<p class="p">When you hire me, you work directly with me from the first conversation through closing.</p>
+<p class="p"><em>Proof strip (four items, side by side):</em></p>
+<ul><li>More than $365 million in career sales</li><li>More than 25 years in real estate</li><li>Publisher of Discover La Jolla magazine and host of the Discover La Jolla podcast</li><li>Producer of the annual La Jolla Sky Show</li></ul>
+<div class="lab">Process</div>
+<p class="h2c">How we work together</p>
+<ol class="steps"><li><strong>Know what the property allows.</strong> Before you list or make an offer, I look at zoning, Coastal Commission requirements, and entitlement, so the price reflects what the property can become.</li><li><strong>Bring in the right people.</strong> When your plan needs an architect, a builder, or a contractor, I bring them in early, so the numbers hold up.</li><li><strong>I lead it through closing.</strong> You work with me directly, from the first conversation to the final signature.</li></ol>
+<div><span class="btn">Schedule a consultation</span></div>
+<div class="lab">Services</div>
+<p class="h2c">How I can help</p>
+<ul><li><strong>Sell your La Jolla home.</strong> Price and present your property for what it can become. Link: Selling in La Jolla</li><li><strong>Buy in La Jolla.</strong> Know what you can do with a home before you make an offer. Link: Buying in La Jolla</li><li><strong>Redevelop, build, or buy land.</strong> Understand zoning, coastal review, and entitlement before you commit to a lot. Link: Redevelopment and new construction</li></ul>
+<div class="lab">Testimonial</div>
+<p class="hl">&quot;His neighborhood knowledge paired with in-depth market knowledge&quot;</p>
+<p class="q">&quot;On top of that, he&#x27;s born and raised in La Jolla and his neighborhood knowledge paired with in-depth market knowledge really helps with our buying and selling decisions.&quot;</p>
+<p class="cr">Dan Wright, CT Homes (Google review)</p>
+<div class="lab">Closing</div>
+<p class="h2c">Thinking about buying, selling, or building in La Jolla?</p>
+<p class="p">Let&#x27;s talk about your goals, your property, and what it could become.</p>
+<div><span class="btn">Schedule a consultation</span></div>
+<div class="lab">Footer</div>
+<p class="p">Jim McInerney, REALTOR® | DRE 01334502 [client to confirm; broker review] | [brokerage: client to confirm] | 7590 Fay Ave Ste 200, La Jolla, CA 92037 [office address: client to confirm] | Office (858) 480-9945 | [Jim&#x27;s direct line: client to confirm]</p>
+</article><article class="page"><h3>Page 2: Selling in La Jolla</h3>
+<div class="seo"><span>SEO title</span> Sell Your La Jolla Luxury Home | Jim McInerney <em>46 chars</em></div>
+<div class="seo"><span>Meta description</span> Selling a luxury home in La Jolla? Price it for what the property can become, with a La Jolla native leading your sale. Schedule a consultation. <em>144 chars</em></div>
+<div class="lab">Hero</div>
+<p class="h1c">Sell your La Jolla luxury home for what it can become</p>
+<p class="p">For La Jolla homeowners selling a luxury home or a property with room to build. I help you price for the house and for what the lot allows, then lead your sale through closing.</p>
+<div><span class="btn">Schedule a consultation about your home</span></div>
+<div class="lab">Problem</div>
+<p class="h2c">Price for the house and for what the lot allows</p>
+<p class="p">In La Jolla, what a home is worth depends on what it is today and on what zoning and coastal review will let the next owner do with it. If you price on the house alone, you may leave the property&#x27;s potential out of the price.</p>
+<div class="lab">Guide</div>
+<p class="h2c">I price the house and the potential</p>
+<p class="p">I grew up in La Jolla and have spent more than 25 years in real estate, with a working knowledge of La Jolla zoning, Coastal Commission review, and entitlement. That lets me show buyers what your property can become, not just what it is today. You work directly with me from pricing to closing.</p>
+<div class="lab">Process</div>
+<p class="h2c">How your sale works</p>
+<ol class="steps"><li><strong>Know what your property allows.</strong> Before we set a price, I look at zoning, Coastal Commission requirements, and entitlement, so the price reflects the property&#x27;s full potential.</li><li><strong>Bring in the right people.</strong> Where it helps, I bring in an architect, a builder, or a contractor, so buyers can see what the property supports.</li><li><strong>I lead your sale through closing.</strong> I handle the negotiation and the issues that come up in escrow.</li></ol>
+<div class="lab">Testimonial</div>
+<p class="hl">&quot;Keeping the transaction moving forward smoothly&quot;</p>
+<p class="q">&quot;The sale involved overcoming foundation concerns, complex disclosure requirements, and insurance-related issues that could have easily derailed the process. Jim did an exceptional job in partnering with me to address these challenges while keeping the transaction moving forward smoothly.&quot;</p>
+<p class="cr">Woody Henderson, buyer&#x27;s agent on one of Jim&#x27;s La Jolla listings (Google review)</p>
+<div class="lab">Closing</div>
+<p class="h2c">Thinking about selling?</p>
+<p class="p">Let&#x27;s look at your home, what it allows, and what that means for your price.</p>
+<div><span class="btn">Schedule a consultation about your home</span></div>
+</article><article class="page"><h3>Page 3: Buying in La Jolla</h3>
+<div class="seo"><span>SEO title</span> Buy a Luxury Home in La Jolla | Jim McInerney <em>45 chars</em></div>
+<div class="seo"><span>Meta description</span> Buying a luxury home in La Jolla? Know what zoning and coastal review allow before you make an offer. Schedule a consultation with Jim McInerney. <em>145 chars</em></div>
+<div class="lab">Hero</div>
+<p class="h1c">Buy a luxury home in La Jolla knowing what you can do with it</p>
+<p class="p">For buyers who want a La Jolla home to live in, remodel, or rebuild. I help you understand what a property allows before you make an offer, and I represent you personally through closing.</p>
+<div><span class="btn">Schedule a consultation about your search</span></div>
+<div class="lab">Problem</div>
+<p class="h2c">The right house can come with the wrong limits</p>
+<p class="p">You may love a home and plan to expand it, remodel it, or start over. Whether you can depends on zoning and coastal review, and that answer belongs in your offer, not after closing. Inspections can raise questions of their own, and you need someone who knows which ones matter.</p>
+<div class="lab">Guide</div>
+<p class="h2c">A local who looks past the listing</p>
+<p class="p">I am a La Jolla native with more than 25 years in real estate. I know the neighborhoods, and I know how zoning, Coastal Commission review, and entitlement affect what a home can become. You work directly with me from the first showing through closing.</p>
+<div class="lab">Process</div>
+<p class="h2c">How your purchase works</p>
+<ol class="steps"><li><strong>Know what the property allows.</strong> Before you make an offer, I look at zoning, Coastal Commission requirements, and entitlement for the homes you are considering.</li><li><strong>Bring in the right people.</strong> When your plans call for it, I bring in an architect, a builder, or a contractor, so you know what a remodel or rebuild involves.</li><li><strong>I lead your purchase through closing.</strong> I negotiate for you and walk you through the inspections, all the way to the keys.</li></ol>
+<div class="lab">Testimonial</div>
+<p class="hl">&quot;Helping us understand what was important&quot;</p>
+<p class="q">&quot;Jim spent an hour or more going over the home inspector&#x27;s report helping us understand what was important in the report and what wasn&#x27;t, and made recommendations about what part of the house needed a specialist to inspect (like a roofer).&quot;</p>
+<p class="cr">Lydia Thompson, buyer (Google review)</p>
+<div class="lab">Closing</div>
+<p class="h2c">Starting your search in La Jolla?</p>
+<p class="p">Let&#x27;s talk about what you want in a home and what you may want to change about it.</p>
+<div><span class="btn">Schedule a consultation about your search</span></div>
+</article><article class="page"><h3>Page 4: Redevelopment and new construction in La Jolla</h3>
+<div class="seo"><span>SEO title</span> La Jolla Redevelopment and New Construction | Jim McInerney <em>59 chars</em></div>
+<div class="seo"><span>Meta description</span> Buying land, redeveloping, or building new in La Jolla? Understand zoning, coastal review, and entitlement before you commit. Schedule a consultation. <em>150 chars</em></div>
+<div class="lab">Hero</div>
+<p class="h1c">Redevelopment, land, and new construction in La Jolla, starting from what the site allows</p>
+<p class="p">For developers, builders, and owners planning a new home, a major remodel, or a lot purchase in La Jolla. I help you understand what a site allows before you commit, and I work alongside your architect, builder, and contractors from purchase to sale.</p>
+<div><span class="btn">Schedule a consultation about your property or lot</span></div>
+<div class="lab">Problem</div>
+<p class="h2c">In La Jolla, the plan has to clear the rules first</p>
+<p class="p">Zoning, Coastal Commission review, and entitlement decide what you can build on a La Jolla lot and how long it takes. Buy on the wrong assumption and the plan, the timeline, or the numbers can change after you own the property.</p>
+<div class="lab">Guide</div>
+<p class="h2c">I specialize in taking dirt to dream</p>
+<p class="p">I am a La Jolla native with more than 25 years in real estate, and redevelopment is a focus of my practice. I know how La Jolla zoning, Coastal Commission review, and entitlement shape a project, and I work with architects, builders, and contractors to bring a plan to market. You work directly with me from the first site visit through the sale.</p>
+<div class="lab">Testimonials</div>
+<p class="hl">&quot;A specialist in luxury new construction&quot;</p>
+<p class="q">&quot;Jim himself is an expert at his field and a specialist in luxury new construction.&quot;</p>
+<p class="cr">Patrick Szydlik (Google review)</p>
+<p class="q">&quot;Jim listed a property we developed in Solana Beach on Thursday, had an open house on Saturday and by Monday, we had 5 offers all over asking.&quot;</p>
+<p class="cr">Joshua Rosenthal, developer (Google review)</p>
+<div class="lab">Process</div>
+<p class="h2c">How a project works</p>
+<ol class="steps"><li><strong>Know what the site allows.</strong> Before you buy or plan, I look at zoning, Coastal Commission requirements, and entitlement, so your plan starts from what the rules permit.</li><li><strong>Bring in the right people.</strong> I bring in architects, builders, and contractors early, so the design and the budget reflect the site.</li><li><strong>I lead the purchase or the sale.</strong> You work directly with me when you buy and when you sell.</li></ol>
+<div class="lab">Closing</div>
+<p class="h2c">Have a lot or a project in mind?</p>
+<p class="p">Let&#x27;s walk the site and talk about what it can become.</p>
+<div><span class="btn">Schedule a consultation about your property or lot</span></div></article>
+  </section>
+
+  <details>
+    <summary>Site audit (internal)</summary>
+    <p class="p">Carried forward from `internal-brand-audit.md` section 3 (captured 2026-10-16, 17 days old, inside the 30-day window); nothing on the site was re-read. Scored per page against website-standard.md A to G.</p>
+<div class="tbl"><table><tr><th>Area</th><th>Homepage</th><th>Buyers</th><th>Sellers</th><th>About and Jim bio</th></tr><tr><td>A. Hero clarity</td><td>Weak: &quot;The best real estate transaction possible&quot; names no market narrower than San Diego, no problem, no outcome; &quot;La Jolla&quot; absent</td><td>Fair: &quot;Buy a Home in La Jolla &amp; San Diego&quot; names market and service; no problem</td><td>Weak: &quot;Sell Your Property With Jim McInerney Real Estate Team&quot; names no market or problem</td><td>n/a</td></tr><tr><td>B. Story structure</td><td>Agent as hero (&quot;most established and top-performing&quot;)</td><td>Feature list, no client problem</td><td>Eight deliverables, no seller problem</td><td>The client appears only in the closing paragraph</td></tr><tr><td>C. Authority</td><td>Claimed, unsourced (&quot;#1&quot;, &quot;$500 million&quot;); template awards with Latin filler undermine it</td><td>None</td><td>&quot;Most comprehensive home selling system&quot;, unsourced</td><td>The real edge (redevelopment, zoning, Coastal Commission, entitlement) lives here only</td></tr><tr><td>D. Process</td><td>None</td><td>Six generic items (&quot;We&#x27;re by your side&quot;)</td><td>None</td><td>None</td></tr><tr><td>E. Differentiation</td><td>Absent</td><td>Helicopter tour only</td><td>Marketing deliverables any luxury agent lists</td><td>Present and specific</td></tr><tr><td>F. Conversion</td><td>&quot;learn more&quot;; three emails, three phones, conflicting numbers</td><td>&quot;Work With Team McInerney&quot;</td><td>&quot;Work With Team McInerney&quot;</td><td>&quot;Schedule a consultation&quot; (the strongest CTA on the site, buried)</td></tr><tr><td>G. Search and AI</td><td>Title repeats the team name; no service plus geography; meta cut off</td><td>Service plus geography in the H</td><td>Partial</td><td>Specific and quotable; AI tools already cite /jim-mcinerney/</td></tr></table></div>
+<p class="p"><strong>Contradictions with the portals and Google:</strong> brokerage (eXp on the site and portal headers, Compass in the GBP description, Pacific Sotheby&#x27;s in the Realtor.com bio); career volume ($500M site, $365M+ LinkedIn and Homes.com, $415M Realtor.com); Jim&#x27;s phone (245-5542 vs 480-9945); team roster (six on About, three in the nav). The new copy states only what `bios.md` states.</p>
+<p class="p"><strong>Fix first:</strong> replace the homepage hero and remove the template content (placeholder features, Latin-filler awards, 2023 template blog, &quot;under construction&quot; counters) before anything else; it is the first thing a buyer, a seller, or an AI summary reads, and today it undercuts the real proof.</p>
+  </details>
+</div>

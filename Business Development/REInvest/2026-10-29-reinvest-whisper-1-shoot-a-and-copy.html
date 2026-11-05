@@ -1,0 +1,200 @@
+<title>REInvest Whisper 1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Didact+Gothic&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a production call sheet. Shot list first (it is needed Monday), then the four copy pieces, then open items. */
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --fg: #141414;
+  --muted: #5d5a52;
+  --line: #ddd9cf;
+  --gold: #a87c00;
+  --gold-soft: #f5ecd2;
+  --display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "Didact Gothic", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111110; --surface: #1a1a18; --fg: #ecebe6; --muted: #a8a49a; --line: #33312c;
+    --gold: #dca301; --gold-soft: #2e2511; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111110; --surface: #1a1a18; --fg: #ecebe6; --muted: #a8a49a; --line: #33312c;
+  --gold: #dca301; --gold-soft: #2e2511; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15.5px/1.55 var(--body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 36px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 30px; }
+.eyebrow { font: 700 13px/1 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+h1 { font: 700 clamp(30px, 5vw, 44px)/1.05 var(--display); margin: 6px 0 8px; text-wrap: balance; }
+h2 { font: 700 24px/1.15 var(--display); margin: 0 0 10px; letter-spacing: .01em; text-wrap: balance; }
+h3 { font: 700 17px/1.2 var(--display); letter-spacing: .03em; margin: 14px 0 6px; }
+p { margin: 0 0 8px; max-width: 70ch; }
+.lede { color: var(--muted); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--muted); }
+.facts b { color: var(--fg); font-weight: 400; }
+section { display: grid; gap: 6px; min-width: 0; }
+ul, ol { margin: 0; padding-left: 20px; max-width: 78ch; }
+li { margin-bottom: 5px; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 820px; font-size: 14px; }
+th { font: 700 12px/1.2 var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+td { padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.n { font: 500 12px/1.4 var(--mono); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tag { display: inline-block; font: 700 11px/1 var(--display); letter-spacing: .12em; text-transform: uppercase; padding: 4px 7px; border-radius: 4px; color: var(--gold); background: var(--gold-soft); white-space: nowrap; }
+.small { font-size: 13px; color: var(--muted); }
+.copy { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; max-width: 760px; min-width: 0; }
+.copy p { max-width: 64ch; }
+.copy .meta { font: 500 12px/1.5 var(--mono); color: var(--muted); margin-bottom: 10px; }
+.foot { font-size: 13px; color: var(--muted); border-left: 2px solid var(--gold); padding-left: 12px; max-width: 760px; }
+.foot div { margin-bottom: 3px; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.card h3 { margin-top: 0; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">REInvest · Whisper 1 of 10 · shot list approved</div>
+  <h1>Whisper 1: Shoot A shot list and copy</h1>
+  <p class="lede">Something is being built. The room builds itself, from a dark, empty Hive to the REInvest logo on the TV. It names REInvest as a room for serious San Diego investors, says nothing else, and ends on "not yet." From the approved whisper and tease plan v3.</p>
+  <div class="facts">
+    <span>Shoot <b>Mon 11/2, The Hive</b></span>
+    <span>Posts <b>Thu 11/5</b></span>
+    <span>Anchor <b>reel, 20 to 30 s, rushed edit</b></span>
+    <span>Email <b>none with Whisper 1</b></span>
+  </div>
+</header>
+
+<section id="shots">
+  <h2>Shoot A shot list</h2>
+  <p>A sizzle reel: the room builds itself, one element per beat (Mark and Brett, 2026-10-29). Every beat uses the same locked-off frame, so each state cuts to the next as if it popped into place. About 90 minutes on site (the task's estimate). Vertical 9:16 is the primary frame; if a second camera is available, run a horizontal one beside it for the partner whisper kit due 11/12.</p>
+
+  <div class="rules">
+    <div class="card">
+      <h3>Camera</h3>
+      <ul>
+        <li>Tripod, locked off, from the back of the room facing the front, so the TV, the table position, the whiteboard position, and all four rows fit in frame. Nobody touches the camera between beats.</li>
+        <li>Manual exposure, focus, and white balance, set for the fully lit room and left alone. The opening reads dark because the lights are off, not because the camera changes.</li>
+        <li>Roll 5 to 10 seconds on each state with the room clear. Crew and furniture move only between takes, all of it out of frame.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Keep off camera</h3>
+      <ul>
+        <li>The event date or month, the event name ("Find the Deal"), and the 50.</li>
+        <li>Any speaker name, photo, or company. No partner logos, signage, or branded cups anywhere in frame.</li>
+        <li>People. The room is empty in every beat.</li>
+        <li>Whiteboard content: it stays blank, so there's nothing to blur.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Before the shoot</h3>
+      <ul>
+        <li>Confirm The Hive's TV can show the REInvest logo from a laptop or USB drive. The light and dark PNGs aren't in the REInvest folder yet, so production exports the logo from the Canva logo file (DAHGUTzzjxM, color option 2).</li>
+        <li>Find the one light that clicks on for beat 2 and test that it lights part of the room, not all of it.</li>
+        <li>Stage the four rows of chairs, the whiteboard, and the speaker's table just out of frame, in build order.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Shots (in build order)</h3>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>#</th><th>State of the room</th><th>Set before rolling</th><th>Roll</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td><b>The empty room, lights off.</b></td><td>Room bare, every light off</td><td class="n">10 s</td></tr>
+      <tr><td class="n">2</td><td><b>A single light turns on</b>, lighting part of the empty room.</td><td>Roll first, then click the one light on during the take so the switch is caught live</td><td class="n">10 s, 3 takes</td></tr>
+      <tr><td class="n">3</td><td>First row of chairs in position.</td><td>Room lights on from here; first row placed</td><td class="n">5 s</td></tr>
+      <tr><td class="n">4</td><td>Second row of chairs.</td><td>Second row added</td><td class="n">5 s</td></tr>
+      <tr><td class="n">5</td><td>Third row of chairs.</td><td>Third row added</td><td class="n">5 s</td></tr>
+      <tr><td class="n">6</td><td>Fourth and final row; seating complete.</td><td>Fourth row added</td><td class="n">5 s</td></tr>
+      <tr><td class="n">7</td><td><b>The whiteboard appears.</b></td><td>Whiteboard placed, blank</td><td class="n">5 s</td></tr>
+      <tr><td class="n">8</td><td><b>The speaker's table appears</b> at the front; the physical setup is complete.</td><td>Table placed, nothing on it</td><td class="n">5 s</td></tr>
+      <tr><td class="n">9</td><td><b>The TV turns on and shows the REInvest logo.</b> Hold on the finished room.</td><td>Roll with the TV off, then turn it on with the logo already queued</td><td class="n">15 s, 3 takes</td></tr>
+      <tr><td class="n">10</td><td>Stills of the finished room.</td><td>Same frame, plus one horizontal and one closer on the TV</td><td class="n">3 frames</td></tr>
+      <tr><td class="n">11</td><td>Optional: handheld behind-the-scenes of the crew carrying chairs and the whiteboard in, between beats.</td><td>Second camera only, never the locked one</td><td class="n">6 to 8 clips</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Audio</h3>
+  <ul>
+    <li>The click of the light switch in beat 2, recorded clean (it opens the reel).</li>
+    <li>The TV powering on in beat 9.</li>
+    <li>30 seconds of room tone. Everything else is music and sound design in the edit.</li>
+  </ul>
+
+  <h3>Hand-off</h3>
+  <p>Footage to production on 11/2 for a rushed 20 to 30 second edit that posts 11/5. Shot 11 goes to the partner whisper kit (due 11/12).</p>
+</section>
+
+<section id="reel">
+  <h2>Reel outline</h2>
+  <p>About 24 seconds, vertical, cut as a sizzle reel: each cut lands on a music beat or a sound hit, and the room fills one element at a time. Text on screen, no voiceover. Instagram collab post from Real Talk Media and Five Star Escrow. Shot numbers point to the shot list above.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Time</th><th>Visual</th><th>On-screen text</th><th>Audio</th></tr></thead>
+    <tbody>
+      <tr><td class="n">0:00–0:02</td><td>The empty room in the dark (shot 1)</td><td>none</td><td>Room tone</td></tr>
+      <tr><td class="n">0:02–0:05</td><td>One light clicks on (shot 2)</td><td>Something new is under construction.</td><td>Switch click, music starts</td></tr>
+      <tr><td class="n">0:05–0:11</td><td>Four rows of chairs pop in, one per beat (shots 3 to 6)</td><td>A room for serious San Diego investors.</td><td>A hit on each row</td></tr>
+      <tr><td class="n">0:11–0:13</td><td>The whiteboard pops in (shot 7)</td><td>none</td><td>Hit</td></tr>
+      <tr><td class="n">0:13–0:15</td><td>The speaker's table pops in (shot 8)</td><td>none</td><td>Hit</td></tr>
+      <tr><td class="n">0:15–0:20</td><td>The TV turns on with the REInvest logo; hold on the finished room (shot 9)</td><td>none (the logo names it)</td><td>TV power-on, music lifts</td></tr>
+      <tr><td class="n">0:20–0:22</td><td>Hold on the finished room</td><td>Is it ready?</td><td>Music drops to room tone</td></tr>
+      <tr><td class="n">0:22–0:24</td><td>Same frame</td><td><b>Not yet.</b></td><td>One soft hit, then silence</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">The first two lines are Brett's (2026-10-29); the second is a headline-style label without a verb, by his choice. "Is it ready?" and "Not yet." are the editor-graded lines from the first outline, re-timed to the new build. Three lines are cut because the footage and the logo now carry them: "It starts with an empty room and a whiteboard," "Right now it's markers and laptops," and "We're calling it REInvest."</p>
+  <div class="foot">
+    <div>Concept: Mark and Brett, 2026-10-29 (sizzle build, nine beats). Text: first two lines written by Brett; the closing two passed the editor.</div>
+    <div>Source: plan v3, Whisper 1 row. Avatar: Persona 3, the investor.</div>
+    <div>Frameworks: Content Unit (4), headline components Proximity, Unusual, Ongoing, Relevancy (4.3), one open question closed (4.5).</div>
+  </div>
+</section>
+
+<section id="caption">
+  <h2>Instagram caption</h2>
+  <div class="copy">
+    <div class="meta">Collab post · Real Talk Media + Five Star Escrow · no hashtags</div>
+    <p>We're building something new for San Diego real estate investors, and this is the first look at where it starts. REInvest is a room for serious investors, and it starts with a whiteboard in an empty room. We'll share more as it takes shape, so follow along. We're not ready to show the rest yet.</p>
+  </div>
+  <div class="foot">
+    <div>Editor: PASS (loop 1; one sentence replaced because the first version implied several planning sessions).</div>
+    <div>Frameworks: Captions (9), company content, so the soft "follow along" stays.</div>
+    <div>Check first: "where it starts" and "it starts with" use the same verb in back-to-back sentences.</div>
+  </div>
+</section>
+
+
+
+<section id="open">
+  <h2>Open items</h2>
+  <h3>Settled (Brett, 2026-10-29)</h3>
+  <ul>
+    <li>Shot list and reel outline rebuilt as Mark's sizzle reel: the room builds itself in nine beats (Brett and Mark, 2026-10-29).</li>
+    <li>Reel is text only, no voiceover.</li>
+    <li>No people on camera. The planning session and the shot of Brett walking the room are out.</li>
+    <li>No LinkedIn post with Whisper 1 (Brett, 2026-10-29).</li>
+    <li>No email with Whisper 1. The first registry send is 12/3 with Whisper 2, from Brett.</li>
+  </ul>
+  <h3>Missing inputs</h3>
+  <ul>
+    <li>Shoot time at The Hive on 11/2 (the "Book the shoot" step on Shoot A).</li>
+    <li>Whether The Hive's TV can show the logo, and the logo exported from Canva.</li>
+  </ul>
+</section>
+
+<footer>Sources: whisper and tease plan v3 (approved 2026-10-29); Asana "1 of 10: Whisper 1" and "Shoot A: Whisper 1 behind the scenes at The Hive"; REInvest CLAUDE.md and MEMORY.md; channel research 2026-10-20; audience-personas.md Persona 3; voice-principles.md; content-frameworks.md. Copywriter drafted the reel text and caption; the CMO wrote the shot list, rebuilt to Mark's sizzle concept; the editor graded the copy. Written in the CMO seat, 2026-10-29.</footer>
+
+</div>

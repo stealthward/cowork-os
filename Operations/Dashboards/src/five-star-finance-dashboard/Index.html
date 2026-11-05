@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<style>
+  :root{--bg:#0f1115;--panel:#171a21;--panel2:#1e222b;--line:#2a2f3a;--text:#e6e8ec;
+        --muted:#8b93a3;--accent:#4f8cff;--ok:#3fb950;--warn:#d29922;--err:#f85149}
+  [data-theme="light"]{--bg:#f6f7f9;--panel:#fff;--panel2:#f0f2f5;--line:#dfe3e8;--text:#1a1d23;
+        --muted:#616a76;--accent:#2563eb;--ok:#1a7f37;--warn:#9a6700;--err:#cf222e}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;
+         border-bottom:1px solid var(--line);background:var(--panel)}
+  h1{font-size:16px;margin:0;font-weight:600}
+  .sub{color:var(--muted);font-size:12px;margin-top:2px}
+  button{font:inherit;cursor:pointer;border-radius:6px;border:1px solid var(--line);
+         background:var(--panel2);color:var(--text);padding:7px 14px}
+  button:hover{border-color:var(--accent)} button:disabled{opacity:.5;cursor:default}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
+  button.ghost{background:transparent}
+  button.danger{border-color:var(--err);color:var(--err)}
+  main{max-width:1000px;margin:0 auto;padding:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:18px}
+  .card h2{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:0 0 14px}
+  #drop{border:2px dashed var(--line);border-radius:10px;padding:42px;text-align:center;color:var(--muted);cursor:pointer;transition:.15s}
+  #drop.over{border-color:var(--accent);background:var(--panel2);color:var(--text)}
+  #drop strong{color:var(--text);display:block;font-size:15px;margin-bottom:4px}
+  .row{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0}
+  .grow{flex:1;min-width:0}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+  .muted{color:var(--muted)}
+  .pill{font-size:11px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);white-space:nowrap}
+  .pill.high{color:var(--ok);border-color:var(--ok)}
+  .pill.medium{color:var(--warn);border-color:var(--warn)}
+  .pill.low,.pill.review{color:var(--err);border-color:var(--err)}
+  .prop{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:14px;margin:12px 0}
+  .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:3px}
+  input[type=text],select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);
+        border-radius:6px;padding:8px 10px;font:inherit}
+  .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:14px}
+  .tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+  .tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .hide{display:none}
+  a{color:var(--accent)}
+  .empty{color:var(--muted);text-align:center;padding:24px 0}
+  .spin{width:15px;height:15px;border:2px solid var(--line);border-top-color:var(--accent);
+        border-radius:50%;display:inline-block;animation:s .7s linear infinite;vertical-align:-3px}
+  @keyframes s{to{transform:rotate(360deg)}}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .issue{padding:8px 12px;border-radius:6px;margin-bottom:6px;font-size:13px}
+  .issue.error{background:rgba(248,81,73,.1);border:1px solid var(--err)}
+  .issue.warn{background:rgba(210,153,34,.1);border:1px solid var(--warn)}
+  .issue.ok{background:rgba(63,185,80,.1);border:1px solid var(--ok)}
+  .arrow{color:var(--muted);margin:0 6px}
+  details{margin-top:12px;border-top:1px solid var(--line)}
+  summary{cursor:pointer;color:var(--muted);font-size:12.5px;padding:9px 0;list-style:none;user-select:none}
+  summary::-webkit-details-marker{display:none}
+  summary::marker{content:''}
+  summary:before{content:'\25B8';display:inline-block;margin-right:7px;font-size:10px;transition:transform .15s}
+  details[open] summary:before{transform:rotate(90deg)}
+  summary:hover{color:var(--accent)}
+  details .row:first-of-type{border-top:0}
+  .help{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;
+        border-radius:50%;border:1px solid var(--line);color:var(--muted);font-size:11px;
+        cursor:pointer;margin-left:7px;vertical-align:1px;background:transparent}
+  .help:hover{border-color:var(--accent);color:var(--accent)}
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;
+         justify-content:center;padding:20px;z-index:50}
+  .modal .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+              max-width:560px;width:100%;padding:24px;max-height:80vh;overflow:auto}
+  .modal h3{margin:0 0 12px;font-size:16px}
+  .modal p{margin:0 0 12px;color:var(--text)}
+  .modal ol{margin:0 0 12px;padding-left:20px} .modal li{margin-bottom:7px}
+  .modal .tip{background:var(--panel2);border-radius:6px;padding:10px 12px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Five Star Finance</h1><div class="sub" id="who">Document filing &amp; quality control</div></div>
+  <button class="ghost" onclick="toggleTheme()" id="themeBtn">Light</button>
+</header>
+
+<main>
+  <div class="tabs">
+    <button id="t_file" class="active" onclick="show('file')">File a document</button>
+    <button id="t_qc" onclick="show('qc')">Quality control</button>
+    <button id="t_set" onclick="show('set')">Settings</button>
+  </div>
+
+  <!-- FILE -->
+  <section id="p_file">
+    <div class="card">
+      <h2>Upload<button class="help" onclick="help('upload')">?</button></h2>
+      <div id="drop"><strong>Drop your documents here</strong>
+        one file or a whole month at once &middot; or click to choose</div>
+      <input type="file" id="picker" class="hide" multiple>
+    </div>
+
+    <div id="bulkBar" class="card hide">
+      <div class="row" style="border:0;padding:0">
+        <div class="grow"><span id="bulkCount"></span>
+          <div class="muted" style="font-size:12px" id="bulkNote"></div>
+        </div>
+        <button class="ghost" onclick="clearReady()">Clear</button>
+        <button class="primary" id="bulkFileBtn" onclick="fileAll()">File all</button>
+      </div>
+    </div>
+
+    <div id="queue"></div>
+  </section>
+
+  <!-- QC -->
+  <section id="p_qc" class="hide">
+    <div class="card">
+      <h2>Needs a name <span class="muted" id="pendCount"></span><button class="help" onclick="help('pending')">?</button></h2>
+      <div id="pending"><div class="empty"><span class="spin"></span></div></div>
+    </div>
+
+    <div class="card">
+      <h2>Check the folders<button class="help" onclick="help('verify')">?</button></h2>
+      <div class="muted" style="font-size:12.5px;margin-bottom:12px">
+        Pick a folder. Every document in it is read and checked against its name, so a file that is
+        named or filed wrong is caught even when the name looks right. Worth running at month end.
+      </div>
+      <div class="row" style="border:0;padding:0">
+        <select id="spotPick" class="grow"><option value="">Loading folders&hellip;</option></select>
+        <button class="primary" onclick="spot()">Check folder</button>
+      </div>
+      <div id="spotOut" style="margin-top:12px"></div>
+    </div>
+
+    <div class="card">
+      <h2>Fix one file<button class="help" onclick="help('refile')">?</button></h2>
+      <div class="muted" style="font-size:12.5px;margin-bottom:12px">
+        Paste the Drive link to a single PDF. It is read, renamed correctly, and moved to the
+        right folder if it is in the wrong place. Good for fixing a one-off.
+      </div>
+      <div class="row" style="border:0;padding:0">
+        <input type="text" id="refileUrl" class="grow" placeholder="Paste a Drive file link&hellip;">
+        <button class="primary" onclick="refile(false)">Check</button>
+      </div>
+      <div id="refileOut" style="margin-top:12px"></div>
+
+    </div>
+
+    <div class="card">
+      <h2>System health<button class="help" onclick="help('health')">?</button></h2>
+      <div class="actions" style="justify-content:flex-start">
+        <button onclick="validate()">Run check</button>
+      </div>
+      <div id="valOut" style="margin-top:12px"></div>
+    </div>
+
+    <div class="card"><h2>Recently filed</h2><div id="recent"></div></div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="p_set" class="hide">
+
+    <div class="card">
+      <h2>Add a vendor<button class="help" onclick="help('vendor')">?</button></h2>
+      <div class="muted" style="font-size:12.5px;margin-bottom:12px">
+        Teaches the system to recognise a company. Do this when the same company keeps landing in
+        <b>Needs a name</b>, or when their name is written differently each month.
+      </div>
+      <div class="grid">
+        <div><div class="lbl">Text to match</div><input type="text" id="v_match" placeholder="e.g. coastalk"></div>
+        <div><div class="lbl">Name to use</div><input type="text" id="v_token" placeholder="e.g. CoastalK"></div>
+      </div>
+      <div class="actions"><button class="primary" onclick="addVendor()">Add vendor</button></div>
+      <div id="vOut"></div>
+      <details>
+        <summary id="vendorSummary">Vendors the system knows</summary>
+        <div id="vendorList"></div>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2>Filing rules<button class="help" onclick="help('rules')">?</button></h2>
+      <div class="muted" style="font-size:12.5px">
+        Which folders are filed automatically. Changing these affects every document, so check with
+        Brett or Felicia first.
+      </div>
+      <details>
+        <summary id="ruleSummary">Show filing rules</summary>
+        <div id="ruleList"></div>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2>Accounts<button class="help" onclick="help('accounts')">?</button></h2>
+      <div class="muted" style="font-size:12.5px">
+        The bank and card accounts the system knows. Editing is rare, and adding one is rarer still.
+      </div>
+      <details>
+        <summary>Show accounts</summary>
+        <div id="acctList"></div>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2>Setup &amp; repair<button class="help" onclick="help('setup')">?</button></h2>
+      <div class="muted" style="font-size:12.5px">
+        One-time tools. You should not need these day to day. If something seems wrong, run
+        <b>Quality control &rarr; Run check</b> first &mdash; it names anything that is missing.
+      </div>
+      <details>
+        <summary>Show setup tools</summary>
+
+        <div class="row">
+          <div class="grow">
+            <div>Organize Recs &amp; Registers</div>
+            <div class="muted" style="font-size:12px">Reads everything sitting in folder 04, names it, and replaces duplicate statement copies with shortcuts to the originals.</div>
+          </div>
+          <button class="ghost" onclick="org04(false)">Preview</button>
+        </div>
+        <div id="org04Out" style="margin:0 0 10px"></div>
+
+        <div class="row">
+          <div class="grow">
+            <div>Restore recommended settings</div>
+            <div class="muted" style="font-size:12px">Puts the filing rules back the way they should be. Safe to run any time.</div>
+          </div>
+          <button class="ghost" onclick="repair()">Restore</button>
+        </div>
+        <div id="repairOut" style="margin-top:10px"></div>
+      </details>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+var DESTS = [], ACCOUNTS = [];
+var READY = {};   // cards that are confidently identified and waiting to be filed
+
+function updateBulk(){
+  var n = Object.keys(READY).length;
+  var bar = document.getElementById('bulkBar');
+  bar.classList.toggle('hide', n < 2);
+  if (n >= 2) {
+    document.getElementById('bulkCount').textContent = n + ' documents ready to file';
+    document.getElementById('bulkNote').textContent = 'Check the names above, then file them all at once.';
+    var b = document.getElementById('bulkFileBtn');
+    b.disabled = false; b.textContent = 'File all';
+  }
+}
+function clearReady(){
+  Object.keys(READY).forEach(function(id){ var c=document.getElementById(id); if(c) c.remove(); });
+  READY = {}; updateBulk();
+}
+function markFiled(id, res, name){
+  var card = document.getElementById(id); if(!card) return;
+  if(!res.ok) return fail(id, res.error);
+  if(res.name) name = res.name;
+  if(res.duplicate){
+    card.innerHTML='<div class="row"><div class="grow"><div class="mono">'+esc(name)+'</div>'+
+      '<div class="muted" style="font-size:12px">Already on file, not duplicated &middot; <a href="'+res.url+'" target="_blank">open</a></div></div>'+
+      '<span class="pill medium">duplicate</span></div>';
+    return;
+  }
+  var sc = res.shortcut;
+  var scNote = sc ? (sc.ok ? ' &middot; ' + esc(sc.note) : '') : '';
+  var scWarn = (sc && !sc.ok) ? '<div style="font-size:12px;color:var(--warn);margin-top:4px">'+esc(sc.note)+'</div>' : '';
+  var bothNote = res.keptBoth ? '<div style="font-size:12px;color:var(--warn);margin-top:4px">A different file with the same name was already here, so this was kept as '+esc(name)+'.</div>' : '';
+  card.innerHTML='<div class="row"><div class="grow"><div class="mono">'+esc(name)+'</div>'+
+    '<div class="muted" style="font-size:12px">'+(res.replaced?'Replaced in ':'Filed to ')+esc(res.folder)+' &middot; <a href="'+res.url+'" target="_blank">open</a>'+scNote+'</div>'+
+    scWarn+bothNote+'</div>'+
+    '<span class="pill '+((sc&&!sc.ok)?'medium':'high')+'">'+(res.replaced?'replaced':'filed')+'</span></div>';
+}
+function fileAll(){
+  var ids = Object.keys(READY);
+  if(!ids.length) return;
+  var btn = document.getElementById('bulkFileBtn');
+  btn.disabled = true;
+  var i = 0, done = 0, failed = 0;
+  (function next(){
+    if(i >= ids.length){
+      btn.textContent = failed ? (done+' filed, '+failed+' need attention') : 'All '+done+' filed';
+      setTimeout(updateBulk, 1500);
+      return;
+    }
+    var id = ids[i++];
+    btn.textContent = 'Filing '+i+' of '+ids.length+'\u2026';
+    var e = READY[id];
+    if(!e){ next(); return; }
+    google.script.run.withSuccessHandler(function(res){
+      if(res.ok) done++; else failed++;
+      markFiled(id, res, e.name); delete READY[id]; next();
+    }).withFailureHandler(function(err){
+      failed++; fail(id, err.message); delete READY[id]; next();
+    }).commitUpload(e.b64, e.mime, e.name, e.folderId, e.sub);
+  })();
+}
+
+function toggleTheme(){
+  var l = document.documentElement.getAttribute('data-theme')==='light';
+  document.documentElement.setAttribute('data-theme', l?'dark':'light');
+  document.getElementById('themeBtn').textContent = l?'Light':'Dark';
+}
+function show(w){
+  ['file','qc','set'].forEach(function(k){
+    document.getElementById('p_'+k).classList.toggle('hide', k!==w);
+    document.getElementById('t_'+k).classList.toggle('active', k===w);
+  });
+  if (w==='qc') { loadQc(); loadSpotFolders(); }
+  if (w==='set') loadSettings();
+}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]});}
+
+/* ---------- FILE ---------- */
+var drop=document.getElementById('drop'), picker=document.getElementById('picker');
+drop.onclick=function(){picker.click()};
+picker.onchange=function(){[].forEach.call(picker.files,handle);picker.value=''};
+['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.add('over')})});
+['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(ev){ev.preventDefault();drop.classList.remove('over')})});
+drop.addEventListener('drop',function(ev){[].forEach.call(ev.dataTransfer.files,handle)});
+
+function handle(file){
+  var id='c'+Math.random().toString(36).slice(2);
+  var card=document.createElement('div'); card.className='card'; card.id=id;
+  card.innerHTML='<div class="row"><div class="grow"><div class="mono">'+esc(file.name)+'</div>'+
+    '<div class="muted" style="font-size:12px">Reading document…</div></div><span class="spin"></span></div>';
+  document.getElementById('queue').prepend(card);
+  var fr=new FileReader();
+  fr.onload=function(){
+    var b64=fr.result.split(',')[1];
+    google.script.run.withSuccessHandler(function(r){proposal(id,r,b64,file)})
+      .withFailureHandler(function(e){fail(id,e.message)})
+      .analyzeUpload(b64,file.name,file.type||'application/octet-stream');
+  };
+  fr.readAsDataURL(file);
+}
+
+function proposal(id,r,b64,file){
+  var card=document.getElementById(id);
+  if(!r.ok) return fail(id,r.error);
+
+  var TYPE_LABEL={EXP:'Expense',BANK:'Bank statement',CC:'Credit card statement',REG:'Register',
+                  REC:'Reconciliation',PAY:'Payroll report',FIN:'Financial statement',COMM:'Commission report'};
+  var typeName = TYPE_LABEL[r.detected.type] || 'Document';
+  var canFile = !!(r.proposedName && r.destination.folderId);
+  var conf = r.classConfidence || 'medium';
+
+  // Why it decided what it decided.
+  var why = r.matchedOn ? 'Matched on '+esc(r.matchedOn)
+          : (r.rawVendor ? 'Document is from '+esc(r.rawVendor) : '');
+
+  // Unknown vendor -> the fix is a Vendors row, not a hand-typed name.
+  var addVendor = (r.detected.type==='EXP' && r.rawVendor && !r.knownVendor)
+    ? '<div class="prop" style="border-color:var(--warn)">'+
+      '<div class="lbl">This company isn\'t in your vendor list</div>'+
+      '<div class="muted" style="font-size:12.5px;margin-bottom:8px">Add it once and every future document from them is named the same way.</div>'+
+      '<div class="grid"><div><div class="lbl">Document says</div>'+
+      '<input type="text" value="'+esc(r.rawVendor)+'" disabled></div>'+
+      '<div><div class="lbl">Name to use</div><input type="text" id="vt_'+id+'" value="'+esc(String(r.rawVendor||'').replace(/[^\w\s-]/g,'').trim().replace(/\s+/g,'-'))+'"></div></div>'+
+      '<div class="actions"><button class="ghost" id="av_'+id+'">Add vendor &amp; use it</button></div></div>' : '';
+
+  var collisionBox = (canFile && r.collision)
+    ? '<div class="prop" style="border-color:var(--warn)">'+
+        '<div class="lbl">A file with this name is already here</div>'+
+        '<div style="font-size:13px;margin-top:4px">Replace updates that file in place, keeping its history and its shortcut in 04. Keep both files this copy as <span class="mono">'+esc(r.collision.keepBothName)+'</span>.</div>'+
+        '<div class="muted" style="font-size:12px;margin-top:6px"><a href="https://drive.google.com/file/d/'+esc(r.collision.existingId)+'/view" target="_blank">Open the existing file</a></div>'+
+      '</div>'
+    : '';
+
+  card.innerHTML =
+    '<div class="row"><div class="grow"><div class="mono muted">'+esc(r.original)+'</div></div>'+
+      '<span class="pill '+(conf==='high'?'high':conf==='low'?'low':'medium')+'">'+esc(typeName)+'</span>'+
+      '<span class="pill">'+(r.source==='claude'?'read by Claude':'from filename')+'</span></div>'+
+    (canFile
+      ? '<div class="prop">'+
+          '<div class="lbl">Name</div><div class="mono" style="font-size:13.5px">'+esc(r.proposedName)+'</div>'+
+          '<div style="height:12px"></div>'+
+          '<div class="lbl">Goes to</div><div style="font-size:13px">'+esc(r.destination.path)+'</div>'+
+          (why?'<div class="muted" style="font-size:12px;margin-top:8px">'+why+'</div>':'')+
+        '</div>'
+      : '<div class="prop" style="border-color:var(--err)">'+
+          '<div class="lbl">Can\'t file this yet</div>'+
+          '<div style="font-size:13px;margin-top:4px">'+esc(r.destination.note||'The document could not be identified.')+'</div>'+
+          (r.readAccount?'<div class="muted" style="font-size:12px;margin-top:6px">It says: "'+esc(r.readAccount)+'"</div>':'')+
+          '<div class="muted" style="font-size:12px;margin-top:6px">Open the file and check it, then file it in Drive by hand.</div>'+
+        '</div>')+
+    collisionBox+
+    addVendor+
+    (r.detected.aiError?'<div style="font-size:12px;color:var(--warn)">Could not read this file: '+esc(r.detected.aiError)+'</div>':'')+
+    '<div class="actions">'+
+      '<button class="ghost" onclick="discard(\''+id+'\')">Discard</button>'+
+      (canFile && r.collision
+        ? '<button class="ghost" id="kb_'+id+'">Keep both</button><button class="primary" id="rp_'+id+'">Replace existing</button>'
+        : canFile?'<button class="primary" id="b_'+id+'">Confirm &amp; file</button>':'')+
+    '</div>';
+
+  if(addVendor){
+    document.getElementById('av_'+id).onclick=function(){
+      var tok=document.getElementById('vt_'+id).value.trim();
+      if(!tok){alert('Give the vendor a short name first.');return}
+      this.disabled=true; this.textContent='Adding…';
+      var self=this;
+      google.script.run.withSuccessHandler(function(res){
+        if(!res.ok){ self.disabled=false; self.textContent='Add vendor & use it'; alert(res.error); return; }
+        handle(file);                 // re-read now that the vendor is known
+        document.getElementById(id).remove();
+      }).addVendor(r.rawVendor, tok, '');
+    };
+  }
+
+  if(canFile && r.collision){
+    document.getElementById('rp_'+id).onclick=function(){
+      this.disabled=true; this.textContent='Replacing…';
+      google.script.run.withSuccessHandler(function(res){
+        markFiled(id, res, r.proposedName);
+      }).withFailureHandler(function(e){ fail(id,e.message); })
+        .replaceFile(b64,file.type||'application/pdf',r.collision.existingId,r.proposedName);
+    };
+    document.getElementById('kb_'+id).onclick=function(){
+      this.disabled=true; this.textContent='Filing…';
+      google.script.run.withSuccessHandler(function(res){
+        markFiled(id, res, r.collision.keepBothName);
+      }).withFailureHandler(function(e){ fail(id,e.message); })
+        .commitUpload(b64,file.type||'application/pdf',r.collision.keepBothName,r.destination.folderId,r.destination.sub||[]);
+    };
+  } else if(canFile){
+    READY[id] = { b64: b64, mime: file.type||'application/pdf', name: r.proposedName,
+                  folderId: r.destination.folderId, sub: r.destination.sub||[] };
+    updateBulk();
+    document.getElementById('b_'+id).onclick=function(){
+      this.disabled=true; this.textContent='Filing…';
+      google.script.run.withSuccessHandler(function(res){
+        markFiled(id, res, r.proposedName); delete READY[id]; updateBulk();
+      }).withFailureHandler(function(e){ fail(id,e.message); delete READY[id]; updateBulk(); })
+        .commitUpload(b64,file.type||'application/pdf',r.proposedName,r.destination.folderId,r.destination.sub||[]);
+    };
+  }
+}
+
+function discard(id){ delete READY[id]; var c=document.getElementById(id); if(c) c.remove(); updateBulk(); }
+function fail(id,msg){
+  document.getElementById(id).innerHTML='<div class="row"><div class="grow"><div class="mono">Error</div>'+
+    '<div class="muted" style="font-size:12px">'+esc(msg||'unknown')+'</div></div>'+
+    '<button class="ghost" onclick="discard(\''+id+'\')">Dismiss</button></div>';
+}
+
+/* ---------- QC ---------- */
+function loadQc(){
+  google.script.run.withSuccessHandler(function(d){
+    document.getElementById('pendCount').textContent=d.pending.length?'('+d.pending.length+')':'';
+    document.getElementById('pending').innerHTML=d.pending.length?d.pending.map(function(f,i){
+      return '<div class="row" id="pf'+i+'"><div class="grow"><div class="mono">'+esc(f.name)+'</div>'+
+        '<div class="muted" style="font-size:12px">'+esc(f.folder)+'</div></div>'+
+        '<a href="'+f.url+'" target="_blank"><button class="ghost">Open</button></a>'+
+        '<button class="primary" onclick="fixOne(\''+f.id+'\',\'pf'+i+'\')">Identify</button></div>';
+    }).join(''):'<div class="empty">Nothing pending.</div>';
+    document.getElementById('recent').innerHTML=d.recent.length?d.recent.map(function(f){
+      return '<div class="row"><div class="grow"><div class="mono">'+esc(f.name)+'</div>'+
+        '<div class="muted" style="font-size:12px">'+esc(f.folder)+' &middot; '+new Date(f.at).toLocaleString()+'</div></div></div>';
+    }).join(''):'<div class="empty">Nothing filed yet.</div>';
+  }).getQcData();
+}
+
+/* ---------- SETTINGS ---------- */
+var SET=null;
+function loadSettings(){
+  google.script.run.withSuccessHandler(function(s){ SET=s; renderVendors(s); renderRules(s); renderAccounts(s); }).getSettings();
+}
+function renderVendors(s){
+  document.getElementById('vendorList').innerHTML='<div class="lbl" style="margin-bottom:6px">Current vendors</div>'+
+    '<div class="muted" style="font-size:12px;margin-bottom:8px">Edit fixes a name. Remove deletes one.</div>'+
+    s.vendors.map(function(v){return '<div class="row" id="vrow_'+v.row+'"><div class="grow"><span class="mono">'+esc(v.token)+
+      '</span> <span class="muted">matches “'+esc(v.match)+'”</span></div>'+
+      '<button class="ghost" data-match="'+esc(v.match)+'" data-token="'+esc(v.token)+'" onclick="editVendorStart('+v.row+',this)">Edit</button>'+
+      '<button class="ghost" onclick="removeVendor('+v.row+')">Remove</button></div>'}).join('');
+}
+function renderRules(s){
+  var onCount=s.rules.filter(function(r){return r.active==='YES'}).length;
+  document.getElementById('ruleSummary').textContent='Show filing rules ('+onCount+' on, '+(s.rules.length-onCount)+' off)';
+  document.getElementById('ruleList').innerHTML=s.rules.map(function(r){
+    var on=r.active==='YES';
+    return '<div class="row" id="rrow_'+r.row+'"><div class="grow"><div>'+esc(r.num)+' '+esc(r.name)+'</div>'+
+      '<div class="muted" style="font-size:12px">'+esc(r.type||'no type')+(r.depth?' · '+esc(r.depth):'')+'</div></div>'+
+      '<button class="ghost" onclick="editRuleStart('+r.row+')">Edit</button>'+
+      '<button class="'+(on?'':'ghost')+'" onclick="toggleRule('+r.row+','+(!on)+')">'+(on?'On':'Off')+'</button></div>';
+  }).join('')+'<div style="margin-top:10px"><button class="ghost" onclick="addRuleStart()">+ Add a rule</button></div><div id="ruleAddBox"></div>';
+}
+function renderAccounts(s){
+  document.getElementById('acctList').innerHTML='<div class="muted" style="font-size:12px;margin-bottom:8px">Edit an account&rsquo;s aliases or last four. Adding one is rare.</div>'+
+    s.accounts.map(function(a){return '<div class="row" id="arow_'+a.row+'"><div class="grow"><span class="mono">'+esc(a.token)+'</span> <span class="muted">'+esc(a.last4)+'</span>'+
+      (a.phrases?'<div class="muted" style="font-size:12px">'+esc(a.phrases)+'</div>':'')+'</div>'+
+      '<button class="ghost" data-token="'+esc(a.token)+'" data-last4="'+esc(a.last4)+'" data-phrases="'+esc(a.phrases)+'" onclick="editAcctStart('+a.row+',this)">Edit</button></div>'}).join('')+
+    '<div style="margin-top:10px"><button class="ghost" onclick="addAcctStart()">+ Add an account</button></div><div id="acctAddBox"></div>';
+}
+function optSel(id,opts,cur){ return '<select id="'+id+'">'+opts.map(function(o){return '<option value="'+esc(o)+'"'+(o===cur?' selected':'')+'>'+esc(o||'(none)')+'</option>';}).join('')+'</select>'; }
+function folderSel(id,cur){ return '<select id="'+id+'">'+SET.folders.map(function(f){return '<option value="'+esc(f.id)+'"'+(f.id===cur?' selected':'')+'>'+esc(f.name)+'</option>';}).join('')+'</select>'; }
+function ruleFormInner(row,r){
+  var isFixed=(r.descSrc||'').indexOf('FIXED:')===0;
+  return '<div class="grow" style="display:grid;gap:6px">'+
+    '<div><div class="lbl">Folder in Drive</div>'+folderSel('erf_'+row,r.folderId||'')+'</div>'+
+    '<div><div class="lbl">Path, e.g. [YYYY]/[YYYY-MM] or Landmark Financials/[YYYY]</div><input type="text" id="erd_'+row+'" value="'+esc(r.depth||'')+'"></div>'+
+    '<div class="grid"><div><div class="lbl">Type</div>'+optSel('ert_'+row,SET.types,r.type||'')+'</div><div><div class="lbl">Entity</div>'+optSel('ere_'+row,['FSE','RTM'],r.entity||'FSE')+'</div></div>'+
+    '<div class="grid"><div><div class="lbl">Descriptor source</div>'+optSel('ers_'+row,SET.descSources.concat(['FIXED']),isFixed?'FIXED':(r.descSrc||''))+'</div><div><div class="lbl">Date source</div>'+optSel('erdt_'+row,[''].concat(SET.dateSources),r.dateSrc||'')+'</div></div>'+
+    '<div><div class="lbl">Fixed text, only if descriptor source is FIXED</div><input type="text" id="erfx_'+row+'" value="'+esc(isFixed?r.descSrc.slice(6):'')+'"></div>'+
+    '</div><div style="display:flex;flex-direction:column;gap:6px"><button class="primary" onclick="'+(row==='new'?'addRuleSave()':'editRuleSave('+row+')')+'">Save</button><button class="ghost" onclick="loadSettings()">Cancel</button></div>';
+}
+function editRuleStart(row){ var r=SET.rules.filter(function(x){return x.row===row;})[0]; if(r) document.getElementById('rrow_'+row).innerHTML=ruleFormInner(row,r); }
+function ruleFromForm(row){
+  var fs=document.getElementById('erf_'+row); var d=document.getElementById('ers_'+row).value;
+  var descSrc=d==='FIXED'?('FIXED:'+document.getElementById('erfx_'+row).value.trim()):d;
+  return { folderId:fs.value, folderName:fs.options[fs.selectedIndex].text, depth:document.getElementById('erd_'+row).value,
+    entity:document.getElementById('ere_'+row).value, type:document.getElementById('ert_'+row).value, descSrc:descSrc, dateSrc:document.getElementById('erdt_'+row).value };
+}
+function editRuleSave(row){ var f=ruleFromForm(row);
+  google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); }).editRule(row,f.folderId,f.folderName,f.depth,f.entity,f.type,f.descSrc,f.dateSrc); }
+function addRuleStart(){ document.getElementById('ruleAddBox').innerHTML='<div class="row" style="margin-top:8px">'+ruleFormInner('new',{folderId:'',depth:'',entity:'FSE',type:'',descSrc:'',dateSrc:''})+'</div><div class="muted" style="font-size:12px;margin-top:4px">New rules start switched Off. Turn one On when you are ready for it to file.</div>'; }
+function addRuleSave(){ var f=ruleFromForm('new'); var num=(f.folderName.match(/^\d+/)||[''])[0];
+  google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); }).addRule(f.folderId,f.folderName,num,f.depth,f.entity,f.type,f.descSrc,f.dateSrc,''); }
+function acctFormInner(row,a){
+  return '<div class="grow" style="display:grid;gap:6px">'+
+    '<div><div class="lbl">Account name, must match the Drive folder</div><input type="text" id="eat_'+row+'" value="'+esc(a.token||'')+'"'+(row==='new'?'':' readonly')+'></div>'+
+    '<div><div class="lbl">Last 4</div><input type="text" id="eal_'+row+'" value="'+esc(a.last4||'')+'"></div>'+
+    '<div><div class="lbl">Also matches, separated by | </div><input type="text" id="eap_'+row+'" value="'+esc(a.phrases||'')+'"></div>'+
+    '</div><div style="display:flex;flex-direction:column;gap:6px"><button class="primary" onclick="'+(row==='new'?'addAcctSave()':'editAcctSave('+row+')')+'">Save</button><button class="ghost" onclick="loadSettings()">Cancel</button></div>';
+}
+function editAcctStart(row,btn){ document.getElementById('arow_'+row).innerHTML=acctFormInner(row,{token:btn.getAttribute('data-token'),last4:btn.getAttribute('data-last4'),phrases:btn.getAttribute('data-phrases')}); }
+function editAcctSave(row){ google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); }).editAccount(row,document.getElementById('eat_'+row).value,document.getElementById('eal_'+row).value,document.getElementById('eap_'+row).value); }
+function addAcctStart(){ document.getElementById('acctAddBox').innerHTML='<div class="row" style="margin-top:8px">'+acctFormInner('new',{token:'',last4:'',phrases:''})+'</div><div class="muted" style="font-size:12px;margin-top:4px">The name must exactly match a folder already created under Bank or Credit Card Statements.</div>'; }
+function addAcctSave(){ if(!confirm('Adding an account is rare, only for a genuinely new bank or card, and its folder must already exist in Drive. Continue?')) return;
+  google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); }).addAccount(document.getElementById('eat_new').value,document.getElementById('eal_new').value,document.getElementById('eap_new').value,''); }
+function toggleRule(row,active){
+  google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); })
+    .setRuleActive(row,active);
+}
+function editVendorStart(row,btn){
+  var r=document.getElementById('vrow_'+row);
+  r.innerHTML='<div class="grow"><input type="text" id="em_'+row+'" value="'+esc(btn.getAttribute('data-match'))+'" style="width:44%"> '+
+    '<input type="text" id="et_'+row+'" value="'+esc(btn.getAttribute('data-token'))+'" style="width:44%"></div>'+
+    '<button class="primary" onclick="editVendorSave('+row+')">Save</button>'+
+    '<button class="ghost" onclick="loadSettings()">Cancel</button>';
+}
+function editVendorSave(row){
+  var m=document.getElementById('em_'+row).value, t=document.getElementById('et_'+row).value;
+  google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); })
+    .editVendor(row,m,t);
+}
+function removeVendor(row){
+  if(!confirm('Remove this vendor? Their documents will need a name again until you re-add them.')) return;
+  google.script.run.withSuccessHandler(function(r){ if(r.ok) loadSettings(); else alert(r.error); })
+    .removeVendor(row);
+}
+function addVendor(){
+  var m=document.getElementById('v_match').value, t=document.getElementById('v_token').value;
+  google.script.run.withSuccessHandler(function(r){
+    var o=document.getElementById('vOut');
+    if(r.ok){o.innerHTML='<div class="issue ok">Vendor added.</div>';
+      document.getElementById('v_match').value='';document.getElementById('v_token').value='';loadSettings();}
+    else o.innerHTML='<div class="issue error">'+esc(r.error)+'</div>';
+  }).addVendor(m,t,'');
+}
+function repair(){
+  var o=document.getElementById('repairOut'); o.innerHTML='<span class="spin"></span>';
+  google.script.run.withSuccessHandler(function(r){
+    if(!r.ok){o.innerHTML='<div class="issue error">'+esc(r.error)+'</div>';return}
+    o.innerHTML = r.changed.length
+      ? r.changed.map(function(c){return '<div class="issue ok">'+esc(c)+'</div>'}).join('')
+      : '<div class="issue ok">Already correct. Nothing changed.</div>';
+    loadSettings();
+  }).applyRecommendedConfig();
+}
+
+/* ---------- FIX IN PLACE ---------- */
+function fixOne(fileId,rowId){
+  var row=document.getElementById(rowId);
+  var btn=row.querySelector('button.primary');
+  btn.disabled=true; btn.textContent='Reading…';
+  google.script.run.withSuccessHandler(function(r){
+    if(!r.ok){ btn.disabled=false; btn.textContent='Identify';
+      row.insertAdjacentHTML('afterend','<div class="row"><div class="grow muted" style="font-size:12.5px">'+esc(r.error)+'</div></div>');
+      return; }
+    row.innerHTML='<div class="grow"><div class="mono muted">'+esc(r.current)+'</div>'+
+      '<div class="mono" style="margin-top:4px">'+esc(r.proposed)+'</div>'+
+      '<div class="muted" style="font-size:12px;margin-top:4px">Found: '+esc(r.vendor)+'</div></div>'+
+      '<span class="pill '+(r.confidence||'medium')+'">'+esc(r.confidence||'medium')+'</span>'+
+      '<button class="ghost" onclick="loadQc()">Skip</button>'+
+      '<button class="primary" id="ok_'+rowId+'">Rename</button>';
+    document.getElementById('ok_'+rowId).onclick=function(){
+      this.disabled=true; this.textContent='Renaming…';
+      google.script.run.withSuccessHandler(function(res){
+        if(!res.ok){ alert(res.error); return; }
+        row.innerHTML='<div class="grow"><div class="mono">'+esc(res.to)+'</div>'+
+          '<div class="muted" style="font-size:12px"><a href="'+res.url+'" target="_blank">open</a></div></div>'+
+          '<span class="pill high">renamed</span>';
+      }).applyFix(r.fileId, r.proposed);
+    };
+  }).withFailureHandler(function(e){ btn.disabled=false; btn.textContent='Identify'; alert(e.message); })
+    .proposeFix(fileId);
+}
+
+/* ---------- VERIFY ---------- */
+function refile(apply){
+  var url=document.getElementById('refileUrl').value;
+  var o=document.getElementById('refileOut');
+  if(!url.trim()){ o.innerHTML='<div class="issue warn">Paste a Drive link first.</div>'; return; }
+  o.innerHTML='<div class="empty"><span class="spin"></span> Reading the document\u2026</div>';
+  google.script.run.withSuccessHandler(function(r){
+    if(!r.ok){ o.innerHTML='<div class="issue error">'+esc(r.error)+(r.name?'<div class="muted" style="font-size:12px;margin-top:6px">Read as: '+esc(r.name)+'</div>':'')+'</div>'; return; }
+    if(r.apply){
+      if(r.noop){ o.innerHTML='<div class="issue ok">Already named and filed correctly. Nothing to change.</div>'; return; }
+      o.innerHTML='<div class="issue ok">Done. '+(r.renamed?'Renamed':'')+(r.renamed&&r.moved?' and moved':(r.moved?'Moved':''))+
+        (r.shortcut?' \u00b7 '+esc(r.shortcut):'')+'</div>'+
+        '<div class="row"><div class="grow"><div class="mono">'+esc(r.to)+'</div>'+
+        '<div class="muted" style="font-size:12px">'+esc(r.destPath)+' \u00b7 <a href="'+r.url+'" target="_blank">open</a></div></div>'+
+        '<span class="pill high">filed</span></div>';
+      return;
+    }
+    // preview
+    if(r.noop){ o.innerHTML='<div class="issue ok">Already named and filed correctly. Nothing to change.</div>'; return; }
+    var changes=[];
+    if(r.willRename) changes.push('rename');
+    if(r.willMove) changes.push('move');
+    o.innerHTML='<div class="issue warn">Will '+changes.join(' and ')+':</div>'+
+      '<div class="row"><div class="grow">'+
+        (r.willRename?'<div class="mono">'+esc(r.from)+'<span class="arrow">\u2192</span>'+esc(r.to)+'</div>':'<div class="mono">'+esc(r.to)+'</div>')+
+        '<div class="muted" style="font-size:12px">'+
+          (r.willMove?esc(r.currentFolder)+' <span class="arrow">\u2192</span> '+esc(r.destPath):esc(r.destPath))+
+        '</div></div></div>'+
+      '<div class="actions" style="justify-content:flex-start;margin-top:10px">'+
+        '<button class="primary" onclick="refile(true)">Do it</button></div>';
+  }).withFailureHandler(function(e){o.innerHTML='<div class="issue error">'+esc(e.message)+'</div>'})
+    .refileOne(url, apply);
+}
+
+function loadSpotFolders(){
+  google.script.run.withSuccessHandler(function(list){
+    var sel=document.getElementById('spotPick');
+    if(!list||!list.length){ sel.innerHTML='<option value="">No folders found</option>'; return; }
+    sel.innerHTML='<option value="">Choose a folder to check&hellip;</option>'+
+      list.map(function(f){return '<option value="'+f.id+'">'+esc(f.label)+'</option>'}).join('');
+  }).withFailureHandler(function(e){
+    document.getElementById('spotPick').innerHTML='<option value="">Could not load folders</option>';
+  }).listCheckableFolders();
+}
+
+function spot(){
+  var sel=document.getElementById('spotPick'), id=sel.value;
+  var o=document.getElementById('spotOut');
+  if(!id){ o.innerHTML='<div class="issue warn">Pick a folder first.</div>'; return; }
+  var label=sel.options[sel.selectedIndex].textContent;
+  o.innerHTML='<div class="empty"><span class="spin"></span> Reading every document in '+esc(label)+'&hellip;</div>';
+  google.script.run.withSuccessHandler(function(r){
+    if(!r.ok){ o.innerHTML='<div class="issue error">'+esc(r.error)+'</div>'; return; }
+    var c=r.counts;
+    var html='<div class="issue '+(c.mismatch?'warn':'ok')+'">'+
+      c.match+' correct \u00b7 '+c.mismatch+' need fixing \u00b7 '+c.unreadable+' could not be read</div>';
+    if(r.mismatch.length){
+      html+='<div class="lbl" style="margin:14px 0 6px">Names that do not match the document</div>';
+      html+=r.mismatch.map(function(x){
+        return '<div class="row" id="sp_'+x.id+'"><div class="grow"><div class="mono">'+esc(x.name)+
+          '<span class="arrow">\u2192</span>'+esc(x.suggested)+'</div>'+
+          '<div class="muted" style="font-size:12px">'+esc(x.folder)+' \u00b7 <a href="'+x.url+'" target="_blank">open</a></div></div>'+
+          '<button class="primary" onclick="spotFix(\''+x.id+'\',\''+esc(x.suggested).replace(/'/g,"\\'")+'\')">Fix</button></div>';
+      }).join('');
+    }
+    if(r.unreadable.length){
+      html+='<div class="lbl" style="margin:14px 0 6px">Could not be read</div>';
+      html+=r.unreadable.map(function(x){return '<div class="row"><div class="grow"><div class="mono">'+esc(x.name)+
+        '</div><div class="muted" style="font-size:12px">'+esc(x.folder)+' \u00b7 '+esc(x.why)+'</div></div></div>'}).join('');
+    }
+    if(!c.mismatch&&!c.unreadable) html+='<div class="muted" style="font-size:12.5px;margin-top:10px">Every file in this folder is named correctly.</div>';
+    o.innerHTML=html;
+  }).withFailureHandler(function(e){o.innerHTML='<div class="issue error">'+esc(e.message)+'</div>'})
+    .spotCheckFolder(id);
+}
+
+function spotFix(id, name){
+  var row=document.getElementById('sp_'+id);
+  if(row) row.querySelector('button').textContent='Fixing\u2026';
+  google.script.run.withSuccessHandler(function(res){
+    if(!res.ok){ if(row) row.querySelector('button').textContent='Failed'; return; }
+    if(row) row.innerHTML='<div class="grow"><div class="mono">'+esc(res.to)+
+      '</div><div class="muted" style="font-size:12px">renamed'+(res.shortcut?' \u00b7 04 shortcut updated':'')+'</div></div>'+
+      '<span class="pill high">fixed</span>';
+  }).withFailureHandler(function(e){ if(row) row.querySelector('button').textContent='Failed'; })
+    .applySpotFix(id, name);
+}
+
+/* ---------- FIX FROM VERIFY ---------- */
+function fixVerify(fileId, newName, rowId){
+  var row=document.getElementById(rowId);
+  var btn=row.querySelector('button.primary');
+  btn.disabled=true; btn.textContent='Renaming…';
+  google.script.run.withSuccessHandler(function(res){
+    if(!res.ok){ btn.disabled=false; btn.textContent='Use this name'; alert(res.error); return; }
+    row.innerHTML='<div class="grow"><div class="mono">'+esc(res.to)+'</div>'+
+      '<div class="muted" style="font-size:12px"><a href="'+res.url+'" target="_blank">open</a></div></div>'+
+      '<span class="pill high">renamed</span>';
+  }).withFailureHandler(function(e){ btn.disabled=false; btn.textContent='Use this name'; alert(e.message); })
+    .applyVerifyFix(fileId, newName);
+}
+
+/* ---------- HELP ---------- */
+var HELP = {
+  upload: {
+    t: 'Filing a document',
+    b: '<p>This is how invoices, statements, and reports get into the right folder with the right name. ' +
+       'You don\'t need to rename anything first — drop the file exactly as you received it.</p>' +
+       '<ol>' +
+       '<li>Drag the files onto the box, or click it to browse. You can drop one file or dozens ' +
+       'at once &mdash; a whole month\'s close in one go.</li>' +
+       '<li>Wait while each document is read. A large batch takes a couple of minutes.</li>' +
+       '<li>Check what came back: the kind of document, the name, and where it goes.</li>' +
+       '<li>Click <b>File all</b> to file everything at once, or <b>Confirm &amp; file</b> on a single card.</li>' +
+       '</ol>' +
+       '<p>You never have to find the right folder or rename anything. Drop the files exactly as you ' +
+       'received them.</p>' +
+       '<p>Nothing is saved until you click Confirm. If a suggestion looks wrong, fix it or click Discard.</p>' +
+       '<div class="tip"><b>The tags on the right tell you what happened.</b><br>' +
+       '<b>read by Claude</b> — the document itself was opened and read. Most reliable.<br>' +
+       '<b>from filename</b> — only the file name was used. Worth a second look.<br>' +
+       '<b>needs review</b> — something couldn\'t be worked out. Fill in the blanks yourself.</div>'
+  },
+  pending: {
+    t: 'Files that still need a name',
+    b: '<p>Sometimes a document can\'t be identified — usually an invoice where the company name only appears inside the PDF, ' +
+       'or a scan that couldn\'t be read.</p>' +
+       '<p>Those files still get filed in the right folder with the right date. But the company name is replaced with the word ' +
+       '<b>RENAME</b> so they\'re easy to find. They show up in this list.</p>' +
+       '<ol>' +
+       '<li>Click <b>Open</b> to see the document.</li>' +
+       '<li>Find out who it\'s from.</li>' +
+       '<li>Rename the file in Google Drive, replacing <span class="mono">RENAME_(old name)</span> with the company name.</li>' +
+       '</ol>' +
+       '<div class="tip">If it\'s a company you\'ll see again, add it under <b>Settings &rarr; Add a vendor</b>. ' +
+       'Then it will be recognized automatically next time.</div>'
+  },
+  refile: {
+    t: 'Fix one file',
+    b: '<p>Open the PDF in Google Drive, copy its link, and paste it here. The document is read, ' +
+       'given its correct name, and moved to the right folder if it is not already there. If it is a ' +
+       'statement, its shortcut in folder 04 is created too.</p>' +
+       '<p>You see exactly what will change &mdash; the new name and the destination &mdash; before ' +
+       'anything happens. A file that is already correct is left alone.</p>'
+  },
+  verify: {
+    t: 'Checking the folders',
+    b: '<p>Pick one folder and every document in it is opened and read. The name on each file is ' +
+       'checked against what the document actually is &mdash; the account on a statement, the vendor ' +
+       'on an invoice, the period on a payroll report.</p>' +
+       '<p>Anything that does not match is listed with a <b>Fix</b> button that renames it correctly. ' +
+       'If it is a statement, the matching shortcut in folder 04 is renamed too, so the two never drift.</p>' +
+       '<div class="tip">This reads real documents, so it is not instant. Checking one account for one ' +
+       'year is quick; checking a whole year of expenses takes longer. Nothing is changed until you click Fix.</div>'
+  },
+  setup: {
+    t: 'Setup & repair',
+    b: '<p>These are one-time steps. Once each has been done, you should never need it again.</p>' +
+       '<p><b>Accounts list</b> &mdash; a bank statement never says "CBT Operating"; it shows an account number. ' +
+       'This list connects each account number to the right folder, so statements file themselves. ' +
+       'Without it, no bank or credit card statement can be named.</p>' +
+       '<p><b>Recs &amp; Registers</b> &mdash; switches on folder 04 so registers, reconciliations, and payroll reports ' +
+       'have somewhere to go. Without it, those documents have no home.</p>' +
+       '<p><b>Organize Recs &amp; Registers</b> &mdash; a one-time cleanup of folder 04. It reads every document ' +
+       'in there, gives it the right name, and turns the duplicate statement copies into shortcuts pointing at the ' +
+       'real file in folders 01 and 02. After this, a statement only ever exists once.</p>' +
+
+       '<p><b>Restore recommended settings</b> &mdash; if someone switches a filing rule off by mistake, ' +
+       'this puts everything back. It never deletes anything and is safe to run at any time.</p>' +
+       '<div class="tip">Not sure whether you need any of these? Go to <b>Quality control</b> and click ' +
+       '<b>Run check</b>. It will name anything that is missing.</div>'
+  },
+  health: {
+    t: 'System health',
+    b: '<p>A quick check that everything behind the scenes still works. Run it if something seems off, ' +
+       'or after anyone changes settings.</p>' +
+       '<p>It confirms that every folder still exists, that no two folders are set up to receive the same kind of ' +
+       'document, and that the connection used to read documents is working.</p>' +
+       '<div class="tip">Green means everything is fine. Anything red or amber tells you what to fix — ' +
+       'send it to Brett or Felicia if it isn\'t obvious.</div>'
+  },
+  vendor: {
+    t: 'Adding a vendor',
+    b: '<p>Adding a vendor teaches the system to recognize a company by name. Do this when the same company keeps ' +
+       'landing in the <b>Needs a name</b> list, or when their name gets written differently each month.</p>' +
+       '<p>Two things to fill in:</p>' +
+       '<ol>' +
+       '<li><b>Text to match</b> — any part of the company name as it appears on the invoice or file name. ' +
+       'Lowercase is fine. For example: <span class="mono">coastalk</span></li>' +
+       '<li><b>Name to use</b> — how you want it written in the file name. No spaces; use a hyphen instead. ' +
+       'For example: <span class="mono">CoastalK</span></li>' +
+       '</ol>' +
+       '<p>From then on, their documents are named consistently — <span class="mono">2026-06_FSE_EXP_CoastalK</span>.</p>' +
+       '<div class="tip">Safe to do any time — it only affects files handled from now on. It won\'t rename anything ' +
+       'already in Drive. To fix those, use <b>Identify</b> on the <b>Quality control</b> page.</div>'
+  },
+  rules: {
+    t: 'Filing rules',
+    b: '<p>Each row is a folder and whether documents are filed into it automatically. <b>On</b> means files ' +
+       'dropped there get named and organized. <b>Off</b> means they are left alone. Some folders are off on ' +
+       'purpose, for records that do not follow a monthly pattern, where an automatic name would do more harm than good.</p>' +
+       '<p><b>To change how a folder files</b>, click <b>Edit</b> on its row. The fields are:</p>' +
+       '<ul><li><b>Folder in Drive</b> is where the files land.</li>' +
+       '<li><b>Path</b> is the subfolders made inside it. <span class="mono">[YYYY]</span> makes a year folder, ' +
+       '<span class="mono">[YYYY-MM]</span> a month folder, and plain text like <span class="mono">Landmark Financials</span> ' +
+       'is a fixed folder that must already exist.</li>' +
+       '<li><b>Type</b> is the code in the file name, such as BANK or EXP.</li>' +
+       '<li><b>Descriptor source</b> and <b>Date source</b> tell the system where to read the rest of the name from.</li></ul>' +
+       '<p><b>Example, filing Landmark financials by year.</b> Open the Financial Statements rule, change the Path from ' +
+       '<span class="mono">Landmark Financials</span> to <span class="mono">Landmark Financials/[YYYY]</span>, and Save. ' +
+       'From then on each year gets its own folder, made automatically.</p>' +
+       '<p><b>To add a folder</b>, click <b>Add a rule</b>, pick the folder, and set the fields the same way. New rules ' +
+       'start switched Off, so nothing changes until you turn one On.</p>' +
+       '<div class="tip">If something gets changed by mistake, <b>Restore recommended settings</b> puts the rules back.</div>'
+  },
+  accounts: {
+    t: 'Accounts',
+    b: '<p>These are the bank and card accounts the system files for. Each one is tied to a folder in Drive whose ' +
+       'name matches exactly, which is how a statement is matched to the right account.</p>' +
+       '<p><b>To fix how an account is recognized</b>, click <b>Edit</b>. You can change:</p>' +
+       '<ul><li><b>Last 4</b>, the last four digits of the account number.</li>' +
+       '<li><b>Also matches</b>, other phrases that should point at this account, separated by a vertical bar. This is ' +
+       'what to update if QuickBooks renames a label, so the old and new names both still match.</li></ul>' +
+       '<p>The account name itself cannot be changed here, because it has to stay identical to the Drive folder.</p>' +
+       '<p><b>Adding an account is rare</b> and only for a genuinely new bank or card. Create its folder under Bank or ' +
+       'Credit Card Statements in Drive first, then click <b>Add an account</b> and enter the exact folder name. The ' +
+       'system checks the folder exists before saving. A dropped file can never create an account on its own.</p>'
+  }
+};
+function help(k){
+  var d = HELP[k]; if(!d) return;
+  var m = document.createElement('div');
+  m.className = 'modal';
+  m.innerHTML = '<div class="box"><h3>'+d.t+'</h3>'+d.b+
+    '<div class="actions"><button class="primary">Got it</button></div></div>';
+  m.onclick = function(e){ if(e.target===m) m.remove(); };
+  m.querySelector('button').onclick = function(){ m.remove(); };
+  document.body.appendChild(m);
+  document.addEventListener('keydown', function esc(e){
+    if(e.key==='Escape'){ m.remove(); document.removeEventListener('keydown', esc); }
+  });
+}
+
+function mkAccounts(){
+  var o=document.getElementById('repairOut')||document.getElementById('valOut'); o.innerHTML='<span class="spin"></span>';
+  google.script.run.withSuccessHandler(function(r){
+    o.innerHTML='<div class="issue ok">'+esc(r.note)+'</div>';
+  }).withFailureHandler(function(e){o.innerHTML='<div class="issue error">'+esc(e.message)+'</div>'})
+    .buildAccountsTab();
+}
+function mk04(){
+  var o=document.getElementById('repairOut')||document.getElementById('valOut'); o.innerHTML='<span class="spin"></span>';
+  google.script.run.withSuccessHandler(function(r){
+    o.innerHTML='<div class="issue '+(r.ok?'ok':'error')+'">'+esc(r.note||r.error)+'</div>';
+    loadSettings();
+  }).withFailureHandler(function(e){o.innerHTML='<div class="issue error">'+esc(e.message)+'</div>'})
+    .setUp04();
+}
+function org04(apply){
+  var o=document.getElementById('org04Out');
+  o.innerHTML='<div class="empty"><span class="spin"></span> Reading every document in folder 04. This takes a few minutes\u2026</div>';
+  google.script.run.withSuccessHandler(function(r){
+    if(!r.ok){o.innerHTML='<div class="issue error">'+esc(r.error)+'</div>';return}
+    var c=r.counts, total=c.rename+c.shortcut+c.moveHome+(c.missing||0);
+    if(!total&&!c.skip){o.innerHTML='<div class="issue ok">Folder 04 is already organized. Nothing to do.</div>';return}
+    var html='<div class="issue '+(apply?'ok':'warn')+'">'+(apply?'Done: ':'Would do: ')+
+      c.rename+' renamed \u00b7 '+c.shortcut+' replaced with shortcuts \u00b7 '+
+      c.moveHome+' moved home first'+(c.missing?' \u00b7 '+c.missing+' missing shortcuts added':'')+
+      (c.skip?' \u00b7 '+c.skip+' skipped':'')+'</div>';
+
+    function rows(list,label,cls){
+      if(!list.length) return '';
+      var s='<div class="lbl" style="margin:14px 0 6px">'+label+'</div>';
+      s+=list.map(function(x){
+        return '<div class="row"><div class="grow"><div class="mono">'+esc(x.name)+
+          '<span class="arrow">\u2192</span>'+esc(x.to||'')+'</div>'+
+          '<div class="muted" style="font-size:12px">'+esc(x.folder)+
+          (x.dest?' \u00b7 original goes to '+esc(x.dest):'')+
+          (x.note?' \u00b7 <span style="color:var(--warn)">'+esc(x.note)+'</span>':'')+'</div></div>'+
+          (cls?'<span class="pill '+cls+'">'+cls+'</span>':'')+'</div>';
+      }).join('');
+      return s;
+    }
+    html+=rows(r.rename,'Renamed where they sit','');
+    html+=rows(r.shortcut,'Duplicate copies \u2192 shortcut to the original (copy goes to the bin)','');
+    html+=rows(r.moveHome,'No original exists \u2014 moved to its account folder, then shortcutted','medium');
+    html+=rows(r.missing||[],'Filed statements with no shortcut in 04 yet \u2014 pointer added','');
+    if(r.skip&&r.skip.length){
+      html+='<div class="lbl" style="margin:14px 0 6px">Left alone</div>';
+      html+=r.skip.map(function(x){return '<div class="row"><div class="grow"><div class="mono">'+esc(x.name)+'</div>'+
+        '<div class="muted" style="font-size:12px">'+esc(x.folder)+' \u00b7 '+esc(x.why)+'</div></div></div>'}).join('');
+    }
+    if(r.errors&&r.errors.length) html+=r.errors.map(function(e){return '<div class="issue error">'+esc(e)+'</div>'}).join('');
+    if(!apply&&total) html+='<div class="actions" style="justify-content:flex-start;margin-top:10px">'+
+      '<button class="primary" onclick="org04(true)">Apply</button></div>';
+    o.innerHTML=html;
+  }).withFailureHandler(function(e){o.innerHTML='<div class="issue error">'+esc(e.message)+'</div>'})
+    .organize04(apply);
+}
+function validate(){
+  var o=document.getElementById('valOut');
+  o.innerHTML='<span class="spin"></span>';
+  google.script.run.withSuccessHandler(function(r){
+    if(!r.issues.length){o.innerHTML='<div class="issue ok">All good. '+r.ruleCount+' rules, '+r.vendorCount+' vendors.</div>';return}
+    o.innerHTML=r.issues.map(function(i){
+      var fix='';
+      if(/Accounts tab|accounts list/i.test(i.msg)) fix=' <button class="ghost" style="padding:2px 10px;margin-left:8px" onclick="mkAccounts()">Set it up</button>';
+      else if(/folder 04|Recs & Registers/i.test(i.msg)) fix=' <button class="ghost" style="padding:2px 10px;margin-left:8px" onclick="mk04()">Set it up</button>';
+      return '<div class="issue '+i.level+'">'+esc(i.msg)+fix+'</div>';
+    }).join('');
+  }).validateConfig();
+}
+
+/* ---------- boot ---------- */
+google.script.run.withSuccessHandler(function(b){
+  DESTS = b.dests || [];
+  ACCOUNTS = b.accounts || [];
+  if (b.user) document.getElementById('who').textContent = b.user;
+}).withFailureHandler(function(e){
+  document.getElementById('who').textContent = 'Could not load config: ' + e.message;
+}).getBootstrap();
+</script>
+</body>
+</html>

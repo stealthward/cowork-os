@@ -1,0 +1,16 @@
+{
+    "last_run_utc": "2026-11-05T22:34:36Z",
+    "waiting": [
+        {
+            "task_gid": "1220161258870253",
+            "story_gid": "1220192516194747",
+            "staged_utc": "2026-11-04T00:09:55Z",
+            "seat": "COO",
+            "change": "Re-staged 2026-11-04 after Elizabeth comment 1220161258870260: in every Create subtasks branch of When Editing Status is Changed (5 templates + 10 active production projects), rename folder mentions to the parent-task field names plus \"(linked in Parent Task)\": Reels Finished Folder -> Finished Reels Folder (linked in Parent Task), Long Form Finished Folder -> Finished Long Form Folder (linked in Parent Task), Raw Folder -> Raw Folder (linked in Parent Task); same edits on open (not completed) matching editing subtasks in the 10 active projects; rule ownership moves to Brett (Elizabeth okayed). Browser work.",
+            "hold": "Apply rule edits once the built-in browser is signed in to Asana, per asana-template-editing-playbook memory; check template field names first.",
+            "status": "approved 2026-11-04T00:14:56Z by Elizabeth like on 1220192516194747; partly applied",
+            "applied": "2026-11-04 00:37: 7 open subtask descriptions updated via connector (DEC 10/29 QC Reels Ep39/40, Edit Full Episode Ep39/40, Manager Review Ep39/40; Factory 10/15 QC Reels Ep6); progress comment 1220192915821638; task moved to Working.",
+            "remaining": "Edit the When Editing Status is Changed rule in 5 templates + 10 active projects in the built-in browser (signed out of Asana 2026-11-04 00:35; needs Brett to sign in). Approval stands; no re-stage needed unless a new comment asks for something different. Open question to Elizabeth: fix \"Discover La Jolla\" file name in DEC Edit Full Episode branch; if she says yes, stage it for a like (a reply is not approval)."
+        }
+    ]
+}

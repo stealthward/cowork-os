@@ -1,0 +1,146 @@
+<title>Team Setup Options</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one reading column. Recommended setup first, then one block per decision with options table and recommendation. */
+:root{
+  --bg:#f7f8f6; --surface:#ffffff; --fg:#1d2420; --muted:#5c6862; --line:#d9dfdb; --accent:#2f6b55; --flag:#9a5b12;
+  --display:"Source Serif 4",Georgia,serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif; --mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131816;--surface:#1b211e;--fg:#e4ebe7;--muted:#9aa8a1;--line:#2e3833;--accent:#7cc4a6;--flag:#e0a75a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131816;--surface:#1b211e;--fg:#e4ebe7;--muted:#9aa8a1;--line:#2e3833;--accent:#7cc4a6;--flag:#e0a75a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:26px}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2rem;line-height:1.2}
+h2{font-size:1.3rem}
+h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.25rem;display:grid;gap:4px}
+.meta{color:var(--muted)}
+section{display:grid;gap:10px;padding-top:18px;border-top:1px solid var(--line)}
+.rec{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:10px 14px}
+.rec b{color:var(--accent)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td:first-child{font-weight:600}
+.num{font-variant-numeric:tabular-nums}
+.src{font-size:.85rem;color:var(--muted)}
+.src a{color:var(--muted)}
+a{color:var(--accent)}
+.flag{border:1px solid var(--flag);border-radius:6px;padding:14px 16px;display:grid;gap:8px}
+.flag h2{color:var(--flag)}
+code{font-family:var(--mono);font-size:.88em}
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:8px">
+    <h3>COO · AI Workforce · Research for Brett, 2026-11-04</h3>
+    <h1>Team Setup Options</h1>
+    <p class="meta">Six decisions from the approved scope, each with options and one recommendation. Claude prices were checked on the live pricing page today. Slack, Asana, and GitHub prices come from their pricing pages as read by research today; re-check them before any purchase. Head count and seat counts are yours to set, so no total cost is calculated here.</p>
+  </header>
+
+  <section>
+    <h2>The setup in one paragraph</h2>
+    <p>Move to Claude Team. Keep the shared kit in one private GitHub repo that Claude syncs to every member automatically, so a fix you approve reaches everyone with no copying and nobody else needs GitHub. Give seats by role in three tiers. Run the workforce in Anthropic's cloud instead of on your PC, under its own account. Keep the team asking in Asana for now, and decide on Slack as its own company-wide question before the second role rolls out.</p>
+  </section>
+
+  <section>
+    <h2>1. Claude plan</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Option</th><th>Price (verified 11/4)</th><th>What it adds</th></tr></thead>
+      <tbody>
+        <tr><td>Team</td><td class="num">Standard $20/seat/mo annual, $25 monthly. Premium (5x usage) $100 annual, $125 monthly. 2 to 150 seats, mix seat types.</td><td>Claude Code and Cowork, org plugins and skills, connector controls, SSO, Claude in Slack, cloud agents, up to $500/mo pooled API credits on premium seats.</td></tr>
+        <tr><td>Enterprise</td><td class="num">$20/seat/mo annual plus usage at API rates. 20-seat minimum.</td><td>Everything in Team plus SCIM, audit logs, custom data retention, role-based access, group-level plugin targeting.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rec"><b>Recommend Team.</b> It covers every capability this plan needs. Enterprise's extras are audit and retention controls; move up only if escrow compliance requires audit logs, which is a question for you, not something I can source.</div>
+    <p class="src">Source: <a href="https://claude.com/pricing">claude.com/pricing</a></p>
+  </section>
+
+  <section>
+    <h2>2. How the kit reaches people (GitHub)</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Option</th><th>How updates arrive</th><th>Catch</th></tr></thead>
+      <tbody>
+        <tr><td>Folder copy (today)</td><td>They don't. Each copy drifts from the master.</td><td>Every fix is manual, per person.</td></tr>
+        <tr><td>Repo per person</td><td>Each person clicks Pull in GitHub Desktop.</td><td>Everyone needs a GitHub account and the habit of pulling.</td></tr>
+        <tr><td>Private repo synced by Claude</td><td>Owner syncs the repo in Organization settings, Plugins &amp; skills. Every push re-syncs. Plugins can be set Required.</td><td>Needs Team. CLAUDE.md rules don't ride in a plugin; they become skills, hooks, or a managed instructions file.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rec"><b>Recommend the Claude-synced private repo.</b> Members need no GitHub account. Only you (and Elizabeth if she maintains it) are on GitHub. GitHub Free covers unlimited private repos; branch protection and required reviews on a private repo need GitHub Team at $4/user/month, needed only for the one or two maintainers. Personal MEMORY.md files stay on each machine and never enter the repo.</div>
+    <p class="src">Sources: <a href="https://claude.com/docs/plugins/org-sync">org sync</a>, <a href="https://claude.com/docs/plugins/admin">plugin admin</a>, <a href="https://code.claude.com/docs/en/plugins/components.md">plugin components</a>, <a href="https://github.com/pricing">github.com/pricing</a></p>
+  </section>
+
+  <section>
+    <h2>3. Who gets what</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Tier</th><th>Who it fits</th><th>What they get</th></tr></thead>
+      <tbody>
+        <tr><td>Builder</td><td>People who run systems and direct others (you, likely Elizabeth)</td><td>Seat with the desktop Code tab, the full kit, workers, and a personal memory</td></tr>
+        <tr><td>Daily user</td><td>Roles with repeat AI work (for example finance, production, client success)</td><td>Standard seat, chat and Cowork, with only the org skills for their role pushed to them</td></tr>
+        <tr><td>Asker</td><td>Occasional users</td><td>No seat. They ask the workforce in the team channel</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rec"><b>Recommend these three tiers,</b> with you placing each person. This is the "mix by role" you described, and it lets a person move up a tier without rebuilding anything.</div>
+    <p class="meta">Overlap to settle: the shared ChatGPT workspace (17 team projects, Elizabeth as pilot user) does the daily-user job today. Running both means two bills and two places for team knowledge.</p>
+  </section>
+
+  <section>
+    <h2>4. Where the agents run</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Option</th><th>Runs with your PC off</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Desktop scheduled task (today)</td><td>No</td><td>Pilot loop stops whenever your PC sleeps; weekdays 7 AM to 6:30 PM only.</td></tr>
+        <tr><td>Cloud scheduled task</td><td>Yes</td><td>On Team. Uses the owner's connectors and draws on the owner's plan usage. Research preview with hourly run limits.</td></tr>
+        <tr><td>Claude in Slack</td><td>Yes</td><td>Cloud by design. Only if Slack is adopted (decision 5).</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rec"><b>Recommend cloud scheduled tasks</b> for the pilot loop and the other recurring jobs, owned by the workforce account (decision 6), not by you. Not yet confirmed: whether a 30-minute cadence fits the hourly run limits. That gets tested first.</div>
+    <p class="src">Sources: <a href="https://code.claude.com/docs/en/routines">cloud scheduled tasks</a>, <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code on the web</a></p>
+  </section>
+
+  <section>
+    <h2>5. Where the team asks (Slack)</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Option</th><th>Cost</th><th>Pros</th><th>Cons</th></tr></thead>
+      <tbody>
+        <tr><td>Stay in Asana</td><td>None new</td><td>No change for staff; every ask is tracked</td><td>Up to a 30-minute wait for a reply</td></tr>
+        <tr><td>Add Slack with Claude in Slack</td><td class="num">Slack Pro $8.75/active user/mo, $7.25 annual; bots free. Claude in Slack has no seat charge: channel work draws org usage credits under a monthly cap you set ($500 to unlimited presets, or a custom amount).</td><td>Real-time answers; Claude acts under its own account in each tool; can watch channels and post digests; connects to Asana</td><td>A new tool for the whole company, overlapping Elevate's internal chat; in public beta; asks scatter unless routed into Asana</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rec"><b>Recommend staying in Asana now</b> and deciding Slack as its own company question before the second role rolls out. Adopting Slack means retiring or keeping Elevate chat for everyone, which is bigger than the workforce. Nothing in decisions 1 to 4 or 6 has to change if you add Slack later.</div>
+    <p class="src">Sources: <a href="https://slack.com/pricing">slack.com/pricing</a>, <a href="https://slack.com/help/articles/218915077-Slacks-Fair-Billing-Policy">Slack Fair Billing</a>, <a href="https://claude.com/docs/claude-tag/admins/setup-overview">Claude in Slack setup</a> (checked 11/4)</p>
+  </section>
+
+  <section>
+    <h2>6. The workforce's own identity</h2>
+    <p>Today every agent reply in Asana posts as you. Asana's developer docs recommend a separate user as the bot, named so people can tell an app is acting. Claude in Slack expects the same thing: an address like claude@ added to each tool as a member, with the narrowest role.</p>
+    <div class="rec"><b>Recommend one workforce account</b> (a company email address, an Asana seat, read-only where a tool allows), used by the cloud tasks now and by Slack later if you add it. Asana Starter is $10.99/user/mo annual or $13.49 monthly; above 5 users Asana sells seats in blocks of 5, so the cost depends on open seats on your current plan, which I have not read. A Google Workspace licence may be needed for the email address; not checked.</div>
+    <p class="src">Sources: <a href="https://developers.asana.com/docs/authentication">Asana authentication</a>, <a href="https://asana.com/pricing">asana.com/pricing</a></p>
+  </section>
+
+  <section>
+    <h2>Proposed order</h2>
+    <ol>
+      <li>You place each person in a tier.</li>
+      <li>Buy Claude Team with those seats.</li>
+      <li>Move the kit into a private GitHub repo, convert the company rules for sync, test on one seat.</li>
+      <li>Create the workforce account; move the pilot loop to the cloud under it.</li>
+      <li>Elizabeth's pilot on the synced kit.</li>
+      <li>Roll out one role at a time; decide Slack before the second role.</li>
+    </ol>
+  </section>
+
+  <section class="flag">
+    <h2>Not confirmed yet</h2>
+    <ul>
+      <li>Whether org-synced plugins and a managed instructions file load in the desktop Code tab's local sessions (docs don't say). Tested at step 3.</li>
+      <li>Whether a 30-minute cloud cadence fits the hourly run limits. Tested at step 4.</li>
+      <li>Your current Asana plan and open seats; Google Workspace cost of one more address.</li>
+      <li>Whether escrow compliance needs audit logs (would point to Enterprise).</li>
+    </ul>
+  </section>
+</div>

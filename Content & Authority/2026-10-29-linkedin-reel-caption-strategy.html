@@ -1,0 +1,109 @@
+<title>Reel Caption Strategy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; evidence first, then the rule text to approve, then each ACQ.ai item with a verdict */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1d2330; --muted: #5b6475; --line: #dde1e8;
+  --accent: #0a66c2; --adopt: #1e7a46; --keep: #8a5a00; --quote-bg: #eef4fb;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12151b; --surface: #1b2029; --fg: #e6e9ef; --muted: #9aa3b2; --line: #2c3340;
+  --accent: #6cb4ff; --adopt: #7fd6a2; --keep: #f2c46b; --quote-bg: #1c2a3b; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12151b; --surface: #1b2029; --fg: #e6e9ef; --muted: #9aa3b2; --line: #2c3340;
+  --accent: #6cb4ff; --adopt: #7fd6a2; --keep: #f2c46b; --quote-bg: #1c2a3b; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 64px; }
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 36px; }
+h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; margin: 0 0 6px; text-wrap: balance; }
+h2 { font-family: var(--serif); font-weight: 600; font-size: 1.3rem; margin: 0; text-wrap: balance; }
+.eyebrow { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+header p, .muted { color: var(--muted); margin: 0; }
+section { display: grid; gap: 14px; }
+p { margin: 0; }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
+.rule { background: var(--quote-bg); border-left: 3px solid var(--accent); padding: 14px 16px; border-radius: 4px; }
+.rule p + p { margin-top: 8px; }
+.v { font-weight: 600; white-space: nowrap; }
+.v.adopt { color: var(--adopt); }
+.v.keep { color: var(--keep); }
+ul, ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: grid; gap: 10px; }
+footer { color: var(--muted); font-size: .85rem; }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">CMO · Factory reel narratives on LinkedIn · for Brett's approval</div>
+  <h1>Reel caption strategy</h1>
+  <p>Built from three sources: the Apify run (1,000 posts from ten operators, 2025 to 2026), the 50-hook swipe file, and your ACQ.ai LinkedIn brief. Nothing in the rulebook changes until you approve it below.</p>
+</header>
+
+<section>
+  <h2>The recommendation</h2>
+  <p>A reel post is a <strong>short caption</strong>, not an essay. It should run 30 to 90 words: a hook that matches the clip's opening, then one or two beats from your interview that the clip doesn't say, then a landing line. The longer story from an interview becomes a <strong>separate story post</strong> with no video, 300 to 700 words. That keeps one idea in two formats, which your ACQ.ai brief recommends ("change the format, not the message").</p>
+</section>
+
+<section>
+  <h2>What the evidence says</h2>
+  <div class="tbl"><table>
+    <tr><th>Source</th><th>What it says about length</th><th>Weight</th></tr>
+    <tr><td>Apify run, 272 native video posts</td><td>Median caption 28.5 words. The middle half runs 12 to 86 words. The 20 strongest video posts have a median of 33 words. Within an author, length doesn't reliably change engagement.</td><td>Strongest. It's the actual format, measured, and recent.</td></tr>
+    <tr><td>Your three authors, on video</td><td>Alex Hormozi 16 words, Leila Hormozi 22, Dan Martell 10.</td><td>Matches your read.</td></tr>
+    <tr><td>ACQ.ai brief</td><td>Has no video caption guidance. Its closest formats are short text at 40 to 100 words and carousel captions at 50 to 150; story posts run 300 to 700. "No post is too long, only too boring."</td><td>Good principles, but not specific to video captions.</td></tr>
+    <tr><td>Vendor studies (swipe file)</td><td>They conflict: AuthoredUp favors longer video captions, Supergrow says 500 to 800 characters. None of them comes from LinkedIn.</td><td>Weak.</td></tr>
+  </table></div>
+  <p class="muted">The 30 to 90 word range covers the data's middle half and sits above its median, which leaves room for one beat from your interview. Narrative 1 v8 is 335 words.</p>
+</section>
+
+<section>
+  <h2>Rule change to approve (content-frameworks.md, section 2)</h2>
+  <p>This replaces the current "LinkedIn post, Factory reel narrative" row:</p>
+  <div class="rule">
+    <p><strong>LinkedIn post, Factory reel narrative</strong> | Captions (9) | none |</p>
+    <p>Posted with the finished reel as native video. Source: the finished reel's transcript (never the cut sheet, only reels where Brett speaks), plus a short CMO interview of two or three questions the clip raises but doesn't answer.</p>
+    <p>The caption runs 30 to 90 words:</p>
+    <ol>
+      <li>Lines 1 and 2 stand alone above the fold and say the same thing as the clip's first three seconds (4.3a item 14).</li>
+      <li>One or two short beats from Brett's answers add what the clip doesn't say. The caption never retells the clip.</li>
+      <li>A landing line closes it.</li>
+    </ol>
+    <p>Give-first: no ask. Basis: 272 native video posts from ten operators, median caption 28.5 words, top 20 median 33 (swipe file, Apify run 2026-10-29).</p>
+    <p>When an interview yields a full story, it becomes a separate post on the "LinkedIn post, operator lesson" row, run as Story, Lesson, Application at 300 to 700 words, with no reel attached. (Brett, 2026-10-27 to 10-29)</p>
+  </div>
+</section>
+
+<section>
+  <h2>ACQ.ai brief, item by item</h2>
+  <p class="muted">For each item: what it says, how it fits your rules, and my recommendation.</p>
+  <div class="tbl"><table>
+    <tr><th>ACQ.ai says</th><th>Pros and cons for you</th><th>Recommend</th></tr>
+    <tr><td>One clear call to action on every post (a question on short posts)</td><td>Questions lift comments. But it breaks give-first on your own posts (3.6 and growth-strategy.md: phase 1, no ask). The Hormozis' video captions mostly carry no ask.</td><td><span class="v keep">Keep no CTA</span></td></tr>
+    <tr><td>0 to 3 hashtags at the end</td><td>Small reach upside, and nothing in our data measures it. Your rule is no hashtags on any platform.</td><td><span class="v keep">Keep none</span></td></tr>
+    <tr><td>Label callouts ("Founders: here's...")</td><td>They identify the reader fast. But lane 10 bans Labels on your own content, and Labels didn't appear among the swipe file's top performers.</td><td><span class="v keep">Keep the ban</span></td></tr>
+    <tr><td>"How I," not "How To"</td><td>Already in the rulebook (section 8) and in your voice.</td><td><span class="v adopt">Already in</span></td></tr>
+    <tr><td>One or two sentences per paragraph, white space between them</td><td>Reads well on a phone and matches how your v8 reads. No downside.</td><td><span class="v adopt">Adopt (section 7)</span></td></tr>
+    <tr><td>One idea per post; reformat one idea across formats</td><td>Gets two posts out of one interview: the reel caption, then a story post. It also keeps captions short without losing your depth.</td><td><span class="v adopt">Adopt</span></td></tr>
+    <tr><td>Three to five hook options per post</td><td>We give three today. Five costs nothing and gives you more to pick from.</td><td><span class="v adopt">Adopt (4.3a item 9)</span></td></tr>
+    <tr><td>Story posts 300 to 700 words, Story, Lesson, Application</td><td>Fits the long versions we've been writing, which now have a home. Its fourth step ("how to apply this week") adds a practical close.</td><td><span class="v adopt">Adopt for story posts</span></td></tr>
+    <tr><td>"No post is too long, only too boring"</td><td>True for text posts. On video, the data shows short captions are the norm and length doesn't help.</td><td><span class="v keep">Text posts only</span></td></tr>
+  </table></div>
+</section>
+
+<section class="card">
+  <h2>What this means for the work in flight</h2>
+  <ul>
+    <li><strong>Narrative 1 (Ep 1 R4, three legs of the stool):</strong> cut v8 to a 30 to 90 word caption for the reel. The 335-word version becomes your first story post, with nothing wasted.</li>
+    <li><strong>Narratives 7 and 8:</strong> answer two or three of the interview questions per reel, not five. One beat from your answers goes in the caption. Anything bigger becomes a story post later.</li>
+    <li><strong>Asana:</strong> the "N of 10: Factory reel narrative" tasks would cover captions. Story posts would be new pieces. I'd confirm the project and section with you before creating any task.</li>
+  </ul>
+</section>
+
+<footer>Sources: Content &amp; Authority/Content &amp; Authority Resources/linkedin-hook-swipe-file.md (Apify run pBQaIEkwGFZgCyjkq); the ACQ.ai LinkedIn brief (Google Doc 1j8qPIs3N0ingpEVSFiKRYWSlMZJQ5yMH7MkeYWMS4Pg); 00_Resources/content-frameworks.md. Nothing has been saved, posted, or written to Asana.</footer>
+</div>

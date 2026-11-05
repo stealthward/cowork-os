@@ -1,0 +1,472 @@
+<meta charset="utf-8">
+<title>San Diego Investor Registry</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F4F6;--panel:#FFFFFF;--panel2:#E9EDF1;--ink:#1A232E;--ink2:#56657A;--line:#D3DAE2;--line2:#E4E9EE;
+  --accent:#0F6D6A;--accent-ink:#FFFFFF;--accent-soft:#D9EEEC;
+  --yes:#2A7A4B;--yes-soft:#DDF0E3;--flag:#B8741A;--flag-soft:#F7ECD6;--miss:#9A3B2E;--miss-soft:#F5DFDA;--focus:#0F6D6A;
+  --s1:#BFC9D4;--s2:#7FB3B0;--s3:#3E948F;--s4:#0F6D6A;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12181E;--panel:#1A222B;--panel2:#222C36;--ink:#E4EAF0;--ink2:#9AA7B6;--line:#2E3944;--line2:#27313B;
+  --accent:#3FB3AE;--accent-ink:#0E1A1A;--accent-soft:#173B3A;
+  --yes:#6CCB8F;--yes-soft:#1D3A29;--flag:#E2A650;--flag-soft:#3D2F16;--miss:#E38A7B;--miss-soft:#43221E;--focus:#3FB3AE;
+  --s1:#3A4754;--s2:#2E6663;--s3:#3A8F8A;--s4:#3FB3AE;color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#12181E;--panel:#1A222B;--panel2:#222C36;--ink:#E4EAF0;--ink2:#9AA7B6;--line:#2E3944;--line2:#27313B;
+  --accent:#3FB3AE;--accent-ink:#0E1A1A;--accent-soft:#173B3A;
+  --yes:#6CCB8F;--yes-soft:#1D3A29;--flag:#E2A650;--flag-soft:#3D2F16;--miss:#E38A7B;--miss-soft:#43221E;--focus:#3FB3AE;
+  --s1:#3A4754;--s2:#2E6663;--s3:#3A8F8A;--s4:#3FB3AE;color-scheme:dark;}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.45}
+body{min-height:100vh}
+h1,h2,h3,.lbl,th,.btn,.tab,.pill{font-family:"IBM Plex Sans Condensed","Arial Narrow",sans-serif}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);font-weight:600}
+
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:20px 24px 0;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+header h1{margin:0;font-size:22px;font-weight:600;letter-spacing:.01em;text-wrap:balance}
+header .sub{color:var(--ink2);font-size:13px;margin:2px 0 12px}
+.hdr-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding-bottom:12px}
+.tabs{display:flex;gap:2px;width:100%}
+.tab{border:0;background:transparent;padding:8px 14px;font-size:13px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--ink2);border-bottom:2px solid transparent;cursor:pointer;margin-bottom:-1px}
+.tab.on{color:var(--accent);border-bottom-color:var(--accent)}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:7px 12px;font-size:13px;font-weight:600;letter-spacing:.02em;cursor:pointer}
+.btn:hover{background:var(--panel2)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.small{padding:4px 9px;font-size:12px}
+.btn.danger{color:var(--miss)}
+.btn:disabled{opacity:.5;cursor:default}
+.mode{font-size:12px;color:var(--ink2);padding:6px 10px;border:1px dashed var(--line);border-radius:6px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.stat{background:var(--panel);padding:12px 20px}
+.stat .val{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2;margin-top:2px}
+.stat .val small{font-size:12px;color:var(--ink2);font-weight:400;margin-left:6px}
+.stat.shared .dist{display:flex;gap:10px;margin-top:4px;font-size:12px;color:var(--ink2)}
+.stat.shared .dist b{color:var(--ink);font-variant-numeric:tabular-nums}
+.bar{height:5px;background:var(--panel2);border-radius:3px;margin-top:7px;overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+
+.wrap{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 160px)}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}.rail{border-right:0;border-bottom:1px solid var(--line)}}
+.rail{border-right:1px solid var(--line);padding:16px;background:var(--panel);display:flex;flex-direction:column;gap:18px}
+.rail .lbl{margin-bottom:6px;display:block}
+.rail input[type=search],.rail select,.drawer input,.drawer select,.drawer textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:7px 9px;font:inherit;font-size:13px;background:var(--bg);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer;background:var(--panel)}
+.chip.on{background:var(--accent-soft);border-color:var(--accent)}
+.chip.miss.on{background:var(--miss-soft);border-color:var(--miss)}
+.count{color:var(--ink2);font-size:12px}
+
+main{padding:0 0 60px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:860px}
+th{position:sticky;top:0;background:var(--panel2);text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer;user-select:none;white-space:nowrap;z-index:1}
+th.c{text-align:center}
+th.sorted::after{content:" ↓";color:var(--accent)}
+th.sorted.desc::after{content:" ↑"}
+td{padding:9px 12px;border-bottom:1px solid var(--line2);vertical-align:top}
+td.c{text-align:center}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--panel)}
+tr.row.sel td{background:var(--accent-soft)}
+td.ent{font-weight:600}
+td.ent .al{display:block;font-weight:400;color:var(--ink2);font-size:12px}
+td.ent .nocomp{font-weight:500;font-style:italic;color:var(--ink2)}
+td .pr{display:block}
+td .pr small{color:var(--ink2)}
+td.dim{color:var(--ink2)}
+.pill{display:inline-block;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.pill.flag{background:var(--flag-soft);color:var(--flag)}
+.pill.miss{background:var(--miss-soft);color:var(--miss)}
+.pill.yes{background:var(--yes-soft);color:var(--yes)}
+.chk{display:inline-block;width:18px;height:18px;border-radius:4px;border:1.5px solid var(--line);vertical-align:middle}
+.chk.on{background:var(--yes);border-color:var(--yes);position:relative}
+.chk.on::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.shared{display:inline-block;min-width:22px;text-align:center;border-radius:4px;padding:2px 6px;font-weight:600;font-variant-numeric:tabular-nums;font-size:12px;background:var(--panel2);color:var(--ink2)}
+.shared.n1{background:var(--s1);color:var(--ink)}.shared.n2{background:var(--s2);color:#fff}.shared.n3{background:var(--s3);color:#fff}.shared.n4{background:var(--s4);color:#fff}
+.grp{font-size:12px;color:var(--ink2);border-left:2px solid var(--accent);padding-left:6px}
+.empty{padding:40px 24px;color:var(--ink2)}
+
+.drawer{position:fixed;top:0;right:0;height:100vh;width:min(560px,100vw);background:var(--panel);border-left:1px solid var(--line);box-shadow:-12px 0 30px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .2s ease;z-index:20;display:flex;flex-direction:column}
+@media (prefers-reduced-motion:reduce){.drawer{transition:none}}
+.drawer.open{transform:none}
+.drawer .dh{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line);gap:12px}
+.drawer .dh h2{margin:0;font-size:19px;font-weight:600;line-height:1.2}
+.drawer .dh .al{color:var(--ink2);font-size:12px;margin-top:2px}
+.drawer .body{padding:16px 20px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:18px}
+.sec h3{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2);font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.ctable{width:100%;min-width:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ctable td{padding:7px 10px;border-bottom:1px solid var(--line2);font-size:13px}
+.ctable tr:last-child td{border-bottom:0}
+.ctable td.n{font-weight:600}
+.ctable td.n small{display:block;font-weight:400;color:var(--ink2)}
+.ctable td.m{color:var(--ink2);white-space:nowrap}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:4px 12px;font-size:13px}
+.kv .k{color:var(--ink2)}
+.rels{display:flex;flex-direction:column;gap:6px}
+.rel{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:6px}
+.rel b{font-weight:600}.rel small{color:var(--ink2);margin-left:6px}
+.rel label{display:flex;align-items:center;gap:10px;cursor:pointer;width:100%}
+.rel input[type=checkbox]{width:18px;height:18px;accent-color:var(--yes);margin:0}
+.sibs{display:flex;flex-wrap:wrap;gap:6px}
+.sib{border:1px solid var(--line);border-radius:6px;padding:4px 9px;font-size:12px;cursor:pointer;background:var(--bg)}
+.sib:hover{border-color:var(--accent)}
+.drawer .df{display:flex;flex-direction:column;gap:4px}
+.drawer .grid3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
+.drawer textarea{min-height:60px;resize:vertical}
+.crow{display:grid;grid-template-columns:1.3fr 1fr 1.2fr 1fr auto;gap:6px;margin-bottom:6px;align-items:center}
+.crow input{padding:6px 8px;font-size:12px}
+.crow .x{border:0;background:transparent;color:var(--ink2);cursor:pointer;font-size:16px;line-height:1;padding:4px}
+.drawer .foot{display:flex;justify-content:space-between;gap:8px;padding:12px 20px;border-top:1px solid var(--line)}
+.meta{font-size:12px;color:var(--ink2)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:6px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30}
+.toast.show{opacity:1}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:15;display:none}
+.scrim.show{display:block}
+dialog{border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);padding:18px;width:min(460px,92vw)}
+dialog::backdrop{background:rgba(0,0,0,.3)}
+dialog h3{margin:0 0 10px;font-size:16px}
+dialog .df{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+dialog input{width:100%;border:1px solid var(--line);border-radius:6px;padding:7px 9px;font:inherit;background:var(--bg);color:var(--ink)}
+.log{padding:16px 24px;border-top:1px solid var(--line);margin-top:20px}
+.log h3{margin:0 0 8px}
+.log ul{margin:0;padding:0;list-style:none;font-size:12px;color:var(--ink2)}
+</style>
+
+<header>
+  <div>
+    <h1>San Diego Investor Registry</h1>
+    <div class="sub">Investor entities, their contacts, and which partners have a relationship with each. Click a row to open the profile.</div>
+  </div>
+  <div class="hdr-actions">
+    <span class="mode" id="mode">Loading…</span>
+    <button class="btn" id="btnPartners">Partners</button>
+    <button class="btn" id="btnExport">Export CSV</button>
+    <button class="btn primary" id="btnAdd">Add entity</button>
+  </div>
+  <div class="tabs"><button class="tab on" data-tab="entities">Entities</button><button class="tab" data-tab="contacts">Contacts</button></div>
+</header>
+<div class="stats" id="stats"></div>
+<div class="wrap">
+  <aside class="rail">
+    <div><span class="lbl">Search</span><input type="search" id="q" placeholder="Entity, contact, alias, address…"></div>
+    <div><span class="lbl">Has relationship with</span><div class="chips" id="relChips"></div></div>
+    <div><span class="lbl">Shared by</span><select id="fShared"><option value="">Any</option><option value="0">No partner yet</option><option value="1">Exactly one partner</option><option value="2">2 or more</option><option value="3">3 or more</option><option value="4">All four</option></select></div>
+    <div><span class="lbl">Entity family</span><select id="fGroup"><option value="">All families</option></select></div>
+    <div><span class="lbl">Data quality</span><div class="chips" id="qualChips">
+      <span class="chip miss" data-f="noCompany">Company missing</span>
+      <span class="chip" data-f="noContact">No contact</span>
+      <span class="chip" data-f="noAddress">No address</span>
+      <span class="chip" data-f="flagged">Needs review</span>
+      <span class="chip" data-f="flipper">Active flipper</span>
+    </div></div>
+    <div class="count" id="count"></div>
+  </aside>
+  <main>
+    <table><thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody></table>
+    <div class="empty" id="empty" hidden>Nothing matches these filters.</div>
+    <div class="log" id="log"></div>
+  </main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="dh"><div><h2 id="dTitle">Entity</h2><div class="al" id="dSub"></div></div><div style="display:flex;gap:6px"><button class="btn" id="dEdit">Edit</button><button class="btn" id="dClose">Close</button></div></div>
+  <div class="body" id="dBody"></div>
+  <div class="foot" id="dFoot" hidden>
+    <button class="btn danger" id="dDelete">Delete</button>
+    <div style="display:flex;gap:8px"><button class="btn" id="dCancel">Cancel</button><button class="btn primary" id="dSave">Save</button></div>
+  </div>
+</div>
+<dialog id="dlgPartner">
+  <h3>Partners</h3>
+  <div id="partnerList"></div>
+  <div class="df"><span class="lbl">Add partner name</span><input id="pName" placeholder="Full name"></div>
+  <div class="df"><span class="lbl">Company</span><input id="pCo" placeholder="Company"></div>
+  <div style="display:flex;justify-content:flex-end;gap:8px"><button class="btn" id="pClose">Close</button><button class="btn primary" id="pAdd">Add partner</button></div>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script id="registry-data" type="application/json">__DATA__</script>
+<script>
+(function(){
+const TEMPLATE = '<!doctype html>\n' + document.documentElement.outerHTML;
+let DATA = JSON.parse(document.getElementById('registry-data').textContent);
+let canWrite = null, artifactNs = null, downloadsNs = null;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+let tab = 'entities';
+let filters = {q:'', rel:new Set(), shared:'', group:'', noCompany:false, noContact:false, noAddress:false, flagged:false, flipper:false};
+let sort = {key:'entity', dir:1};
+let selectedId = null, editing = false;
+
+// ---------- helpers ----------
+const hasRel = (r,pid) => !!(r.relationships && r.relationships[pid]);
+const sharedCount = r => DATA.partners.filter(p => hasRel(r,p.id)).length;
+const label = r => r.entity || ((r.contacts||[]).map(c=>c.name).join(' & ') || '(unnamed)');
+const fullAddr = r => [r.address, [r.city, r.state].filter(Boolean).join(', '), r.zip].filter(Boolean).join(', ');
+const siblings = r => r.group ? DATA.records.filter(x => x.group===r.group && x.id!==r.id) : [];
+function matches(r){
+  const f = filters;
+  if (f.q){
+    const hay = [r.entity, ...(r.aliases||[]), ...(r.contacts||[]).flatMap(c=>[c.name,c.role,c.email,c.phone]), fullAddr(r), r.group, r.notes, r.relationshipNotes].join(' ').toLowerCase();
+    if (!f.q.split(/\s+/).every(w => hay.includes(w))) return false;
+  }
+  for (const pid of f.rel) if (!hasRel(r,pid)) return false;
+  if (f.shared !== ''){ const n = sharedCount(r), k = +f.shared; if (k===0 ? n!==0 : k===1 ? n!==1 : n<k) return false; }
+  if (f.group && r.group !== f.group) return false;
+  if (f.noCompany && r.entity) return false;
+  if (f.noContact && (r.contacts||[]).length) return false;
+  if (f.noAddress && (r.address || r.city)) return false;
+  if (f.flagged && !(r.flags||[]).length) return false;
+  if (f.flipper && !((r.flips&&r.flips.count)||0)) return false;
+  return true;
+}
+function sortVal(r, key){
+  if (key.startsWith('rel:')) return hasRel(r, key.slice(4)) ? 0 : 1;
+  if (key === 'shared') return -sharedCount(r);
+  if (key === 'flips') return -((r.flips&&r.flips.count)||0);
+  if (key === 'contacts') return ((r.contacts||[])[0]||{}).name || '￿';
+  if (key === 'city') return r.city || '￿';
+  if (key === 'entity') return (r.entity || '￿' + label(r)).toLowerCase();
+  return (r[key] || '￿').toString().toLowerCase();
+}
+
+// ---------- render ----------
+function renderStats(){
+  const rs = DATA.records, n = rs.length;
+  const nc = rs.reduce((a,r)=>a+(r.contacts||[]).length,0);
+  const withA = rs.filter(r => r.address || r.city).length;
+  const flagged = rs.filter(r => (r.flags||[]).length).length;
+  const dist = [0,0,0,0,0]; rs.forEach(r => dist[Math.min(sharedCount(r),4)]++);
+  let html = `<div class="stat"><div class="lbl">Entities</div><div class="val">${n}</div></div>
+  <div class="stat"><div class="lbl">Contacts</div><div class="val">${nc}</div></div>
+  <div class="stat"><div class="lbl">Address on file</div><div class="val">${withA}<small>${Math.round(100*withA/n)}%</small></div></div>
+  <div class="stat"><div class="lbl">Needs review</div><div class="val">${flagged}</div></div>
+  <div class="stat"><div class="lbl">Active flippers</div><div class="val">${rs.filter(r=>(r.flips&&r.flips.count)).length}<small>${rs.reduce((a,r)=>a+((r.flips&&r.flips.count)||0),0)} sales on ARV reports</small></div></div>`;
+  for (const p of DATA.partners){
+    const c = rs.filter(r => hasRel(r,p.id)).length, sole = rs.filter(r => hasRel(r,p.id) && sharedCount(r)===1).length;
+    html += `<div class="stat"><div class="lbl">${esc(p.name)} · ${esc(p.company)}</div><div class="val">${c}<small>${sole} sole · ${c-sole} shared</small></div><div class="bar"><i style="width:${100*c/n}%;background:var(--accent)"></i></div></div>`;
+  }
+  html += `<div class="stat shared"><div class="lbl">Shared clients</div><div class="dist"><span><b>${dist[1]}</b> one</span><span><b>${dist[2]}</b> two</span><span><b>${dist[3]}</b> three</span><span><b>${dist[4]}</b> four</span><span><b>${dist[0]}</b> none</span></div>
+    <div class="bar"><i style="width:${100*dist[1]/n}%;background:var(--s1)"></i><i style="width:${100*dist[2]/n}%;background:var(--s2)"></i><i style="width:${100*dist[3]/n}%;background:var(--s3)"></i><i style="width:${100*dist[4]/n}%;background:var(--s4)"></i></div></div>`;
+  $('stats').innerHTML = html;
+}
+function renderFilters(){
+  $('relChips').innerHTML = DATA.partners.map(p => `<span class="chip ${filters.rel.has(p.id)?'on':''}" data-p="${esc(p.id)}">${esc(p.name.split(' ')[0])}</span>`).join('');
+  const groups = [...new Set(DATA.records.map(r => r.group).filter(Boolean))].sort();
+  $('fGroup').innerHTML = '<option value="">All families</option>' + groups.map(g => `<option value="${esc(g)}">${esc(g)}</option>`).join('');
+  $('fGroup').value = filters.group;
+}
+function renderTable(){
+  const rows = DATA.records.filter(matches).sort((a,b) => { const x=sortVal(a,sort.key), y=sortVal(b,sort.key); return (x<y?-1:x>y?1:0)*sort.dir; });
+  $('count').textContent = `${rows.length} of ${DATA.records.length} entities`;
+  const relCols = DATA.partners.map(p => ['rel:'+p.id, p.name.split(' ')[0], 'c']);
+  const th = cols => $('thead').innerHTML = cols.map(([k,l,c]) => `<th data-k="${esc(k)}" class="${c||''} ${sort.key===k?'sorted':''} ${sort.dir<0?'desc':''}">${esc(l)}</th>`).join('');
+  if (tab === 'entities'){
+    th([['entity','Entity'],['contacts','Contacts'],['city','Location'],['group','Family'], ...relCols, ['shared','Shared','c'], ['flips','Flips','c'], ['flags','Review']]);
+    $('tbody').innerHTML = rows.map(r => `<tr class="row ${r.id===selectedId?'sel':''}" data-id="${esc(r.id)}">
+      <td class="ent">${r.entity ? esc(r.entity) : `<span class="nocomp">${esc(label(r))}</span> <span class="pill miss">No company</span>`}${(r.aliases||[]).length?`<span class="al">aka ${esc(r.aliases.join('; '))}</span>`:''}</td>
+      <td>${(r.contacts||[]).map(c=>`<span class="pr">${esc(c.name)}${c.role?` <small>${esc(c.role)}</small>`:''}</span>`).join('') || '<span class="dim">—</span>'}</td>
+      <td class="dim">${esc([r.city, r.state].filter(Boolean).join(', ')) || '—'}${r.zip?` <span class="mono">${esc(r.zip)}</span>`:''}</td>
+      <td>${r.group?`<span class="grp">${esc(r.group)}</span>`:'<span class="dim">—</span>'}</td>
+      ${DATA.partners.map(p => `<td class="c"><span class="chk ${hasRel(r,p.id)?'on':''}"></span></td>`).join('')}
+      <td class="c"><span class="shared n${Math.min(sharedCount(r),4)}">${sharedCount(r)}</span></td>
+      <td class="c mono">${(r.flips&&r.flips.count)?r.flips.count:'<span class="dim">·</span>'}</td>
+      <td>${(r.flags||[]).length?`<span class="pill flag">${r.flags.length} flag${r.flags.length>1?'s':''}</span>`:''}</td>
+    </tr>`).join('');
+  } else {
+    th([['contacts','Contact'],['entity','Entity'],['group','Family'],['city','Location'], ...relCols, ['shared','Shared','c']]);
+    const crow = [];
+    rows.forEach(r => (r.contacts||[]).forEach(c => crow.push({r,c})));
+    crow.sort((a,b) => sort.key==='contacts' ? a.c.name.localeCompare(b.c.name)*sort.dir : 0);
+    $('tbody').innerHTML = crow.map(({r,c}) => `<tr class="row ${r.id===selectedId?'sel':''}" data-id="${esc(r.id)}">
+      <td class="ent">${esc(c.name)}${c.role?`<span class="al">${esc(c.role)}</span>`:''}${c.email||c.phone?`<span class="al">${esc([c.email,c.phone].filter(Boolean).join(' · '))}</span>`:''}</td>
+      <td>${r.entity?esc(r.entity):'<span class="pill miss">No company</span>'}</td>
+      <td>${r.group?`<span class="grp">${esc(r.group)}</span>`:'<span class="dim">—</span>'}</td>
+      <td class="dim">${esc([r.city, r.state].filter(Boolean).join(', ')) || '—'}</td>
+      ${DATA.partners.map(p => `<td class="c"><span class="chk ${hasRel(r,p.id)?'on':''}"></span></td>`).join('')}
+      <td class="c"><span class="shared n${Math.min(sharedCount(r),4)}">${sharedCount(r)}</span></td>
+    </tr>`).join('');
+    $('count').textContent = `${crow.length} contacts across ${rows.length} entities`;
+  }
+  $('empty').hidden = $('tbody').children.length > 0;
+}
+function renderLog(){
+  const log = (DATA.log||[]).slice(-8).reverse();
+  $('log').innerHTML = `<h3 class="lbl">Recent changes</h3><ul>${log.map(l => `<li><span class="mono">${esc(l.ts.slice(0,10))}</span> · ${esc(l.action)}</li>`).join('') || '<li>No changes yet.</li>'}</ul>`;
+}
+function renderAll(){ renderStats(); renderFilters(); renderTable(); renderLog(); }
+
+// ---------- profile drawer ----------
+const blank = () => ({id:'', entity:'', aliases:[], contacts:[], address:'', city:'', state:'CA', zip:'', group:'', notes:'', relationships:{}, relationshipNotes:'', flags:[], addedBy:'', addedDate:'', src:[]});
+function openProfile(id, edit){
+  const r = id ? DATA.records.find(x => x.id===id) : blank();
+  selectedId = id; editing = !!edit || !id; renderTable();
+  $('dTitle').textContent = id ? label(r) : 'New entity';
+  $('dSub').textContent = id ? [(r.aliases||[]).length ? 'aka ' + r.aliases.join('; ') : '', r.group ? 'Family: ' + r.group : ''].filter(Boolean).join(' · ') : '';
+  $('dEdit').hidden = editing || canWrite === false;
+  $('dFoot').hidden = !editing;
+  $('dDelete').hidden = !id;
+  $('dBody').innerHTML = editing ? editView(r) : readView(r);
+  if (editing){ $('dBody').querySelectorAll('input,textarea,select').forEach(el => el.disabled = canWrite === false); $('dSave').disabled = canWrite === false; }
+  $('drawer').classList.add('open'); $('scrim').classList.add('show'); $('drawer').setAttribute('aria-hidden','false');
+  $('dBody').scrollTop = 0;
+}
+function readView(r){
+  const rels = DATA.partners.map(p => `<div class="rel"><span class="chk ${hasRel(r,p.id)?'on':''}"></span><span><b>${esc(p.name)}</b><small>${esc(p.company)}</small></span></div>`).join('');
+  const sibs = siblings(r);
+  return `
+    ${!r.entity ? '<div><span class="pill miss">Company missing</span> <span class="meta">Contact record without a named entity. Add the company when known.</span></div>' : ''}
+    <div class="sec"><h3>Contacts <span class="meta">${(r.contacts||[]).length}</span></h3>
+      ${(r.contacts||[]).length ? `<table class="ctable">${r.contacts.map(c => `<tr><td class="n">${esc(c.name)}${c.role?`<small>${esc(c.role)}</small>`:''}${c.notes?`<small>${esc(c.notes)}</small>`:''}</td><td class="m">${c.email?`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`:''}${c.email&&c.phone?'<br>':''}${esc(c.phone)}</td></tr>`).join('')}</table>` : '<div class="meta">No contacts on file.</div>'}
+    </div>
+    <div class="sec"><h3>Relationships</h3><div class="rels">${rels}</div>${r.relationshipNotes?`<div class="meta" style="margin-top:8px">${esc(r.relationshipNotes)}</div>`:''}</div>
+    <div class="sec"><h3>Details</h3><div class="kv">
+      <span class="k">Address</span><span>${esc(fullAddr(r)) || '<span class="meta">Not on file</span>'}</span>
+      <span class="k">Family</span><span>${esc(r.group) || '<span class="meta">None</span>'}</span>
+      <span class="k">Notes</span><span>${esc(r.notes) || '<span class="meta">None</span>'}</span>
+      <span class="k">Flip activity</span><span>${(r.flips&&r.flips.count)?`${r.flips.count} sale${r.flips.count>1?'s':''} on ARV Finance Flip Reports (${(r.flips.reports||[]).join(', ')}), last ${esc(r.flips.last||'')}`:'<span class="meta">None on the ARV reports loaded (Oct 2024, Jan 2025, Oct 2025 to Jan 2026)</span>'}</span>
+      <span class="k">Review</span><span>${(r.flags||[]).length ? r.flags.map(f=>`<span class="pill flag">${esc(f)}</span>`).join(' ') : '<span class="meta">Clear</span>'}</span>
+    </div></div>
+    ${sibs.length ? `<div class="sec"><h3>Related entities <span class="meta">${esc(r.group)}</span></h3><div class="sibs">${sibs.map(s => `<span class="sib" data-id="${esc(s.id)}">${esc(label(s))}</span>`).join('')}</div></div>` : ''}
+    <div class="meta">Source: ${esc(r.addedBy ? 'added by ' + r.addedBy : 'partner list')}${r.addedDate?' · '+esc(r.addedDate):''}${(r.src||[]).length?' · source rows '+esc(r.src.join(', ')):''}${r.updated?' · last edited '+esc(r.updated.slice(0,10)):''}</div>`;
+}
+function contactRow(c){
+  return `<div class="crow"><input placeholder="Name" class="c_name" value="${esc(c.name)}"><input placeholder="Role" class="c_role" value="${esc(c.role)}"><input placeholder="Email" class="c_email" value="${esc(c.email)}"><input placeholder="Phone" class="c_phone" value="${esc(c.phone)}"><button class="x" title="Remove contact" type="button">×</button></div>`;
+}
+function editView(r){
+  const groups = [...new Set(DATA.records.map(x => x.group).filter(Boolean))].sort();
+  return `
+    <div class="df"><span class="lbl">Entity name (leave blank if no real entity; single-property LLCs are not entities)</span><input id="e_entity" value="${esc(r.entity)}"></div>
+    <div class="df"><span class="lbl">Also known as (separate with ;)</span><input id="e_aliases" value="${esc((r.aliases||[]).join('; '))}"></div>
+    <div class="sec"><h3>Contacts <button class="btn small" type="button" id="e_addc">Add contact</button></h3><div id="e_contacts">${(r.contacts||[]).map(contactRow).join('')}</div></div>
+    <div class="sec"><h3>Relationships</h3><div class="rels">${DATA.partners.map(p => `<div class="rel"><label><input type="checkbox" class="e_rel" data-p="${esc(p.id)}" ${hasRel(r,p.id)?'checked':''}><span><b>${esc(p.name)}</b><small>${esc(p.company)}</small></span></label></div>`).join('')}</div></div>
+    <div class="df"><span class="lbl">Relationship notes (since when, introduced by, exceptions)</span><textarea id="e_relnotes">${esc(r.relationshipNotes)}</textarea></div>
+    <div class="df"><span class="lbl">Street address</span><input id="e_address" value="${esc(r.address)}"></div>
+    <div class="grid3">
+      <div class="df"><span class="lbl">City</span><input id="e_city" value="${esc(r.city)}"></div>
+      <div class="df"><span class="lbl">State</span><input id="e_state" value="${esc(r.state)}" maxlength="2"></div>
+      <div class="df"><span class="lbl">Zip</span><input id="e_zip" class="mono" value="${esc(r.zip)}"></div>
+    </div>
+    <div class="df"><span class="lbl">Entity family (related entities share this)</span><input id="e_group" list="groupList" value="${esc(r.group)}"><datalist id="groupList">${groups.map(g=>`<option value="${esc(g)}">`).join('')}</datalist></div>
+    <div class="df"><span class="lbl">Notes</span><textarea id="e_notes">${esc(r.notes)}</textarea></div>
+    <div class="df"><span class="lbl">Review flags (separate with ;)</span><input id="e_flags" value="${esc((r.flags||[]).join('; '))}"></div>`;
+}
+function closeDrawer(){ $('drawer').classList.remove('open'); $('scrim').classList.remove('show'); $('drawer').setAttribute('aria-hidden','true'); selectedId = null; editing = false; renderTable(); }
+function readForm(){
+  const split = (v, sep) => v.split(sep).map(s=>s.trim()).filter(Boolean);
+  const contacts = [...document.querySelectorAll('#e_contacts .crow')].map(row => ({name:row.querySelector('.c_name').value.trim(), role:row.querySelector('.c_role').value.trim(), email:row.querySelector('.c_email').value.trim(), phone:row.querySelector('.c_phone').value.trim(), notes:''})).filter(c => c.name);
+  const relationships = {}; document.querySelectorAll('.e_rel').forEach(cb => relationships[cb.dataset.p] = cb.checked);
+  return { entity:$('e_entity').value.trim(), aliases:split($('e_aliases').value,';'), contacts, relationships, relationshipNotes:$('e_relnotes').value.trim(),
+    address:$('e_address').value.trim(), city:$('e_city').value.trim(), state:$('e_state').value.trim().toUpperCase(), zip:$('e_zip').value.trim(), group:$('e_group').value.trim(), notes:$('e_notes').value.trim(), flags:split($('e_flags').value,';') };
+}
+
+// ---------- persistence ----------
+function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,40) || 'rec'; }
+function logAction(action){ DATA.log = (DATA.log||[]).concat([{ts:new Date().toISOString(), action}]).slice(-200); }
+function buildHtml(){
+  const json = JSON.stringify(DATA).replace(/<\//g,'<\\/');
+  return TEMPLATE.replace(/(<script id="registry-data" type="application\/json">)[\s\S]*?(<\/script>)/, (m,a,b) => a + json + b);
+}
+async function persist(msg){
+  renderAll();
+  if (!artifactNs){ toast('Saved in this view only. Publishing is not available here.'); return; }
+  try { toast('Publishing…'); await artifactNs.publish(buildHtml()); toast(msg || 'Published for everyone.'); }
+  catch (e){
+    if (e && e.code === 'conflict'){ toast('Someone else just published. Reloading to the latest version.'); return; }
+    if (e && (e.code === 'not_writer' || e.code === 'not_granted')){ setReadOnly(); toast('This view is read-only. Your change was not saved.'); return; }
+    toast('Publish failed: ' + (e && e.message || 'unknown error'));
+  }
+}
+function setReadOnly(){ canWrite = false; $('mode').textContent = 'View only'; $('btnAdd').disabled = true; $('dEdit').hidden = true; }
+
+// ---------- export ----------
+function toCsv(){
+  const P = DATA.partners;
+  const cols = ['Entity','Also known as','Contact','Role','Email','Phone','Street','City','State','Zip','Family', ...P.map(p=>p.name+' ('+p.company+')'), 'Shared by','Relationship notes','Notes','Review flags','Added by','Added date'];
+  const q = v => '"' + String(v ?? '').replace(/"/g,'""') + '"';
+  const lines = [cols.map(q).join(',')];
+  for (const r of [...DATA.records].sort((a,b)=>label(a).localeCompare(label(b)))){
+    const cs = (r.contacts||[]).length ? r.contacts : [{name:'',role:'',email:'',phone:''}];
+    cs.forEach(c => lines.push([r.entity,(r.aliases||[]).join('; '),c.name,c.role,c.email,c.phone,r.address,r.city,r.state,r.zip,r.group, ...P.map(p=>hasRel(r,p.id)?'Yes':'No'), sharedCount(r), r.relationshipNotes, r.notes,(r.flags||[]).join('; '),r.addedBy,r.addedDate].map(q).join(',')));
+  }
+  return lines.join('\r\n');
+}
+
+// ---------- events ----------
+function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2600); }
+document.querySelector('.tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if(!b) return; tab = b.dataset.tab; document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t===b)); sort = {key: tab==='contacts'?'contacts':'entity', dir:1}; renderTable(); });
+$('q').addEventListener('input', e => { filters.q = e.target.value.trim().toLowerCase(); renderTable(); });
+$('relChips').addEventListener('click', e => { const c = e.target.closest('.chip'); if(!c) return; const p=c.dataset.p; filters.rel.has(p) ? filters.rel.delete(p) : filters.rel.add(p); c.classList.toggle('on'); renderTable(); });
+$('fShared').addEventListener('change', e => { filters.shared = e.target.value; renderTable(); });
+$('fGroup').addEventListener('change', e => { filters.group = e.target.value; renderTable(); });
+$('qualChips').addEventListener('click', e => { const c = e.target.closest('.chip'); if(!c) return; filters[c.dataset.f] = !filters[c.dataset.f]; c.classList.toggle('on', filters[c.dataset.f]); renderTable(); });
+$('thead').addEventListener('click', e => { const th = e.target.closest('th'); if(!th) return; const k = th.dataset.k; if (sort.key===k) sort.dir *= -1; else { sort.key=k; sort.dir=1; } renderTable(); });
+$('tbody').addEventListener('click', e => { const tr = e.target.closest('tr.row'); if (tr) openProfile(tr.dataset.id, false); });
+$('dBody').addEventListener('click', e => {
+  const s = e.target.closest('.sib'); if (s){ openProfile(s.dataset.id, false); return; }
+  if (e.target.id === 'e_addc'){ $('e_contacts').insertAdjacentHTML('beforeend', contactRow({name:'',role:'',email:'',phone:''})); $('e_contacts').lastElementChild.querySelector('input').focus(); return; }
+  const x = e.target.closest('.crow .x'); if (x){ x.closest('.crow').remove(); }
+});
+$('dEdit').addEventListener('click', () => openProfile(selectedId, true));
+$('dClose').addEventListener('click', closeDrawer); $('scrim').addEventListener('click', closeDrawer);
+$('dCancel').addEventListener('click', () => selectedId ? openProfile(selectedId, false) : closeDrawer());
+document.addEventListener('keydown', e => { if (e.key==='Escape' && $('drawer').classList.contains('open')) closeDrawer(); });
+$('btnAdd').addEventListener('click', () => openProfile(null, true));
+$('dSave').addEventListener('click', () => {
+  const v = readForm();
+  if (!v.entity && !v.contacts.length){ toast('Enter an entity name or at least one contact.'); $('e_entity').focus(); return; }
+  if (!v.entity && !v.flags.some(f => /company missing/i.test(f))) v.flags.push('Company missing');
+  if (v.entity) v.flags = v.flags.filter(f => !/company missing/i.test(f));
+  const now = new Date().toISOString(), name = v.entity || v.contacts.map(c=>c.name).join(' & ');
+  let id = selectedId;
+  if (id){ Object.assign(DATA.records.find(x => x.id===id), v, {updated: now}); logAction('Edited ' + name); }
+  else { id = slug(name); let n=2; while (DATA.records.some(x=>x.id===id)) id = slug(name)+'-'+(n++); DATA.records.push(Object.assign({id, addedBy:'', addedDate:now.slice(0,10), src:[], created: now}, v)); logAction('Added ' + name); }
+  openProfile(id, false); persist('Saved and published.');
+});
+$('dDelete').addEventListener('click', () => {
+  const r = DATA.records.find(x => x.id===selectedId); if (!r) return;
+  const b = $('dDelete');
+  if (b.dataset.armed !== '1'){ b.dataset.armed='1'; b.textContent='Confirm delete'; setTimeout(()=>{ b.dataset.armed=''; b.textContent='Delete'; }, 4000); return; }
+  b.dataset.armed=''; b.textContent='Delete';
+  DATA.records = DATA.records.filter(x => x.id!==selectedId); logAction('Deleted ' + label(r));
+  closeDrawer(); persist('Deleted and published.');
+});
+$('btnPartners').addEventListener('click', () => {
+  $('partnerList').innerHTML = '<ul style="margin:0 0 12px;padding-left:18px">' + DATA.partners.map(p => `<li><b>${esc(p.name)}</b> · ${esc(p.company)}</li>`).join('') + '</ul>' + (DATA.partners.length>=4?'<div class="meta" style="margin-bottom:10px">Four partners is the working maximum for the shared-by scale.</div>':'');
+  $('pAdd').disabled = canWrite === false; $('pName').disabled = $('pCo').disabled = canWrite === false;
+  $('dlgPartner').showModal();
+});
+$('pClose').addEventListener('click', () => $('dlgPartner').close());
+$('pAdd').addEventListener('click', () => {
+  const name = $('pName').value.trim(), co = $('pCo').value.trim();
+  if (!name || !co){ toast('Partner name and company are both required.'); return; }
+  let id = slug(name), n=2; while (DATA.partners.some(p=>p.id===id)) id = slug(name)+'-'+(n++);
+  DATA.partners.push({id, name, company:co}); logAction('Added partner ' + name + ' (' + co + ')');
+  $('pName').value=''; $('pCo').value=''; $('dlgPartner').close(); persist('Partner added and published.');
+});
+$('btnExport').addEventListener('click', async () => {
+  const csv = toCsv();
+  if (downloadsNs){ try { await downloadsNs.save({filename:'san-diego-investor-registry.csv', data: csv}); toast('CSV ready.'); } catch(e){ if (e && e.code!=='cancelled') toast('Download not available here.'); } }
+  else { try { await navigator.clipboard.writeText(csv); toast('CSV copied to clipboard.'); } catch(e){ toast('Download not available in this view.'); } }
+});
+
+// ---------- boot ----------
+renderAll();
+$('mode').textContent = 'Checking access…';
+if (window.claude && typeof window.claude.use === 'function'){
+  window.claude.use('artifact').then(ns => { artifactNs = ns; if (ns){ canWrite = true; $('mode').textContent = 'Shared · edits publish for everyone'; } else setReadOnly(); });
+  window.claude.use('downloads').then(ns => { downloadsNs = ns; });
+} else { setReadOnly(); }
+})();
+</script>
