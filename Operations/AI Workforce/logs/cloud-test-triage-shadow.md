@@ -2,6 +2,24 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-06 11:10 PT
+
+Threads seen: 11. Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 11.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| GitHub | [GitHub] Sudo email verification code | RULE-KEPT | keep (verification code rule; read, not surfaced) |
+| John Casarietti | Re: Five Star COI | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Brooke Lenander | Rent | RESPONSE-WORTHY | keep (unread) |
+| Ruben Hassid | Money. | RULE-KEPT | keep (Ruben Hassid rule; unread) |
+| Kim Kelly | Re: coming Q1 | RESPONSE-WORTHY | keep (read, not surfaced) |
+| GitHub | A first-party GitHub OAuth application has been added | AMBIGUOUS | keep (security notice; read, not surfaced) |
+| Ease Benefits Administration | Reset your password | AMBIGUOUS | keep (password reset notice; read, not surfaced) |
+| isolved People Cloud | isolved Security Code | RULE-KEPT | keep (verification code rule) |
+| Five Star Escrow Benefits Management | Important online benefit enrollment information | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Kurt Iuli Kinsey | Re: Launch party tonight 17348 Via Del Campo | RESPONSE-WORTHY | keep (read, not surfaced) |
+| CRMLS AccountSecurity | REcore Login Verification Code | RULE-KEPT | keep (verification code rule) |
+
 ## 2026-11-06 10:34 PT
 
 Threads seen: 17 (12 in scope, 5 Promotions skipped per scope rule). Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 12.
