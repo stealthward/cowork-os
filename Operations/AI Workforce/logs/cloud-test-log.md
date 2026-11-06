@@ -7,3 +7,4 @@ One line per failure in a cloud session: date | what failed | error.
 2026-11-06 | Friday report: alertClears read | the registry page database (ArtifactData) was not read from the cloud session; cleared alerts taken from the 10/30 report.
 2026-11-06 | Friday report: folders untouched 60+ days | a fresh git clone sets every file's modified time to the clone date, so folder age cannot be judged from disk; use git log per folder instead.
 2026-11-06 | git push to origin (claude/fervent-noether-yfgjpq and main) | HTTP 403: "Claude does not have GitHub access to stealthward/cowork-os for your organization" (GitHub App not installed or GitHub link needs reconnecting). Commits are local only.
+2026-11-06 | (resolved) git push 403 above | GitHub access fixed by the COO from the office PC; the four Friday report commits were rebased onto main and pushed.
