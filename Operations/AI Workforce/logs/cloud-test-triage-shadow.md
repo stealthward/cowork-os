@@ -1,0 +1,27 @@
+# Cloud Test Triage Shadow (report-only)
+
+Newest run at top. Gmail untouched by this shadow.
+
+## 2026-11-06 10:34 PT
+
+Threads seen: 17 (12 in scope, 5 Promotions skipped per scope rule). Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 12.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| GitHub | [GitHub] Sudo email verification code | RULE-KEPT | keep (verification code rule; read, not surfaced) |
+| John Casarietti | Re: Five Star COI | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Elizabeth Eidbo | Re: 10509 Suite 300 - Compressor Replacement (11/10) | AMBIGUOUS | keep, flag (unread, Brett cc'd) |
+| Brooke Lenander | Rent | RESPONSE-WORTHY | keep (unread) |
+| Ruben Hassid | Money. | RULE-KEPT | keep (Ruben Hassid rule) |
+| Kim Kelly | Re: coming Q1 | RESPONSE-WORTHY | keep (read, not surfaced) |
+| GitHub | A first-party GitHub OAuth application has been added | AMBIGUOUS | keep (security notice) |
+| Ease Benefits Administration | Reset your password | AMBIGUOUS | keep (password reset notice) |
+| isolved People Cloud | isolved Security Code | RULE-KEPT | keep (verification code rule) |
+| Five Star Escrow Benefits Management | Important online benefit enrollment information | RESPONSE-WORTHY | keep |
+| Kurt Iuli Kinsey | Re: Launch party tonight 17348 Via Del Campo | RESPONSE-WORTHY | keep (read, not surfaced) |
+| CRMLS AccountSecurity | REcore Login Verification Code | RULE-KEPT | keep (verification code rule) |
+| AAA Claims | Reminder: Feedback on your Recent AAA Claim | Promotions | out of scope, untouched |
+| Steve @ Anthros | You have VIP Early Access! | Promotions | out of scope, untouched |
+| Total Vision Solana Beach | Year End Appointment Reminder | Promotions | out of scope, untouched |
+| Frank Mead | Your Office Upgrade Could Be Tax Deductible | Promotions | out of scope, untouched |
+| Amflow | PX vs. PR: Find Your Perfect Match. | Promotions | out of scope, untouched |
