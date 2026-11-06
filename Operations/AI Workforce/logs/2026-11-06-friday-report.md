@@ -29,7 +29,6 @@ _Chief of staff, Fri 11/6, run from the cloud test session. Read before the Mon 
 - **Wed 11/11:** Weekly run 5 CRMLS check, Research guests, Factory show prep call 3:00.
 - **Thu 11/12:** REInvest: Hold 2/18 at The Hive, Confirm two experts, Partner whisper kit; Post LinkedIn reel Ep 3 R11; Studio; Ep 7 shoot.
 - **Fri 11/13:** Determine FSE's Core Company Values (Sydney).
-- **Waiting on your install:** reel engine v5.1 in claude.ai (carried from 10/30; not re-verified, _Outbox is not in the cloud repo).
 
 ## Team (exceptions only)
 - **Elizabeth, Marketing Projects & Tasks:** a second "Shoot A: Whisper 1 behind the scenes at The Hive" (1220150393846271, created 11/2, also in REInvest) is open, unassigned, due 11/4. Yours was completed 11/2. Likely a duplicate to close.
@@ -52,11 +51,22 @@ _Chief of staff, Fri 11/6, run from the cloud test session. Read before the Mon 
 - **CMO:** Blueprint skills 4 to 6 of 6, worker review 1 to 3 of 3, PoC 7 and 10 of 10, Ep 7 topic notes, piece 4 rating, REACH Ch 6 v4.2 and the chapter process.
 
 ## OS maintenance flags
-OS_CURATOR_PLACEHOLDER
+- **Root MEMORY.md:** 85 of 150 lines, header 10/30 (stale: the 11/4 and 11/5 edits did not bump it).
+- **Audit dates:** OS audit 8/12 is 86 days, due Tue 11/10. Client name check 10/27 comes due Tue 11/10. Alignment check 10/28 is current. The COO offers both on load next week.
+- **os-curator run 4:** 21 findings. Run 3's five top items are all fixed. 12 findings are still open from run 3, and 6 are new (REACH row still says "undated", Rebuild row still calls Dean Aguilar a kept guest brief, IG queue date past, registry still shows reel engine v5 not v5.1).
+- **Your calls (os-curator):**
+  - Real Talk Factory row: "2 of 15 tasks complete" rests on a 5/13 memory. Current status?
+  - Investor Database tracker: the Artifact is superseded. Link the portal or the Sheet?
+  - Cowork Setup entry (8/12 status): archive or update?
+  - Three behavior rules in the Team section (Elizabeth's address, Design Team Projects check, Heather credit and former staff): move to a CLAUDE.md or keep as facts?
+- **Registry:** rendered, not republished (brief). Snapshot left at 10/30: desktop run history is not readable from the cloud. New alert: morning-inbox-triage ran 2 of 3 times on Thu 11/5. Usually the app was closed; nothing to fix unless it repeats.
+- **Logs:** the copywriter log has no entries after 10/29 (10 runs since, by the usage log); the editor log misses 10/30, 11/2, 11/4; the fact-checker log misses 11/2 and 11/4; the os-curator log stops at run 2 (run 3 is only in the 10/30 report). Second week running for worker logs.
+- **Folders 60+ days:** not checkable from the cloud clone.
+- **Registry coverage:** every agent and skill has a row.
 
 ## Sources read
 - **Files:** root MEMORY.md, chief of staff memory and log, handoffs.md, the 10/30 report, COO, CMO, pilot-loop, worker and usage logs (10/30 to 11/6), registry snapshot. Max Income and apriliapeace were not read (not in the repo).
 - **Asana (read by the seat; the asana-specialist could not run in the cloud):** My Tasks completed since 10/30 and open through 11/13; AI Workforce, REInvest, REACH open tasks; workspace open tasks due on or before today (100-result cap).
 - **Other:** Google Calendar 11/6 to 11/13; registry render.
 - **Could not read:** desktop scheduled-task run history, the registry alertClears database, folder ages (the clone resets them), activity on team projects flagged stale last week (REbuild Podcast Build Out, Five Star Branding & Talent Plan, Task Force Client WOW, Escrow L&D), next week's minute totals (Estimated time not pulled).
-- **Verified:** 14 by get_task, 0 by Gmail, 4 by log and source. Could not verify: 1 (reel engine v5.1 install).
+- **Verified:** 14 by get_task, 0 by Gmail, 5 by log and source (reel engine v5.1 live 10/30 per root MEMORY.md). Could not verify: 0.

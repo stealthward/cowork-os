@@ -452,3 +452,16 @@ Writes: 11 chapter subtasks assigned to Brett, dated (Ch 2 11/6 to Ch 1 2027-01-
 - Writes (Brett-directed), Today section: Rank 1 Place each team member in a seat tier (1220226639855646), 2 Upgrade to Claude Team (1219342602318655), 3 Send Factory show topics (1219341016667140), 4 Post LinkedIn reel Ep 1 R4 (1220051251508450), 5 9 of 10 (1219342644489288), 6+ Edit LinkedIn headline (1219122746065391), 11/05 Social Content Review (1218619467913913), Boost LiL (1218396789640791), Top 20 (1219186260590573), CMO PoC master (1219342714813882); Create the workforce account (1220226651451288) 11/6 to 11/5, 6+. Created Brian Daly REInvest email (1220236635035844), REInvest Partner tier section, 11/5, 60 min, 6+, no description (Brett gave none). 12 of 12 succeeded; all re-read. Thu 285; Fri about 380.
 - Top three confirmed: seat tier, Claude Team upgrade, show topics.
 - Brett (re-sort): short operations tasks first, content and writing after. Writes (Brett-directed): Rank 1 Boost LiL (1218396789640791), 2 Top 20 (1219186260590573), 3 seat tier (1220226639855646), 4 Claude Team upgrade (1219342602318655), 5 workforce account (1220226651451288); 6+ show topics (1219341016667140), LinkedIn reel (1220051251508450), 9 of 10 (1219342644489288). 8 of 8 succeeded; all 12 Thursday tasks re-read. Boost LiL treated as operations (5 min).
+
+## 2026-11-06 (Friday report, cloud test session)
+- Request: "Chief of staff, run the Friday report."
+- Sources: root MEMORY.md, own memory and log, handoffs.md (1 open row to the chief of staff: Asana sign-in), 10/30 report, COO, CMO, pilot-loop, worker and usage logs 10/30 to 11/6; Asana My Tasks (completed since 10/30, open through 11/13), AI Workforce, REInvest, REACH open tasks, workspace open tasks due on or before 11/6; Google Calendar 11/6 to 11/13; registry render. Not read: Max Income, apriliapeace, email.
+- asana-specialist not dispatched: its tool list names the desktop connector ID, absent in the cloud (cloud-test-log.md). Seat read Asana directly.
+- os-curator run 4 dispatched: 85 lines, 21 findings, 5 run-3 top items fixed, 4 calls for Brett.
+- Verified: 14 by get_task, 0 by Gmail, 5 by log and source; could not verify: 0.
+- Off the stalled list: Asana audit round 1 (last two subtasks complete by get_task).
+- Raised: pilot loop rule edits blocked on Asana sign-in (2 days); Upgrade to Claude Team dated today vs held Prerequisite; Factory show prep 11/10 vs calendar 11/11; duplicate Shoot A in Marketing Projects (team, unassigned, 11/4).
+- Collision raised: cloud test vs the desktop sign-in the pilot loop needs.
+- Asana writes: completed "Friday Report" (1220068917169740) per Brett's standing instruction (10/16).
+- Registry: rendered, not republished (brief); snapshot left at 10/30. Push to GitHub refused (403), commits local.
+- Report: logs/2026-11-06-friday-report.md

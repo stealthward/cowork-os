@@ -70,3 +70,4 @@ _Personal Layer. Read by the chief-of-staff seat on load; appended at the end of
 
 - 2026-11-04 (Brett): when he asks to add a task by name in the answer box (Brian Daly REInvest email), search first; the old Daly/WeRevive subtask was complete, so a new one was created in REInvest Partner tier with only what he stated. A Studio task can show complete before its date when the shoot is canceled; ask rather than reopen.
 - 2026-11-04 (Brett): he wants short operations tasks ranked first and all content and writing after, so build the day ops block first. Rank tops out at 6+, so order inside the content block is not shown in Asana.
+- 2026-11-06: in a cloud session the asana-specialist has no Asana tools (desktop connector ID in its tool list), so the seat reads Asana itself; desktop scheduled-task history, alertClears, and folder ages are also unreadable there. Report those as could-not-read, never as clean.

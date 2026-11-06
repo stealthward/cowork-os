@@ -59,3 +59,6 @@ Not findings (traps): line 17 "delete after 2026-10-16" is still in the future; 
 ## 2026-10-22 (weekly root MEMORY audit, run 2, Friday report run Thursday)
 - Result: 106 of 150 lines; 21 findings (18 carried, 3 new: attribution delete date past, reel engine v4 vs v5, Aprilia Peace queue status); fixed since 10/16: none.
 - Graded by the seat: all 6 prior misses caught; 1 miss (Real Talk Factory row links archived project 1214560093184793); 0 false positives. Scores: 1 counts 5; 2 findings 3 (one miss); 3 drift 5; 4 nothing invented 5; 5 coverage 5. Weighted about 4.5; one miss short of baseline match, so the seat keeps auditing alongside. Row 7 (nextdoor time) resolved by the scheduled-task list: cron 8:30, MEMORY.md 8:37 stale.
+
+## 2026-11-06 run 4 (dispatched by the chief of staff, Friday report, cloud session)
+- Root MEMORY.md 85 of 150; 21 findings (12 open since run 3, 6 new, 2 reworked, 1 sentence-count set). Run 3's five top items fixed. Calls for Brett: Real Talk Factory status, Investor Database tracker link, Cowork Setup entry, three Team-section behavior rules. Note: run 3 (10/30) was not logged here; it is in the 10/30 Friday report.

@@ -512,3 +512,5 @@ One line per run, every agent and skill, appended by the run itself when it can 
 2026-11-05 | session-audit | opus | 5 findings approved and applied (root MEMORY, project CLAUDE.md, registry, repo task)
 2026-11-05 | coo | opus | team setup scenario vetting page; launch dates held
 2026-11-05 | coo | opus | cloud-only feasibility page; Remote Control interim check
+2026-11-06 | os-curator | sonnet | Run 4 root MEMORY.md audit: 85 lines, 21 findings, 4 calls for Brett (cloud session)
+2026-11-06 | chief-of-staff | claude-opus-5-5 | Friday report (week of 11/2) saved from the cloud test session; Friday Report task closed; push refused 403
