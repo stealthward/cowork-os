@@ -1,0 +1,42 @@
+{
+  "_about": "Run activity render.py cannot read from a local log: desktop scheduled-task run history (dates only, no summaries) and the attribution task's dated output sheets in Drive. Dates are Pacific. A session refreshes this before each republish; the page raises an alert when it is over 7 days old.",
+  "asOf": "2026-10-30",
+  "rows": {
+    "ai-workforce-sunday-kickoff": {
+      "source": "Desktop scheduled task run history",
+      "runs": [
+        {
+          "date": "2026-09-20"
+        }
+      ]
+    },
+    "fse-client-attribution-weekly": {
+      "source": "Dated output sheets in its Drive folder",
+      "runs": [
+        {
+          "date": "2026-09-11",
+          "summary": "Sheet FSE Client Attribution 2026-09-11"
+        },
+        {
+          "date": "2026-09-18",
+          "summary": "Sheet FSE Client Attribution 2026-09-19"
+        },
+        {
+          "date": "2026-10-02",
+          "summary": "Sheet FSE Client Attribution 2026-09-26 (created Oct 2, 9:51 AM)"
+        },
+        {
+          "date": "2026-10-02",
+          "summary": "Sheet FSE Client Attribution 2026-10-03 (created Oct 2, 6:07 PM)"
+        }
+      ]
+    }
+  },
+  "loggingSince": {
+    "session-audit": "2026-10-07",
+    "handoff": "2026-10-07",
+    "reconcile": "2026-10-07",
+    "alignment-check": "2026-10-07",
+    "factory-cut-sheet": "2026-10-07"
+  }
+}

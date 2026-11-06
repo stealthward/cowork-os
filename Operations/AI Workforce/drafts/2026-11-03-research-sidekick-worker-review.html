@@ -1,0 +1,126 @@
+<title>Research Sidekick Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: single reading column, verdict first, evidence tables after */
+:root{
+  --bg:#f7f8f6; --surface:#ffffff; --fg:#1d2420; --muted:#5b6660; --line:#d9ded9; --accent:#2f6b4f;
+  --pass:#2f6b4f; --warn:#9a6a12; --fail:#a3392f; --add:#e6f2ea; --del:#f8e6e3;
+  --display:"Source Serif 4", Georgia, serif; --body:"IBM Plex Sans", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1c2320; --fg:#e4e9e5; --muted:#9aa6a0; --line:#2f3934; --accent:#7fc4a0;
+  --pass:#7fc4a0; --warn:#e0b25a; --fail:#ec8a7f; --add:#1f3a2c; --del:#3d2422; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1c2320; --fg:#e4e9e5; --muted:#9aa6a0; --line:#2f3934; --accent:#7fc4a0;
+  --pass:#7fc4a0; --warn:#e0b25a; --fail:#ec8a7f; --add:#1f3a2c; --del:#3d2422; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55}
+main{max-width:860px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:1.9rem} h2{font-size:1.3rem;margin-bottom:8px}
+p{margin:0 0 8px;max-width:68ch}
+.meta{color:var(--muted);font-size:.85rem;letter-spacing:.02em}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:16px 18px;border-radius:6px}
+.verdict strong{color:var(--accent)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+td.n{text-align:right;white-space:nowrap}
+.pill{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:10px;border:1px solid currentColor}
+.ok{color:var(--pass)} .wn{color:var(--warn)} .bad{color:var(--fail)}
+ul{margin:0;padding-left:20px} li{margin-bottom:4px}
+.diff{font-family:var(--mono);font-size:.82rem;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px;white-space:pre-wrap;overflow-x:auto}
+.diff .a{background:var(--add);display:block} .diff .d{background:var(--del);display:block;text-decoration:line-through}
+.note{font-size:.82rem;color:var(--muted)}
+</style>
+<main>
+<header>
+<div class="meta">CMO worker review · 3 of 3: Research sidekick · 2026-11-03</div>
+<h1>Research sidekick review</h1>
+</header>
+
+<section class="verdict">
+<p><strong>Recommendation: keep the worker on sonnet, and fix the eval.</strong> All three gate briefs pass the eval on rescore (4.23, 4.69, 4.54 against a 4.0 bar, no auto-fails). Brett's one "Partly" came from a missed source (Gmail and Smartsheet), already fixed in the agent file on 10/16. That is a coverage gap, not a reasoning gap, so a model promotion would buy nothing. The eval itself has four gaps: it scores revised briefs instead of first drafts, it has no criteria for topic research (most runs since the gate), its cost rule contradicts the agent file, and nothing records tokens.</p>
+</section>
+
+<section>
+<h2>Cost per brief</h2>
+<p class="note">Paid spend is from the usage log and research-sidekick-log.md. Tokens are from the eval table; the usage log records none. Token dollars are a labeled calculation at the Sonnet 5 rates in model-selection.md ($2 input, $10 output per million, cached 2026-06-24). The log has no input/output split, so the range runs from all-input to all-output. The Sonnet 5.5 rate is not in the file.</p>
+<div class="wrap"><table>
+<tr><th>Run</th><th>Type</th><th>Paid lookups</th><th>Tokens</th><th>Token cost range</th></tr>
+<tr><td>Dean Aguilar, 10/13</td><td>Person brief</td><td class="n">$0</td><td class="n">96K</td><td class="n">$0.19 to $0.96</td></tr>
+<tr><td>Brian Daly, 10/15</td><td>Person brief</td><td class="n">$0</td><td class="n">134K</td><td class="n">$0.27 to $1.34</td></tr>
+<tr><td>Greg Noonan, 10/16</td><td>Person brief</td><td class="n">about $0.04</td><td class="n">223K</td><td class="n">$0.45 to $2.23</td></tr>
+<tr><td>Jim McInerney gathers 1 to 3, 10/14 to 10/16</td><td>Blueprint gather</td><td class="n">$2.25, $1.59, $1.76 (avg $1.87)</td><td class="n">not logged</td><td class="n">unknown</td></tr>
+<tr><td>Seven topic runs, 10/02 to 10/29</td><td>Topic research</td><td class="n">$0 to $2.00; about $2.60 total</td><td class="n">not logged</td><td class="n">unknown</td></tr>
+</table></div>
+<ul>
+<li><strong>Per person brief:</strong> about $0.01 paid on average, plus roughly 150K tokens (about $0.30 to $1.51 at the file rates).</li>
+<li><strong>Per Blueprint gather:</strong> $1.87 average paid, well under the $5 cap.</li>
+<li><strong>All 13 runs:</strong> about $8.24 paid in total (labeled calculation from logged figures).</li>
+<li><strong>Logging gaps:</strong> the Dean Aguilar brief has no usage-log line, the Noonan line omits its $0.04, and no line carries tokens. Rule 2 of model-selection.md asks for tokens per run.</li>
+</ul>
+</section>
+
+<section>
+<h2>Eval rerun: the three gate briefs</h2>
+<p class="note">CMO scores on research-sidekick-eval.md v1.0, scored on the files as they stand today. The Brian Daly file is the revised version, after Brett's review added Gmail and Smartsheet.</p>
+<div class="wrap"><table>
+<tr><th>Criterion (weight)</th><th>Dean Aguilar</th><th>Brian Daly</th><th>Greg Noonan</th></tr>
+<tr><td>1. Sourced and dated (3)</td><td class="n">4</td><td class="n">5</td><td class="n">5</td></tr>
+<tr><td>2. Answers first (2)</td><td class="n">5</td><td class="n">5</td><td class="n">5</td></tr>
+<tr><td>3. Nothing unverified as fact (3)</td><td class="n">4</td><td class="n">5</td><td class="n">5</td></tr>
+<tr><td>4. Avatar and door (2)</td><td class="n">4</td><td class="n">5</td><td class="n">4</td></tr>
+<tr><td>5. Act without sources (2)</td><td class="n">4</td><td class="n">3</td><td class="n">4</td></tr>
+<tr><td>6. Cost discipline (1)</td><td class="n">5</td><td class="n">5</td><td class="n">3</td></tr>
+<tr><th>Weighted</th><th class="n ok">4.23 pass</th><th class="n ok">4.69 pass</th><th class="n ok">4.54 pass</th></tr>
+<tr><td>Brett's rating</td><td>Useful</td><td>Partly</td><td>Useful</td></tr>
+</table></div>
+<ul>
+<li><strong>Dean (4s):</strong> the culture claim cites Asana reel tasks with no task IDs; "founder and team leader" is stated as fact while his current title sits under Could not verify; no why-now and no opener.</li>
+<li><strong>Brian (5 = 3):</strong> 1,428 words, nearly three pages. The opener was left out on instruction, which is correct.</li>
+<li><strong>Noonan (6 = 3):</strong> two Apify runs at $0.04 without Brett's ask. The agent file allows one lookup without staging; the eval allows none. They disagree, which is a fix for the eval. Criterion 4 = 4: the opener names Real Talk Media and Five Star, close to the give-first line, though it does not pitch.</li>
+<li><strong>Where the eval misses Brett:</strong> the rescore gives Brian the top score, but Brett rated it Partly. The eval scored the corrected file, not the first draft he saw. That is the main fix.</li>
+</ul>
+</section>
+
+<section>
+<h2>Against the CMO definition of good</h2>
+<div class="wrap"><table>
+<tr><th>Rule</th><th>Result</th></tr>
+<tr><td>1. Labeled, names source and avatar</td><td><span class="pill ok">holds</span> every brief names its initiative, sources, and avatar</td></tr>
+<tr><td>2. Never invents a figure or fact</td><td><span class="pill ok">holds</span> Noonan's $113.8M is a labeled calculation from Zoho rows; the WeRevive miss was an omission, not an invention</td></tr>
+<tr><td>3. Growth strategy holds</td><td><span class="pill wn">watch</span> no conflated avatars or pitches; Noonan's opener names both companies</td></tr>
+<tr><td>4. Ties to an initiative</td><td><span class="pill ok">holds</span> 7a, 7, 8</td></tr>
+<tr><td>5. Brett can act from the output alone</td><td><span class="pill wn">watch</span> Brian's brief runs long</td></tr>
+<tr><td>6. Nothing sent, posted, or written without a go</td><td><span class="pill ok">holds</span> zero contacts and zero Zoho writes in all 13 runs</td></tr>
+</table></div>
+<p class="note">Operating limits seen in the log, none of them grading issues: the worker cannot run code, save raw JSON, or append to a log. The CMO already covers each step, per the 10/16 and 10/29 memory entries.</p>
+</section>
+
+<section>
+<h2>Proposed eval edits (v1.0 to v1.1)</h2>
+<p class="note">File: Operations/AI Workforce/evals/research-sidekick-eval.md, plus one line in .claude/agents/research-sidekick.md.</p>
+<div class="diff"><span class="d">**Version:** 1.0, 2026-09-24</span><span class="a">**Version:** 1.1, 2026-11-03 (worker review under the CMO)</span>
+<span class="d">**Used by:** Brett on the first three briefs (one Rebuild guest, one investor, one prospect); the editor does not grade research</span><span class="a">**Used by:** Brett on the first three briefs (done 2026-10-16); since then the CMO scores every brief's first draft before Brett sees it and records it in the run table. The editor does not grade research.</span>
+<span class="a">Score the first draft. A brief revised after Brett's review keeps its first-draft score; the revision gets its own row.</span>
+4. Right avatar, right door (weight 2)
+<span class="a">For a topic or scope: a 5 names the decision, the initiative or plan it feeds, and what changes with each answer. Avatar and door are N/A.</span>
+5. Brett can act without opening the sources (weight 2)
+<span class="d">A 5: one page or less, a facts table, ...</span><span class="a">A 5: one page or less (about 600 words; a Blueprint gather pack is exempt), a facts table, ...</span>
+6. Cost discipline (weight 1)
+<span class="d">A 5: no paid lookup unless Brett asked for contact data on a named person; one Tracerfy hit at most per person. A 1: paid runs Brett did not ask for.</span><span class="a">A 5: Tracerfy only when Brett asked for contact data on a named person (one hit per person); Apify within the agent file (one small lookup without staging, a Blueprint gather up to $5, anything more staged); tokens and paid cost on the usage-log line. A 1: a paid run Brett did not approve, or cost not logged.</span>
+<span class="a">## Run table (after the first three)
+| Date | Brief | Type | CMO score | Brett's rating | Tokens | Paid |
+| 2026-11-03 | Rescore of the first three | Person | 4.23 / 4.69 / 4.54 | Useful / Partly / Useful | 96K / 134K / 223K | $0 / $0 / $0.04 |</span>
+
+research-sidekick.md, Usage log line:
+<span class="d">`YYYY-MM-DD | research-sidekick | model that ran | one-line summary`</span><span class="a">`YYYY-MM-DD | research-sidekick | model that ran | one-line summary; paid $X (or $0); tokens filled in by the dispatching seat`</span></div>
+</section>
+
+<section>
+<h2>Why not promote</h2>
+<p>Promotion here means moving the worker up a model tier. Rule 1 of model-selection.md says the cheapest model that passes the check wins, and the sonnet worker passes. Its one miss was a source it was never told to read, fixed by an input rule on 10/16. Opus would cost about 2.5 times as much per token at the file rates and would not have found Gmail on its own.</p>
+</section>
+</main>

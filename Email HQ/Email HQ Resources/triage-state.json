@@ -1,0 +1,1025 @@
+{
+  "_comment": "State file for the morning-inbox-triage scheduled task. Written by the task on every run. Do not edit by hand unless resetting. Keyed on Gmail threadId; lastMessageId is what makes a seen thread re-surface when a new message lands on it.",
+  "schemaVersion": 1,
+  "lastRunAt": "2026-11-05T11:10:00-08:00",
+  "lastRollupAt": "2026-11-05T07:08:00-08:00",
+  "seen": {
+    "19f14cc6d6a5f255": {
+      "threadId": "19f14cc6d6a5f255",
+      "lastMessageId": "1a19d31aa5826530",
+      "subject": "Re: Listing Missing in Zoho (& CRMLS searches)",
+      "from": "andrew@aetherautomation.com (to Elizabeth, Brett cc)",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-02T11:10:00-08:00"
+    },
+    "1a155d998a210d72": {
+      "threadId": "1a155d998a210d72",
+      "lastMessageId": "1a1a299baa4713f8",
+      "subject": "RE: RE: New Escrow and Escrow Lookup: please work in the Hub starting today",
+      "from": "admin@fivestarescrow.com / vjamison",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-03T11:08:00-08:00"
+    },
+    "1a164855c42eec65": {
+      "threadId": "1a164855c42eec65",
+      "lastMessageId": "1a164855c42eec65",
+      "subject": "Video cannot be monetized: Discover Ramona Ep. 76",
+      "from": "no-reply@youtube.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-22T11:10:00-07:00"
+    },
+    "1a165251c83088cc": {
+      "threadId": "1a165251c83088cc",
+      "lastMessageId": "1a16525b3bbfc9fb",
+      "subject": "(no subject) session-4-listing-velocity-slides PDF",
+      "from": "brett@brettward.net",
+      "classification": "AMBIGUOUS (self-sent PDF scan, no body; left in inbox)",
+      "firstSurfaced": "2026-10-22T15:05:00-07:00"
+    },
+    "1a1651614a495550": {
+      "threadId": "1a1651614a495550",
+      "lastMessageId": "1a1651614a495550",
+      "subject": "Friday Ideas",
+      "from": "feliciacward@gmail.com",
+      "classification": "FYI/personal (Felicia SLC trip ideas, to Jalyn and Brett; left in inbox)",
+      "firstSurfaced": "2026-10-22T15:05:00-07:00"
+    },
+    "1a168c02475a4cb9": {
+      "threadId": "1a168c02475a4cb9",
+      "lastMessageId": "1a168c02475a4cb9",
+      "subject": "Red Dress Gala 2026 | Know Before You Go",
+      "from": "live@prosend.gofundme.com",
+      "classification": "FYI, Utah rule (left in inbox; gala tonight)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a168067e01c3656": {
+      "threadId": "1a168067e01c3656",
+      "lastMessageId": "1a168067e01c3656",
+      "subject": "REMINDER: Birthday in 3 Days",
+      "from": "automation@app.smartsheet.com",
+      "classification": "FYI, never-archive rule (left in inbox)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a167dee85d6182e": {
+      "threadId": "1a167dee85d6182e",
+      "lastMessageId": "1a167dee85d6182e",
+      "subject": "Hyatt Regency SLC online check-in",
+      "from": "noreply@reservations.hyatt.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a166f24b6742ede": {
+      "threadId": "1a166f24b6742ede",
+      "lastMessageId": "1a166f24b6742ede",
+      "subject": "One Claude.",
+      "from": "ruben@substack.com",
+      "classification": "FYI, Ruben rule (left in inbox)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a1669103e3d3f98": {
+      "threadId": "1a1669103e3d3f98",
+      "lastMessageId": "1a1669103e3d3f98",
+      "subject": "AutoReel video Kurt Kinsey",
+      "from": "hello@autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a16671a057c77dd": {
+      "threadId": "1a16671a057c77dd",
+      "lastMessageId": "1a16671a057c77dd",
+      "subject": "AutoReel edit Woody Henderson",
+      "from": "hello@autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a1666b5db48ac79": {
+      "threadId": "1a1666b5db48ac79",
+      "lastMessageId": "1a1666b5db48ac79",
+      "subject": "AutoReel video Woody Henderson",
+      "from": "hello@autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a166443eb49f6f3": {
+      "threadId": "1a166443eb49f6f3",
+      "lastMessageId": "1a166443eb49f6f3",
+      "subject": "AutoReel edit Bryan Devore",
+      "from": "hello@autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a1663d59dfc96a7": {
+      "threadId": "1a1663d59dfc96a7",
+      "lastMessageId": "1a1663d59dfc96a7",
+      "subject": "AutoReel video Bryan Devore",
+      "from": "hello@autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a165c98201bb6fc": {
+      "threadId": "1a165c98201bb6fc",
+      "lastMessageId": "1a165c98201bb6fc",
+      "subject": "Elizabeth mentioned you: Determine One-off Charge Process",
+      "from": "no-reply@asana.com",
+      "classification": "RESPONSE-WORTHY (Asana mention; left in inbox)",
+      "firstSurfaced": "2026-10-23T07:10:00-07:00"
+    },
+    "1a169dc4df1595d4": {
+      "threadId": "1a169dc4df1595d4",
+      "lastMessageId": "1a169dc4df1595d4",
+      "subject": "Alamo Reservation Confirmation 78774647 has been Checked-In",
+      "from": "reservations@goalamo.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T11:10:00-07:00"
+    },
+    "1a169d2ed39a519c": {
+      "threadId": "1a169d2ed39a519c",
+      "lastMessageId": "1a169d2ed39a519c",
+      "subject": "AutoReel video edit for Jim's La Jolla B-Roll is ready",
+      "from": "hello@mail.autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T11:10:00-07:00"
+    },
+    "1a169a00fac35a26": {
+      "threadId": "1a169a00fac35a26",
+      "lastMessageId": "1a169a00fac35a26",
+      "subject": "AutoReel video edit for Kurt Kinsey - 17348 Via Del Campo is ready",
+      "from": "hello@mail.autoreelapp.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T11:10:00-07:00"
+    },
+    "1a169882757f8cbb": {
+      "threadId": "1a169882757f8cbb",
+      "lastMessageId": "1a169882757f8cbb",
+      "subject": "Reach holiday shoppers in ChatGPT",
+      "from": "noreply@email.openai.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T11:10:00-07:00"
+    },
+    "1a16acaf70196323": {
+      "threadId": "1a16acaf70196323",
+      "lastMessageId": "1a16acaf70196323",
+      "subject": "Brett, you're now an IHG One Rewards member",
+      "from": "IHGOneRewards@tx.ihg.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16ac876e80e7b8": {
+      "threadId": "1a16ac876e80e7b8",
+      "lastMessageId": "1a16ac876e80e7b8",
+      "subject": "NETGEAR INSIGHT FREE TRIAL EXPIRING SOON",
+      "from": "insightalerts@netgear.com",
+      "classification": "AMBIGUOUS (Insight trial expires in 7 days, ~10/30; same notice as earlier thread; left in inbox)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16ab5286f94b10": {
+      "threadId": "1a16ab5286f94b10",
+      "lastMessageId": "1a16ab5286f94b10",
+      "subject": "Your Google Analytics performance report is in for September 26th - October 23rd",
+      "from": "analytics-noreply@google.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16a9f153fb40cd": {
+      "threadId": "1a16a9f153fb40cd",
+      "lastMessageId": "1a16a9f153fb40cd",
+      "subject": "Asana payment confirmation",
+      "from": "customer-service@asana.com",
+      "classification": "FYI (receipt; archived)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16a8e9a436367f": {
+      "threadId": "1a16a8e9a436367f",
+      "lastMessageId": "1a16a8e9a436367f",
+      "subject": "You have a new message in MyScripps",
+      "from": "MyScrippsDoNotReply@myscripps.org",
+      "classification": "RESPONSE-WORTHY (personal: new MyScripps message for Nyla; left in inbox)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16a402360e77fc": {
+      "threadId": "1a16a402360e77fc",
+      "lastMessageId": "1a16a402360e77fc",
+      "subject": "Your receipt from Anthropic, PBC #2019-6501-4282",
+      "from": "invoice+statements@mail.anthropic.com",
+      "classification": "FYI (receipt; archived)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16a1fc3a1b479e": {
+      "threadId": "1a16a1fc3a1b479e",
+      "lastMessageId": "1a16a1fc3a1b479e",
+      "subject": "Weekly Ops & Optimization Summary | October 19 - 23, 2026",
+      "from": "elizabeth@realtalkmedia.com",
+      "classification": "RESPONSE-WORTHY (Elizabeth weekly ops report; left in inbox)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a169f20ae5a7965": {
+      "threadId": "1a169f20ae5a7965",
+      "lastMessageId": "1a169f20ae5a7965",
+      "subject": "Alamo Rental Agreement 245234139",
+      "from": "DoNotReply@alamo.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-23T15:10:00-07:00"
+    },
+    "1a16e0b48683994a": {
+      "threadId": "1a16e0b48683994a",
+      "lastMessageId": "1a16e0b48683994a",
+      "subject": "Venmo Quarterly Statement",
+      "from": "venmo@venmo.com",
+      "classification": "FYI (statement; archived)",
+      "firstSurfaced": "2026-10-24T07:05:00-07:00"
+    },
+    "1a16b1d42642b54d": {
+      "threadId": "1a16b1d42642b54d",
+      "lastMessageId": "1a16b1d42642b54d",
+      "subject": "Falcon Newsletter 10/23/26",
+      "from": "donotreply@parentsquare.com",
+      "classification": "FYI (school newsletter; archived)",
+      "firstSurfaced": "2026-10-24T07:05:00-07:00"
+    },
+    "1a16b1184401b559": {
+      "threadId": "1a16b1184401b559",
+      "lastMessageId": "1a16b1184401b559",
+      "subject": "Weekly summary for Nyla Ward",
+      "from": "no-reply@classroom.google.com",
+      "classification": "FYI, Nyla Classroom rule (left in inbox)",
+      "firstSurfaced": "2026-10-24T07:05:00-07:00"
+    },
+    "1a16f6dfd52f4a08": {
+      "threadId": "1a16f6dfd52f4a08",
+      "lastMessageId": "1a16f6dfd52f4a08",
+      "subject": "New sign-in to your OpenAI account",
+      "from": "noreply@tm.openai.com",
+      "classification": "FYI (sign-in notice, Salt Lake City matches trip; archived)",
+      "firstSurfaced": "2026-10-24T15:05:00-07:00"
+    },
+    "1a17299158df65a8": {
+      "threadId": "1a17299158df65a8",
+      "lastMessageId": "1a17299158df65a8",
+      "subject": "Your domain is about to expire.",
+      "from": "noreply@zohoaccounts.com",
+      "classification": "RESPONSE-WORTHY (fivestarescrow.com domain expires 2026-11-09, Zoho notice; left in inbox)",
+      "firstSurfaced": "2026-10-25T07:05:00-07:00"
+    },
+    "1a174e684ed4c6d8": {
+      "threadId": "1a174e684ed4c6d8",
+      "lastMessageId": "1a174e684ed4c6d8",
+      "subject": "Your Bill Is Ready",
+      "from": "donotreply@notifications.t-mobile.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-25T15:05:00-07:00"
+    },
+    "1a1747b43bfd3be5": {
+      "threadId": "1a1747b43bfd3be5",
+      "lastMessageId": "1a1747b43bfd3be5",
+      "subject": "Alamo Rental Agreement 245234139",
+      "from": "Customerservice@goalamo.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-25T15:05:00-07:00"
+    },
+    "1a17444ac7e1c6a8": {
+      "threadId": "1a17444ac7e1c6a8",
+      "lastMessageId": "1a17444ac7e1c6a8",
+      "subject": "Your Grazzy Receipt",
+      "from": "support@grazzy.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-25T15:05:00-07:00"
+    },
+    "1a174bea38c1f510": {
+      "threadId": "1a174bea38c1f510",
+      "lastMessageId": "1a174bea38c1f510",
+      "subject": "Please complete eCheck-in before your appointment",
+      "from": "MyScrippsDoNotReply@myscripps.org",
+      "classification": "RESPONSE-WORTHY (personal)",
+      "firstSurfaced": "2026-10-25T15:05:00-07:00"
+    },
+    "1a1749cfaad890f4": {
+      "threadId": "1a1749cfaad890f4",
+      "lastMessageId": "1a1749cfaad890f4",
+      "subject": "Security alert for jalynkate@gmail.com",
+      "from": "no-reply@accounts.google.com",
+      "classification": "AMBIGUOUS (left in inbox)",
+      "firstSurfaced": "2026-10-25T15:05:00-07:00"
+    },
+    "1a1787a233e65851": {
+      "threadId": "1a1787a233e65851",
+      "lastMessageId": "1a1787a233e65851",
+      "subject": "ChatGPT Business admin update: slides, data plugin, and chrome extension",
+      "from": "noreply@email.openai.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-26T07:15:00-07:00"
+    },
+    "1a1776378bd9ed45": {
+      "threadId": "1a1776378bd9ed45",
+      "lastMessageId": "1a1776378bd9ed45",
+      "subject": "We\u2019ve received your Connect+ payment",
+      "from": "hello@em.rivian.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-26T07:15:00-07:00"
+    },
+    "1a17948e51afcb69": {
+      "threadId": "1a17948e51afcb69",
+      "lastMessageId": "1a17948e51afcb69",
+      "subject": "FSE cash position",
+      "from": "brooke@hqoffice365.com",
+      "classification": "AMBIGUOUS (signature-only body, image001.png; unfamiliar hqoffice365.com sender; left in inbox)",
+      "firstSurfaced": "2026-10-26T11:05:00-07:00"
+    },
+    "1a1793ce7314cb89": {
+      "threadId": "1a1793ce7314cb89",
+      "lastMessageId": "1a1793ce7314cb89",
+      "subject": "Video cannot be monetized: Discover East County EP. 34 With Andrew Lawson",
+      "from": "no-reply@youtube.com",
+      "classification": "FYI (YouTube demonetization rule; archived)",
+      "firstSurfaced": "2026-10-26T11:05:00-07:00"
+    },
+    "1a17923d99c8fa6f": {
+      "threadId": "1a17923d99c8fa6f",
+      "lastMessageId": "1a17923d99c8fa6f",
+      "subject": "Elizabeth mentioned you: Updated FAQ Process 10/26/26",
+      "from": "no-reply@asana.com",
+      "classification": "RESPONSE-WORTHY (Asana mention; left in inbox)",
+      "firstSurfaced": "2026-10-26T11:05:00-07:00"
+    },
+    "1a17ddff9f608ba1": {
+      "threadId": "1a17ddff9f608ba1",
+      "lastMessageId": "1a17ddff9f608ba1",
+      "subject": "witness statement, case 06148000",
+      "from": "jleddy@sandiego.gov (City of San Diego Stormwater)",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-27T09:25:00-07:00"
+    },
+    "1a17bbf5d9221d6e": {
+      "threadId": "1a17bbf5d9221d6e",
+      "lastMessageId": "1a17bbf5d9221d6e",
+      "subject": "Who writes this?",
+      "from": "ruben@substack.com",
+      "classification": "FYI (Ruben Hassid never-archive rule; left in inbox)",
+      "firstSurfaced": "2026-10-27T09:25:00-07:00"
+    },
+    "1a165574812e6b13": {
+      "threadId": "1a165574812e6b13",
+      "lastMessageId": "1a17e1d32107608c",
+      "subject": "For Brett - an introduction",
+      "from": "chris.meade@entrepreneurcohortlabs.com",
+      "classification": "SOLICITATION (routed)",
+      "firstSurfaced": "2026-10-27T09:25:00-07:00"
+    },
+    "1a17e45080c707e9": {
+      "threadId": "1a17e45080c707e9",
+      "lastMessageId": "1a17e45080c707e9",
+      "subject": "Elizabeth mentioned you: CRMLS sync rules: consolidated list for Elizabeth's approval",
+      "from": "Asana (Elizabeth Eidbo)",
+      "classification": "RESPONSE-WORTHY (Asana mention; likely already answered by email thread; left in inbox)",
+      "firstSurfaced": "2026-10-27T11:10:00-07:00"
+    },
+    "1a17f16f5e8fe3cf": {
+      "threadId": "1a17f16f5e8fe3cf",
+      "lastMessageId": "1a17f16f5e8fe3cf",
+      "subject": "Recap for FSE Finance Mtg.",
+      "from": "no-reply@spinach.ai",
+      "classification": "FYI",
+      "firstSurfaced": "2026-10-27T15:05:00-07:00"
+    },
+    "1a17e79236d56827": {
+      "threadId": "1a17e79236d56827",
+      "lastMessageId": "1a1a40fe52097891",
+      "subject": "Re: coming Q1",
+      "from": "kim@everythingcreativedesigns.com",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-11-03T11:08:00-08:00"
+    },
+    "1a17f80e178e6270": {
+      "threadId": "1a17f80e178e6270",
+      "lastMessageId": "1a17f80e178e6270",
+      "subject": "A new login detected",
+      "from": "Guardian Life (no-reply@glic.com)",
+      "classification": "AMBIGUOUS (left in inbox, ambiguous)",
+      "firstSurfaced": "2026-10-28T07:20:00-07:00"
+    },
+    "1a17fcc731db3e0e": {
+      "threadId": "1a17fcc731db3e0e",
+      "lastMessageId": "1a17fcc731db3e0e",
+      "subject": "Your receipt from Vidonary #2700-3986",
+      "from": "Vidonary (Stripe)",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-28T07:20:00-07:00"
+    },
+    "1a17f715cb614f81": {
+      "threadId": "1a17f715cb614f81",
+      "lastMessageId": "1a17f715cb614f81",
+      "subject": "New invoice from Netlify, Inc. (#HYCTTT-00007)",
+      "from": "Netlify",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-28T07:20:00-07:00"
+    },
+    "1a18042a3dbb3fbe": {
+      "threadId": "1a18042a3dbb3fbe",
+      "lastMessageId": "1a18042a3dbb3fbe",
+      "subject": "Accepted: Jim+Brett call re: REInvest, Wed 10/28 2:45pm PDT",
+      "from": "Jim (Hawthorn and Albatross)",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-28T07:20:00-07:00"
+    },
+    "1a183952f2ece8f0": {
+      "threadId": "1a183952f2ece8f0",
+      "lastMessageId": "1a183952f2ece8f0",
+      "subject": "Investment Properties-",
+      "from": "ryan@fruitfulhomesolutions.com",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-28T11:05:00-07:00"
+    },
+    "1a182e9d82a95c4f": {
+      "threadId": "1a182e9d82a95c4f",
+      "lastMessageId": "1a182e9d82a95c4f",
+      "subject": "Fwd: The Morning: A.I. by the numbers",
+      "from": "feliciacward@gmail.com",
+      "classification": "FYI (personal) (left in inbox)",
+      "firstSurfaced": "2026-10-28T11:05:00-07:00"
+    },
+    "1a18486847bd4a9d": {
+      "threadId": "1a18486847bd4a9d",
+      "lastMessageId": "1a18486847bd4a9d",
+      "subject": "Fwd: End of Year projection / Questions",
+      "from": "feliciacward@gmail.com",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-28T15:05:00-07:00"
+    },
+    "1a1840d40881b96a": {
+      "threadId": "1a1840d40881b96a",
+      "lastMessageId": "1a19d105b5cfc24e",
+      "subject": "Re: change regarding LIBRA invoicing",
+      "from": "billing@fivestarescrow.com (cc Brett)",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-02T11:10:00-08:00"
+    },
+    "1a1848713681dba4": {
+      "threadId": "1a1848713681dba4",
+      "lastMessageId": "1a1848713681dba4",
+      "subject": "Zoho CRM - Report Scheduler : Bounce Report",
+      "from": "systemgenerated@zohocrm.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-28T15:05:00-07:00"
+    },
+    "1a184e3e684514ed": {
+      "threadId": "1a184e3e684514ed",
+      "lastMessageId": "1a184e3e684514ed",
+      "subject": "Felicia mentioned you: Ask Spencer: succession and S corporation questions",
+      "from": "no-reply@asana.com",
+      "classification": "RESPONSE-WORTHY (Asana mention; left in inbox)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a183ae27ef857c6": {
+      "threadId": "1a183ae27ef857c6",
+      "lastMessageId": "1a18896ca0d7bc9a",
+      "subject": "Re: did we mess up?",
+      "from": "Melissa Tucci",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a1852571c3e2595": {
+      "threadId": "1a1852571c3e2595",
+      "lastMessageId": "1a1852a2199b4203",
+      "subject": "An update on 2212 Carmel Valley Road",
+      "from": "brett@brettward.net (own sent, bcc neighbors)",
+      "classification": "FYI (own message; left in inbox)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a18647028bb5eae": {
+      "threadId": "1a18647028bb5eae",
+      "lastMessageId": "1a18647028bb5eae",
+      "subject": "Your Benefits Card Purchase is Approved",
+      "from": "bcs@goigoe.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a18646fba3e865b": {
+      "threadId": "1a18646fba3e865b",
+      "lastMessageId": "1a18646fba3e865b",
+      "subject": "Igoe Benefits Card Purchase - Transaction Approved",
+      "from": "bcs@goigoe.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a187cd3d7cc9e99": {
+      "threadId": "1a187cd3d7cc9e99",
+      "lastMessageId": "1a187cd3d7cc9e99",
+      "subject": "Thank you for staying at Kimpton Hotel Monaco Salt Lake City",
+      "from": "kimpton@mc.ihg.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a18561b70fb36e4": {
+      "threadId": "1a18561b70fb36e4",
+      "lastMessageId": "1a18561b70fb36e4",
+      "subject": "Caliber Collision replied to your review on Google",
+      "from": "google-maps-noreply@google.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-29T07:10:00-07:00"
+    },
+    "1a188a85846ff672": {
+      "threadId": "1a188a85846ff672",
+      "lastMessageId": "1a1a7cb4ddc03816",
+      "subject": "Re: Launch party tonight 17348 Via Del Campo",
+      "from": "lajollasmanabouttown@gmail.com (Kurt Iuli Kinsey)",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-29T11:08:00-07:00"
+    },
+    "1a18828935173227": {
+      "threadId": "1a18828935173227",
+      "lastMessageId": "1a18828935173227",
+      "subject": "Fwd: Succession and S Corp Questions",
+      "from": "feliciacward@gmail.com",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-29T11:08:00-07:00"
+    },
+    "1863d7b19ae287e0": {
+      "threadId": "1863d7b19ae287e0",
+      "lastMessageId": "1a1888c9ee352b37",
+      "subject": "RE: 6190 Cornerstone Ste 208 - Expansion Proposal",
+      "from": "Samantha Alston (H.G. Fenton)",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-29T11:08:00-07:00"
+    },
+    "1a188d7e808cce92": {
+      "threadId": "1a188d7e808cce92",
+      "lastMessageId": "1a188db69029f0a7",
+      "subject": "Re: Flow Support Request",
+      "from": "support@wispr.ai",
+      "classification": "RESPONSE-WORTHY (left in inbox)",
+      "firstSurfaced": "2026-10-29T15:05:00-07:00"
+    },
+    "1a189ae435744a58": {
+      "threadId": "1a189ae435744a58",
+      "lastMessageId": "1a189ae435744a58",
+      "subject": "NETGEAR INSIGHT FREE TRIAL EXPIRING SOON",
+      "from": "insightalerts@netgear.com",
+      "classification": "AMBIGUOUS (left in inbox)",
+      "firstSurfaced": "2026-10-29T15:05:00-07:00"
+    },
+    "1a18a06dc33143bc": {
+      "threadId": "1a18a06dc33143bc",
+      "lastMessageId": "1a18a06dc33143bc",
+      "subject": "Gary left a review for Five Star Escrow",
+      "from": "Google Business Profile",
+      "classification": "FYI (Google Business Profile review; never-archive per Brett 2026-11-02; labeled FSE/Testimonials, left in inbox)",
+      "firstSurfaced": "2026-10-30T07:06:00-07:00"
+    },
+    "1a18c6a6d94afb60": {
+      "threadId": "1a18c6a6d94afb60",
+      "lastMessageId": "1a18c6a6d94afb60",
+      "subject": "We're updating our Terms of Service and Privacy Policy on 1 December 2026",
+      "from": "ScoreApp (Mark Purdy)",
+      "classification": "FYI (ToS notice; archived)",
+      "firstSurfaced": "2026-10-30T07:06:00-07:00"
+    },
+    "1a18b3221ea2ffbf": {
+      "threadId": "1a18b3221ea2ffbf",
+      "lastMessageId": "1a18b3221ea2ffbf",
+      "subject": "Clauned.",
+      "from": "Ruben Hassid (Substack)",
+      "classification": "FYI (Ruben Hassid never-auto-archive rule; left in inbox)",
+      "firstSurfaced": "2026-10-30T07:06:00-07:00"
+    },
+    "1a18dda81864239d": {
+      "threadId": "1a18dda81864239d",
+      "lastMessageId": "1a18dda81864239d",
+      "subject": "Brett Ward deleted List It Live 3.0",
+      "from": "no-reply@asana.com",
+      "classification": "FYI (Asana deletion notice; archived)",
+      "firstSurfaced": "2026-10-30T11:08:00-07:00"
+    },
+    "1a18ed4cb2e5ecb8": {
+      "threadId": "1a18ed4cb2e5ecb8",
+      "lastMessageId": "1a18ed4cb2e5ecb8",
+      "subject": "NETGEAR INSIGHT FREE TRIAL EXPIRED",
+      "from": "insightalerts@netgear.com",
+      "classification": "FYI (Insight trial expired, devices now unmanaged; archived)",
+      "firstSurfaced": "2026-10-30T15:06:00-07:00"
+    },
+    "1a19134648a3a083": {
+      "threadId": "1a19134648a3a083",
+      "lastMessageId": "1a19134648a3a083",
+      "subject": "Work Anniversary Alert! (Joyce Priebe, 1 yr on 11/07)",
+      "from": "automation@app.smartsheet.com",
+      "classification": "FYI (Smartsheet never-auto-archive rule; left in inbox)",
+      "firstSurfaced": "2026-10-31T07:05:00-07:00"
+    },
+    "1a18fccf280b2c3a": {
+      "threadId": "1a18fccf280b2c3a",
+      "lastMessageId": "1a18fccf280b2c3a",
+      "subject": "Jalyn has spent 80% of their spending limit.",
+      "from": "uber@uber.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-10-31T07:05:00-07:00"
+    },
+    "1a197335fef42f16": {
+      "threadId": "1a197335fef42f16",
+      "lastMessageId": "1a197335fef42f16",
+      "subject": "Brett, you're up! Shop your waitlisted item today",
+      "from": "info@info.quince.com",
+      "classification": "FYI (retail marketing; archived)",
+      "firstSurfaced": "2026-11-01T07:06:00-08:00"
+    },
+    "1a19653ed69550a7": {
+      "threadId": "1a19653ed69550a7",
+      "lastMessageId": "1a19653ed69550a7",
+      "subject": "Your mortgage payment is processing",
+      "from": "no-reply@uwmservicing.com",
+      "classification": "FYI (payment confirmation, $8,342.19; archived)",
+      "firstSurfaced": "2026-11-01T07:06:00-08:00"
+    },
+    "1a195e0cdc73011d": {
+      "threadId": "1a195e0cdc73011d",
+      "lastMessageId": "1a195e0cdc73011d",
+      "subject": "More usage for Business Premium users and a simpler way to work",
+      "from": "noreply@email.openai.com",
+      "classification": "FYI (product newsletter; archived)",
+      "firstSurfaced": "2026-11-01T07:06:00-08:00"
+    },
+    "1a19468e4bd528f8": {
+      "threadId": "1a19468e4bd528f8",
+      "lastMessageId": "1a19468e4bd528f8",
+      "subject": "Open Box + 25% Off",
+      "from": "hello@anthros.com",
+      "classification": "FYI (retail marketing; archived)",
+      "firstSurfaced": "2026-11-01T07:06:00-08:00"
+    },
+    "1a1981bb00283478": {
+      "threadId": "1a1981bb00283478",
+      "lastMessageId": "1a1981bb00283478",
+      "subject": "Good posture news, straight to your phone",
+      "from": "hello@anthros.com",
+      "classification": "FYI (retail marketing; archived)",
+      "firstSurfaced": "2026-11-01T11:05:00-08:00"
+    },
+    "1a19cc7eaeebf163": {
+      "threadId": "1a19cc7eaeebf163",
+      "lastMessageId": "1a19e1192d8bc224",
+      "subject": "First American SMS - 1099 Monthly Reports (1679-0001)",
+      "from": "TrustLink.1099@firstam.com",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-02T07:25:00-08:00"
+    },
+    "1a19c0afad7a4b4d": {
+      "threadId": "1a19c0afad7a4b4d",
+      "lastMessageId": "1a19c0afad7a4b4d",
+      "subject": "Your domain is about to expire.",
+      "from": "noreply@zohoaccounts.com",
+      "classification": "RESPONSE-WORTHY",
+      "firstSurfaced": "2026-11-02T07:25:00-08:00"
+    },
+    "1a19adee4e916aad": {
+      "threadId": "1a19adee4e916aad",
+      "lastMessageId": "1a19adee4e916aad",
+      "subject": "Google Workspace: Your invoice is available for brettward.net",
+      "from": "payments-noreply@google.com",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-02T07:25:00-08:00"
+    },
+    "1a19c9354d4c1365": {
+      "threadId": "1a19c9354d4c1365",
+      "lastMessageId": "1a19c9354d4c1365",
+      "subject": "Fwd: Brett",
+      "from": "juliarogers@platemakerfederation.co",
+      "classification": "SOLICITATION",
+      "firstSurfaced": "2026-11-02T07:25:00-08:00"
+    },
+    "1a19cf97f2174c25": {
+      "threadId": "1a19cf97f2174c25",
+      "lastMessageId": "1a19cf97f2174c25",
+      "subject": "A new way to browse Apify Store, plus your agent builds Actors now",
+      "from": "hello@apify.com",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-02T11:10:00-08:00"
+    },
+    "1a19d6c08d63aa9a": {
+      "threadId": "1a19d6c08d63aa9a",
+      "lastMessageId": "1a19d6c08d63aa9a",
+      "subject": "Brett, Turning your website into a growth channel!",
+      "from": "brennan@digitalagencymarketing.online",
+      "classification": "SOLICITATION",
+      "firstSurfaced": "2026-11-02T11:10:00-08:00"
+    },
+    "1a19e1e08534f04e": {
+      "threadId": "1a19e1e08534f04e",
+      "lastMessageId": "1a19e1e08534f04e",
+      "subject": "Discover La Jolla Podcast Filming - November 6th",
+      "from": "marketing4mcinerney@gmail.com",
+      "classification": "RESPONSE-WORTHY light (Discover La Jolla podcast, Brett is guest, Fri 11/6 11:30 AM at RTM Ste 200, arrive 10 min early; left in inbox)",
+      "firstSurfaced": "2026-11-02T15:05:00-08:00"
+    },
+    "1a1653f160a6b3f7": {
+      "threadId": "1a1653f160a6b3f7",
+      "lastMessageId": "1a19e7b69fa02f82",
+      "subject": "Re: Expanding your investor network",
+      "from": "jakob@vertigorev.com",
+      "classification": "RESPONSE-WORTHY (VREV GM free for a call this week; will discuss client intro; no prior work with Fruitful; left in inbox)",
+      "firstSurfaced": "2026-11-02T15:05:00-08:00"
+    },
+    "1a19db5611e214ca": {
+      "threadId": "1a19db5611e214ca",
+      "lastMessageId": "1a19db5611e214ca",
+      "subject": "Elizabeth mentioned you on a task assigned to you: Whisper and tease pieces [REInvest]",
+      "from": "no-reply@asana.com",
+      "classification": "RESPONSE-WORTHY (Asana mention; Elizabeth asks if subtasks should be created per Whisper/Tease piece for Mark's editing; left in inbox)",
+      "firstSurfaced": "2026-11-02T15:05:00-08:00"
+    },
+    "1a1a17eda7efb0a0": {
+      "threadId": "1a1a17eda7efb0a0",
+      "lastMessageId": "1a1a17eda7efb0a0",
+      "subject": "\u2615\ufe0f Where\u2019d the sellers go?",
+      "from": "brian@getrealreport.com",
+      "classification": "FYI (Get Real Report, never-auto-archive; left in inbox)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a1a02523eefdd48": {
+      "threadId": "1a1a02523eefdd48",
+      "lastMessageId": "1a1a02523eefdd48",
+      "subject": "Ruben Hassid is going live on Nov 4 at 11:00 AM PST: \u201cAI 201 Learn Claude Code\u201d",
+      "from": "ruben@substack.com",
+      "classification": "FYI (Ruben Hassid never-auto-archive; left in inbox)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a19fcb7c352b221": {
+      "threadId": "1a19fcb7c352b221",
+      "lastMessageId": "1a19fcb7c352b221",
+      "subject": "Stop sending slop.",
+      "from": "ruben@substack.com",
+      "classification": "FYI (Ruben Hassid never-auto-archive; left in inbox)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a19fa795447ec1e": {
+      "threadId": "1a19fa795447ec1e",
+      "lastMessageId": "1a19fa795447ec1e",
+      "subject": "SLC Alpha Phi November Newsletter",
+      "from": "aphialumparents@pb01.wixemails.com",
+      "classification": "AMBIGUOUS (Alpha Phi parents newsletter, possibly Utah campus related; left in inbox)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a1a1a2cedbe8263": {
+      "threadId": "1a1a1a2cedbe8263",
+      "lastMessageId": "1a1a1a2cedbe8263",
+      "subject": "Real Talk Media, are you open on Thanksgiving?",
+      "from": "businessprofile-noreply@google.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a19f2fbdf5eff7d": {
+      "threadId": "1a19f2fbdf5eff7d",
+      "lastMessageId": "1a19f2fc642235f5",
+      "subject": "Automatic reply: Re: RE: New Escrow and Escrow Lookup: please work in the Hub starting today",
+      "from": "srohlfs@fivestarescrow.com",
+      "classification": "FYI (OOO auto-replies Sydney 11/3-11/6, Heather thru 11/3; archived)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a19f31c2321bba1": {
+      "threadId": "1a19f31c2321bba1",
+      "lastMessageId": "1a19f31c2321bba1",
+      "subject": "Important Updates to Our Conditions of Use",
+      "from": "noreply@mail.audible.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-03T07:08:00-08:00"
+    },
+    "1a1a2a2b7e7f5734": {
+      "threadId": "1a1a2a2b7e7f5734",
+      "lastMessageId": "1a1a2a2b7e7f5734",
+      "subject": "H&A Marketing ideas w/ Real Talk",
+      "from": "matt@hawthornandalbatross.com",
+      "classification": "RESPONSE-WORTHY",
+      "firstSurfaced": "2026-11-03T11:08:00-08:00"
+    },
+    "1a1a2cc57a730e98": {
+      "threadId": "1a1a2cc57a730e98",
+      "lastMessageId": "1a1a2cc57a730e98",
+      "subject": "Your October Flow State recap",
+      "from": "hello@mail.wispr.ai",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-03T11:08:00-08:00"
+    },
+    "1a1a360012729b31": {
+      "threadId": "1a1a360012729b31",
+      "lastMessageId": "1a1a360012729b31",
+      "subject": "[Plaud-AutoFlow] 11-03 Strategy Meeting: Nonprofit Growth, Media Strategy, and Real Estate Collaboration",
+      "from": "no-reply@plaud.ai",
+      "classification": "FYI (Plaud auto meeting notes; archived)",
+      "firstSurfaced": "2026-11-03T15:07:00-08:00"
+    },
+    "1a1a605e1f89e57a": {
+      "threadId": "1a1a605e1f89e57a",
+      "lastMessageId": "1a1a605e1f89e57a",
+      "subject": "REMINDER: Hire Anniversary in 3 Days",
+      "from": "automation@app.smartsheet.com",
+      "classification": "FYI (never-auto-archive rule; left in inbox)",
+      "firstSurfaced": "2026-11-04T07:10:00-08:00"
+    },
+    "1a1a5c51db35dda2": {
+      "threadId": "1a1a5c51db35dda2",
+      "lastMessageId": "1a1a5c51db35dda2",
+      "subject": "Pricing change coming for Zillow Agent Scraper",
+      "from": "hello@apify.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-04T07:10:00-08:00"
+    },
+    "1a1a4ba8ed94789b": {
+      "threadId": "1a1a4ba8ed94789b",
+      "lastMessageId": "1a1a4ba8ed94789b",
+      "subject": "Make Claude Write Like You",
+      "from": "roberto@email.circle.so",
+      "classification": "AMBIGUOUS (left in inbox)",
+      "firstSurfaced": "2026-11-04T07:10:00-08:00"
+    },
+    "1a1a48a3296ea17d": {
+      "threadId": "1a1a48a3296ea17d",
+      "lastMessageId": "1a1a48a3296ea17d",
+      "subject": "Important Updates to Our Conditions of Use",
+      "from": "noreply@mail.audible.com",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-04T07:10:00-08:00"
+    },
+    "1a1a7bf83774c38e": {
+      "threadId": "1a1a7bf83774c38e",
+      "lastMessageId": "1a1a7bf83774c38e",
+      "subject": "syndicate intro - Brett",
+      "from": "sophia@jonathanjfund.co",
+      "classification": "SOLICITATION",
+      "firstSurfaced": "2026-11-04T11:10:00-08:00"
+    },
+    "1a1a7f27839101df": {
+      "threadId": "1a1a7f27839101df",
+      "lastMessageId": "1a1a7f27839101df",
+      "subject": "From Substack support",
+      "from": "no-reply@substack.zendesk.com",
+      "classification": "FYI",
+      "firstSurfaced": "2026-11-04T11:10:00-08:00"
+    },
+    "1a1a7d7bc05a54a5": {
+      "threadId": "1a1a7d7bc05a54a5",
+      "lastMessageId": "1a1a7d7bc05a54a5",
+      "subject": "Elizabeth mentioned you: REInvest - Whisper 1 Reel (TOMORROW - 4th)",
+      "from": "no-reply@asana.com (Elizabeth Eidbo)",
+      "classification": "RESPONSE-WORTHY (Asana mention, left in inbox)",
+      "firstSurfaced": "2026-11-04T11:10:00-08:00"
+    },
+    "1a1a32d597cf5ee1": {
+      "threadId": "1a1a32d597cf5ee1",
+      "lastMessageId": "1a1a89983edcc711",
+      "subject": "October Report",
+      "from": "tj@werevive.com",
+      "classification": "FYI (VREV October report thread; Brett already replied, TJ closes loop; archived)",
+      "firstSurfaced": "2026-11-04T15:05:00-08:00"
+    },
+    "1a1a8ca7c875f555": {
+      "threadId": "1a1a8ca7c875f555",
+      "lastMessageId": "1a1a8ca7c875f555",
+      "subject": "Zoho CRM - Report Scheduler : Bounce Report",
+      "from": "systemgenerated@zohocrm.com",
+      "classification": "FYI (empty scheduled report; archived)",
+      "firstSurfaced": "2026-11-04T15:05:00-08:00"
+    },
+    "1a1a95cec76c2f98": {
+      "threadId": "1a1a95cec76c2f98",
+      "lastMessageId": "1a1a95cec76c2f98",
+      "subject": "Important online benefit enrollment information",
+      "from": "noreply@ease.com (Five Star Escrow Benefits Management)",
+      "classification": "RESPONSE-WORTHY (benefits enrollment incomplete; left in inbox)",
+      "firstSurfaced": "2026-11-05T07:08:00-08:00"
+    },
+    "1a1ac094ff8f2133": {
+      "threadId": "1a1ac094ff8f2133",
+      "lastMessageId": "1a1ac094ff8f2133",
+      "subject": "quick one Brett",
+      "from": "quinten.kamphuis@reachkitgrowth.com",
+      "classification": "SOLICITATION (routed)",
+      "firstSurfaced": "2026-11-05T07:08:00-08:00"
+    },
+    "1a1a2e8835020d75": {
+      "threadId": "1a1a2e8835020d75",
+      "lastMessageId": "1a1ac9a026b2679f",
+      "subject": "10509 Suite 300 - Compressor Replacement (11/10)",
+      "from": "Kiley Cramer (Healthpeak)",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    },
+    "1a1ac7b2ab5b050e": {
+      "threadId": "1a1ac7b2ab5b050e",
+      "lastMessageId": "1a1ac7b2ab5b050e",
+      "subject": "Monthly Retainer Billing Review Complete",
+      "from": "Felicia Ward (operations@realtalkmedia.com)",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    },
+    "1a0444d2fe8623b0": {
+      "threadId": "1a0444d2fe8623b0",
+      "lastMessageId": "1a1ad1783f257338",
+      "subject": "Automatic reply: 6190 Cornerstone Ste 208 - Expansion Proposal",
+      "from": "Samantha Alston (hgfenton.com)",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    },
+    "1a1acf9e6357d37c": {
+      "threadId": "1a1acf9e6357d37c",
+      "lastMessageId": "1a1acf9e6357d37c",
+      "subject": "View Your Mortgage Loan E-Statement",
+      "from": "UWM Servicing",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    },
+    "1a1acc973ddc39be": {
+      "threadId": "1a1acc973ddc39be",
+      "lastMessageId": "1a1acc973ddc39be",
+      "subject": "Video cannot be monetized: Discover Ramona Ep. 77",
+      "from": "YouTube",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    },
+    "1a1ac842e6145aa4": {
+      "threadId": "1a1ac842e6145aa4",
+      "lastMessageId": "1a1ac842e6145aa4",
+      "subject": "Video cannot be monetized: A New Room for San Diego Investors",
+      "from": "YouTube",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    },
+    "1a1ac7575c5fce19": {
+      "threadId": "1a1ac7575c5fce19",
+      "lastMessageId": "1a1ac7575c5fce19",
+      "subject": "Your October activity",
+      "from": "Link",
+      "classification": "FYI (archived)",
+      "firstSurfaced": "2026-11-05T11:10:00-08:00"
+    }
+  },
+  "carryForward": [],
+  "pendingReport": [
+    {
+      "threadId": "1a1a2e8835020d75",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "Kiley Cramer (Healthpeak)",
+      "subject": "10509 Suite 300 - Compressor Replacement (11/10)",
+      "classification": "FYI",
+      "whatItIs": "Building compressor work Tue 11/10 near kitchenette; Elizabeth coordinating alarm/back-door entry, Brett cc'd",
+      "myRead": "No action; Elizabeth has it",
+      "actionTaken": "archived"
+    },
+    {
+      "threadId": "1a1ac7b2ab5b050e",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "Felicia Ward (operations@realtalkmedia.com)",
+      "subject": "Monthly Retainer Billing Review Complete",
+      "classification": "FYI",
+      "whatItIs": "Felicia finished October RTM retainer billing review, no exceptions",
+      "myRead": "None",
+      "actionTaken": "archived"
+    },
+    {
+      "threadId": "1a0444d2fe8623b0",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "Samantha Alston (hgfenton.com)",
+      "subject": "Automatic reply: 6190 Cornerstone Ste 208 - Expansion Proposal",
+      "classification": "FYI",
+      "whatItIs": "OOO auto-reply, back Mon 11/9; main Cornerstone thread stays in inbox",
+      "myRead": "None",
+      "actionTaken": "archived"
+    },
+    {
+      "threadId": "1a1acf9e6357d37c",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "UWM Servicing",
+      "subject": "View Your Mortgage Loan E-Statement",
+      "classification": "FYI",
+      "whatItIs": "Mortgage e-statement available",
+      "myRead": "None",
+      "actionTaken": "archived"
+    },
+    {
+      "threadId": "1a1acc973ddc39be",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "YouTube",
+      "subject": "Video cannot be monetized: Discover Ramona Ep. 77",
+      "classification": "FYI",
+      "whatItIs": "Demonetization notice (archive rule)",
+      "myRead": "None",
+      "actionTaken": "archived"
+    },
+    {
+      "threadId": "1a1ac842e6145aa4",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "YouTube",
+      "subject": "Video cannot be monetized: A New Room for San Diego Investors",
+      "classification": "FYI",
+      "whatItIs": "Demonetization notice (archive rule)",
+      "myRead": "None",
+      "actionTaken": "archived"
+    },
+    {
+      "threadId": "1a1ac7575c5fce19",
+      "runAt": "2026-11-05T11:10:00-08:00",
+      "from": "Link",
+      "subject": "Your October activity",
+      "classification": "FYI",
+      "whatItIs": "Monthly activity notice",
+      "myRead": "None",
+      "actionTaken": "archived"
+    }
+  ]
+}

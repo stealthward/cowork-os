@@ -1,0 +1,111 @@
+<title>Cloud-Only Feasibility</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column. Verdict, inventory table by class, how a day changes, decisions, test plan. */
+:root{--bg:#f7f8f6;--surface:#ffffff;--fg:#1d2420;--muted:#5c6862;--line:#d9dfdb;--accent:#2f6b55;--flag:#9a5b12;--bad:#a23b2c;
+--display:"Source Serif 4",Georgia,serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131816;--surface:#1b211e;--fg:#e4ebe7;--muted:#9aa8a1;--line:#2e3833;--accent:#7cc4a6;--flag:#e0a75a;--bad:#e58a7a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131816;--surface:#1b211e;--fg:#e4ebe7;--muted:#9aa8a1;--line:#2e3833;--accent:#7cc4a6;--flag:#e0a75a;--bad:#e58a7a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--body);margin:0}
+.wrap{max-width:920px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:26px}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2rem;line-height:1.2}h2{font-size:1.3rem}
+h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0}
+p{margin:0}ul,ol{margin:0;padding-left:1.25rem;display:grid;gap:4px}
+.meta{color:var(--muted)}
+section{display:grid;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td:first-child{font-weight:600}
+.k{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600;white-space:nowrap}
+.ready{color:var(--accent)}.work{color:var(--flag)}.block{color:var(--bad)}
+.rec{border-left:3px solid var(--accent);padding:10px 14px;background:var(--surface);display:grid;gap:6px}
+.flag{border:1px solid var(--flag);border-radius:6px;padding:14px 16px;display:grid;gap:8px}
+.flag h2{color:var(--flag)}
+a{color:var(--accent)}
+</style>
+<div class="wrap">
+<header style="display:grid;gap:8px">
+<h3>COO · AI Workforce · For Brett, 2026-11-05</h3>
+<h1>Cloud-Only Feasibility</h1>
+<p class="meta">Every part of the OS that depends on the office PC, mapped to a cloud path or a blocker. Researched from current Anthropic, GitHub, and vendor docs on 11/5. Nothing is moved or bought.</p>
+</header>
+
+<section>
+<h2>Verdict</h2>
+<p><b>About 90% of the OS can run in the cloud now.</b> The seats, workers, skills, memory files, and every connector (Asana, Zoho, Smartsheet, Gmail, Drive, Calendar) work in Claude Code cloud sessions run from a private GitHub repo. Scheduled tasks become cloud routines that run with every computer off.</p>
+<p><b>What can't go fully cloud today is work that needs a browser signed in as you.</b> Anthropic documents no cloud browser that holds your logins. That work stops depending on the office PC, but it still needs <i>a</i> computer with Chrome, any computer, through Claude in Chrome.</p>
+</section>
+
+<section>
+<h2>What changes in your day</h2>
+<ul>
+<li>You open a session from the Claude desktop app, claude.ai/code, or the phone app, on any computer, and pick your OS repo. Same seats, same phrases, same files.</li>
+<li>Each session works on a fresh copy of the repo and saves its changes back to GitHub. Memory and logs land on the main copy without you merging anything, if the repo allows Claude to push directly (to be tested).</li>
+<li>Nothing local is needed except a browser. The office PC becomes just another computer.</li>
+</ul>
+</section>
+
+<section>
+<h2>Inventory</h2>
+<div class="tbl"><table>
+<thead><tr><th>Item</th><th>Today</th><th>In the cloud</th><th>Class</th></tr></thead>
+<tbody>
+<tr><td>Seats, workers, all text skills (session-audit, handoff, reconcile, Blueprint, pilot-loop)</td><td>Files in .claude/</td><td>Read from the repo by cloud sessions</td><td><span class="k ready">Ready</span></td></tr>
+<tr><td>CLAUDE.md and MEMORY.md files, logs, drafts</td><td>Local folder</td><td>Repo files; about 62 MB without apriliapeace</td><td><span class="k ready">Ready</span></td></tr>
+<tr><td>Connectors: Asana, Zoho, Smartsheet, Gmail, Drive, Calendar, Miro, Canva</td><td>claude.ai account</td><td>Work in cloud sessions and routines</td><td><span class="k ready">Ready</span></td></tr>
+<tr><td>Python scripts (registry render, cut sheet engine, social metrics)</td><td>Windows Python</td><td>Python preinstalled on the cloud machine; packages through a setup script</td><td><span class="k ready">Ready</span></td></tr>
+<tr><td>morning-inbox-triage, fse-client-attribution-weekly</td><td>Cowork scheduled tasks on the PC</td><td>Cloud routines (hourly minimum; both run less often than that)</td><td><span class="k work">Rebuild</span></td></tr>
+<tr><td>pilot-loop-check</td><td>Desktop task, every 30 minutes</td><td>Hourly routine, already planned</td><td><span class="k work">Rebuild</span></td></tr>
+<tr><td>Registry hooks</td><td>Point at C:/…/python.exe</td><td>Point at the repo path; small edit</td><td><span class="k work">Small fix</span></td></tr>
+<tr><td>Cut sheet timing (WhisperX on the RTX 3050)</td><td>Local GPU</td><td>Plaud timings plus the existing retime.py, or a transcription API with word timings (AssemblyAI about $0.21 per audio hour). Needs a calibration check on one episode.</td><td><span class="k work">Replace</span></td></tr>
+<tr><td>Word for PDF export, docx toolchain</td><td>Word on Windows</td><td>LibreOffice on the Linux machine (not yet tested)</td><td><span class="k work">Replace</span></td></tr>
+<tr><td>Apps Script deploys</td><td>Built-in browser in the script editor</td><td>Apps Script API with a token stored as a network secret; needs your Google consent once</td><td><span class="k work">Replace</span></td></tr>
+<tr><td>Google Doc rewrites</td><td>Built-in browser</td><td>Google Docs connector (read and update)</td><td><span class="k work">Replace</span></td></tr>
+<tr><td>Gmail with attachments</td><td>Claude in Chrome</td><td>Gmail API token as a network secret, or stays browser work</td><td><span class="k work">Replace</span></td></tr>
+<tr><td>Asana template edits, Smartsheet moves and sharing, Meta Business Suite scheduling, alignment check of claude.ai settings</td><td>Built-in browser or Chrome, signed in</td><td>No documented cloud browser with your logins. Runs through Claude in Chrome on whatever computer you're on.</td><td><span class="k block">Browser</span></td></tr>
+<tr><td>apriliapeace (5.7 GB of video, Instagram file dialog)</td><td>Local folder, Windows dialog</td><td>Media to Drive; the Instagram upload stays browser work or moves to Meta's API</td><td><span class="k block">Browser</span></td></tr>
+<tr><td>Max Income</td><td>Local folder</td><td>Your decision: the same private repo, a separate private repo, or left out</td><td><span class="k work">Decide</span></td></tr>
+</tbody></table></div>
+</section>
+
+<section class="flag">
+<h2>Unproven, test before relying on it</h2>
+<ul>
+<li>Claude pushing memory and log changes straight to the main copy. The docs say a GitHub rule decides this; whether it behaves as described is untested.</li>
+<li>Two sessions changing the same file at once. Not documented; the safe rule is one session at a time on shared files such as MEMORY.md.</li>
+<li>Publishing Artifacts (the registry page, review pages) from a cloud session. Not researched yet.</li>
+<li>LibreOffice output matching the Word-built cut sheets.</li>
+</ul>
+</section>
+
+<section>
+<h2>Where it lives</h2>
+<p>Your OS goes in its own private repo under your personal account, separate from the team kit repo. That fits account scenario A: you stay on your personal plan, which also has Claude Projects (cloud threads that read Drive folders and a MEMORY.md), a feature not yet offered on Team. GitHub states it does not train AI on private repo content. GitHub Free covers it ($0).</p>
+</section>
+
+<section>
+<div class="rec">
+<h2>Recommendation</h2>
+<p><b>Go cloud-first, and prove it with a one-week test before moving anything for real.</b> The test copies the OS, without Max Income and apriliapeace, into a private repo and runs your normal week from cloud sessions. Your local folder stays the live copy until the test passes.</p>
+<ol>
+<li>You: create a GitHub account if you don't have one, and install the Claude GitHub app on one private repo (your consent clicks).</li>
+<li>COO: loads the copy, fixes the hook paths, sets the direct-push rule, and moves morning-inbox-triage to a routine.</li>
+<li>You: run a chief of staff daily, one COO job, and one CMO draft from the cloud, on two different computers.</li>
+<li>COO: tests one cut sheet with Plaud timings and LibreOffice, and one Artifact publish.</li>
+<li>Pass when all of those work with the office PC off, and memory updates landed without a merge. Then you decide where Max Income goes, and the local folder retires.</li>
+</ol>
+</div>
+</section>
+
+<section>
+<h2>Sources (fetched 2026-11-05)</h2>
+<ul>
+<li><a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code on the web</a> · <a href="https://code.claude.com/docs/en/cloud-environments">Cloud environments</a> · <a href="https://code.claude.com/docs/en/routines">Routines</a> · <a href="https://code.claude.com/docs/en/self-hosted-environments">Self-hosted environments</a> · <a href="https://code.claude.com/docs/en/remote-control">Remote Control</a></li>
+<li><a href="https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan">Team plan setup</a> · <a href="https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data/">GitHub data use</a> · <a href="https://www.assemblyai.com/pricing">AssemblyAI pricing</a> · <a href="https://deepgram.com/pricing">Deepgram pricing</a></li>
+</ul>
+</section>
+</div>

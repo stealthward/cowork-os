@@ -1,0 +1,79 @@
+<title>Pilot Loop Build</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: single reading column, scope as label/value rows, plan as an ordered list, decisions boxed */
+:root{--bg:#f6f7f5;--fg:#1d2420;--muted:#5d6862;--line:#d6ddd8;--accent:#2f6b55;--box:#e9efeb;
+--display:"Fraunces",Georgia,serif;--body:"Source Sans 3",system-ui,sans-serif;--mono:"IBM Plex Mono",Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151a17;--fg:#e4ebe6;--muted:#9aa8a0;--line:#2c3631;--accent:#7cc4a6;--box:#1e2622;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151a17;--fg:#e4ebe6;--muted:#9aa8a0;--line:#2c3631;--accent:#7cc4a6;--box:#1e2622;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--body)}
+main{max-width:46rem;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font:600 2rem/1.15 var(--display);margin:0 0 4px;text-wrap:balance}
+h2{font:600 1.25rem/1.2 var(--display);margin:32px 0 10px;color:var(--accent);text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px}
+dl{display:grid;grid-template-columns:9.5rem 1fr;gap:8px 16px;margin:0}
+dt{font-weight:600;color:var(--muted);font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;padding-top:2px}
+dd{margin:0;min-width:0}
+@media (max-width:560px){dl{grid-template-columns:1fr}dt{padding-top:10px}}
+ol,ul{padding-left:1.3rem;margin:0}li{margin:0 0 8px}
+code{font:.85rem var(--mono);background:var(--box);padding:1px 5px;border-radius:3px}
+.box{background:var(--box);border:1px solid var(--line);border-radius:6px;padding:14px 18px}
+.tag{font:.75rem var(--mono);color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.95rem}td{border-top:1px solid var(--line);padding:8px 6px;vertical-align:top}
+.wrap{overflow-x:auto}
+</style>
+<main>
+<h1>Pilot Loop Build</h1>
+<p class="sub">COO scope and plan, 2026-10-30. AI Workforce task "Pilot loop: the Asana project the workforce answers in" (Team launch, due 10/30).</p>
+
+<h2>Scope</h2>
+<dl>
+<dt>System</dt><dd>One Asana project where Elizabeth posts asks for the workforce. A scheduled run reads it, answers or drafts in task comments, and acts on anything that changes something only after a like on its comment or the Approved field.</dd>
+<dt>Users</dt><dd>Elizabeth (asker, pilot 11/9 to 11/20), you (asker and approver). The run wears the seat the ask belongs to, by the root routing map.</dd>
+<dt>Source of truth</dt><dd>The Asana project. Run state and pilot issues in <code>Operations/AI Workforce/logs/</code>.</dd>
+<dt>Platform</dt><dd>Asana connector (reads, comments), asana-specialist (read-only volume read), a desktop scheduled task on the office PC.</dd>
+<dt>Done when</dt><dd>The project exists, the asana-specialist reads it on a schedule, its brief carries the four rules (draft never send, say what you cannot do, correct yourself out loud, report what you did not check), and one seeded low-risk ask and one seeded change ask both pass end to end.</dd>
+<dt>Touches</dt><dd>New Asana project; asana-specialist brief and its kit copy; new skill <code>pilot-loop</code>; new scheduled task; registry, operations map, root MEMORY.md Scheduled Tasks table.</dd>
+<dt>Conventions</dt><dd>asana-conventions.md (new project fields, portfolios, Elizabeth as admin, Approval signals).</dd>
+</dl>
+
+<h2>Project design</h2>
+<div class="wrap"><table>
+<tr><td><strong>Name</strong></td><td>Ask the Workforce (your call below)</td></tr>
+<tr><td><strong>Sections</strong></td><td>New asks · Working · Waiting on your approval · Done. How to ask lives in the project description.</td></tr>
+<tr><td><strong>Fields</strong></td><td>Lead, Project Priority, Estimated time, Link (convention), plus Approved (single-select, Yes). Asks are exempt from the field rules (asana-conventions.md, 2026-10-30).</td></tr>
+<tr><td><strong>People</strong></td><td>Owner you; Elizabeth as admin (Share dialog, browser)</td></tr>
+<tr><td><strong>Portfolios</strong></td><td>Active Projects and Operations, same as AI Workforce</td></tr>
+<tr><td><strong>Comments</strong></td><td>Posted from your Asana account, opening "This is the COO." (or the CMO, chief of staff), per the root Asana comment rule</td></tr>
+</table></div>
+
+<h2>One run</h2>
+<ol>
+<li>Read the state file (last run time). Dispatch the asana-specialist in a new loop mode: tasks created or changed since then, new comments, likes on the workforce's comments, Approved field values.</li>
+<li>Nothing new: log one line and stop.</li>
+<li>New ask: classify it. Low-risk (a question, a read, a draft): do it and reply. Changes something: reply with exactly what it would do, move the task to Waiting on your approval.</li>
+<li>Approved (like or field): do the staged change, reply with what was done and what was not checked, move to Done.</li>
+<li>Can't do it (out of lane, Max Income, sending, spending): say so in the reply and name who can.</li>
+<li>Log the run; log any pilot issue to <code>pilot-issues.md</code> for kit fixes (roadmap Phase 4 step 4).</li>
+</ol>
+
+<h2>Plan</h2>
+<ol>
+<li>Registry rows for the pilot-loop skill and scheduled task (the registry hook blocks a skill with no row). COO, no specialist.</li>
+<li>Create the project, sections, fields, and How to ask task through the connector. Approved field, Elizabeth's admin role, and portfolios in the built-in browser if the connector can't. COO.</li>
+<li>asana-specialist: add Loop mode and the four rules; same edit to the team-kit copy. COO.</li>
+<li>Write <code>.claude/skills/pilot-loop/SKILL.md</code> and the state and log files. COO.</li>
+<li>Seeded test: I add one question and one change ask, run the skill by hand, check the replies, you like the change reply, I confirm it acted. Test tasks deleted on your yes.</li>
+<li>Create the scheduled task; add Asana allow rules to <code>~/.claude/settings.json</code> so unattended runs do not stall.</li>
+<li>Document: operations map, registry, root MEMORY.md Scheduled Tasks table, asana-specialist eval line. Complete the Asana task when Done when is verified.</li>
+</ol>
+
+<h2>Not verified yet</h2>
+<ul>
+<li>Whether the connector returns likes on a comment. Step 5 tests it. If it does not, the Approved field is the only signal.</li>
+<li>Whether the connector can create a custom field or add a project to a portfolio. Browser fallback either way.</li>
+<li>Run cost per day. A run that finds nothing should be short, but I have no measured figure.</li>
+<li>Runs need the office PC on and the Claude app open.</li>
+</ul>
+</main>

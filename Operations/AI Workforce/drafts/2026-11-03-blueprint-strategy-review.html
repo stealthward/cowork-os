@@ -1,0 +1,221 @@
+<title>Jim McInerney Blueprint Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: a review strip on top, then the Blueprint as a bound report (cover, contents, snapshot tiles, numbered sections). */
+:root{
+  --paper:#f6f8f9; --sheet:#ffffff; --ink:#18242e; --muted:#5a6872; --rule:#d9e1e5;
+  --tide:#0f6b78; --tide-soft:#e3f0f2; --flag:#9a5b00; --flag-soft:#fbf1e0; --ok:#2f6b3a;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
+  --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f161b; --sheet:#152029; --ink:#e4ecf0; --muted:#9aabb5; --rule:#2a3a45;
+  --tide:#5cc3cf; --tide-soft:#173840; --flag:#f0b25a; --flag-soft:#3a2c14; --ok:#7fc58b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f161b; --sheet:#152029; --ink:#e4ecf0; --muted:#9aabb5; --rule:#2a3a45;
+  --tide:#5cc3cf; --tide-soft:#173840; --flag:#f0b25a; --flag-soft:#3a2c14; --ok:#7fc58b; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+.wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.2;margin:0}
+p{margin:0}
+.review{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.review h1{font-size:1.6rem}
+.review .kicker{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.review h3{font-family:var(--body);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tide);margin-top:6px}
+.review ul,.review ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.pill{display:inline-block;font-size:.75rem;font-weight:700;padding:1px 8px;border-radius:99px;background:var(--tide-soft);color:var(--tide)}
+.pill.flag{background:var(--flag-soft);color:var(--flag)}
+.report{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:clamp(20px,5vw,56px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.cover{border-bottom:2px solid var(--tide);padding-bottom:36px;margin-bottom:12px;display:flex;flex-direction:column;gap:14px}
+.cover .eyebrow{color:var(--tide)}
+.cover h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05}
+.cover .sub{font-size:1.1rem;color:var(--muted);max-width:48ch}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:10px}
+.meta div{display:flex;flex-direction:column}
+.meta span{font-size:.7rem;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.meta b{font-family:var(--display);font-size:1.1rem;font-weight:600}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.contents ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 20px}
+.contents a{color:var(--ink);text-decoration:none;display:flex;gap:12px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.contents a:hover,.contents a:focus-visible{color:var(--tide)}
+.contents .n{font-variant-numeric:tabular-nums;color:var(--tide);font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+@media (max-width:620px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{background:var(--sheet);padding:14px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tile b{font-family:var(--display);font-size:1.05rem;color:var(--tide);overflow-wrap:anywhere}
+.tile span{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.report h2{font-size:1.7rem;margin-top:12px}
+.report h3{font-size:1.25rem;margin-top:10px}
+.report h4{font-family:var(--body);font-size:1rem;font-weight:700;margin-top:6px}
+.report p,.report li{max-width:68ch}
+.report ul,.report ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:6px}
+.sec-open{border-top:1px solid var(--rule);padding-top:28px;margin-top:20px;display:flex;flex-direction:column;gap:4px}
+.sec-open .eyebrow{color:var(--tide)}
+.sec-open h2{margin-top:0;font-size:2rem}
+.tbl{overflow-x:auto;min-width:0}
+table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--rule)}
+thead th{background:var(--tide-soft);color:var(--ink);font-weight:700;font-size:.8rem;letter-spacing:.04em}
+tbody th{font-weight:700;width:32%}
+.callout{background:var(--tide-soft);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.callout .label{font-size:.72rem;letter-spacing:.14em;font-weight:700;color:var(--tide)}
+.callout p{font-family:var(--display);font-size:1.12rem}
+.quote{margin:0;font-family:var(--display);font-size:1.35rem;line-height:1.35;border-left:3px solid var(--tide);padding-left:18px}
+.email{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.email p{max-width:68ch}
+a:focus-visible{outline:2px solid var(--tide);outline-offset:2px}
+</style>
+
+<div class="wrap">
+<section class="review" aria-label="Review notes">
+  <span class="kicker">blueprint-strategy test 1 · for Brett · Nov 3, 2026</span>
+  <h1>Jim McInerney Blueprint, ready for your review</h1>
+  <p>The CMO wrote this in one pass from the full Playbook standard and your seven discovery gate answers, which stand in for the discovery meeting in this test. Nothing here goes to Jim.</p>
+
+  <h3>Checks</h3>
+  <ul>
+    <li><span class="pill">Editor</span> FIX, 7 items, all applied: team-listing reviews, an engagement overclaim, two unsourced generalizations, ranking and search-engine language, repeated positioning, and contractions in the cover email.</li>
+    <li><span class="pill">Fact-check</span> 59 claims. First run flagged 19. The re-run found 58 supported and 1 flagged (Google "behind every referral"), reworded as a role.</li>
+    <li><span class="pill">QA</span> Every Playbook checklist item passes. Script results: 0 em dashes, 0 contrast constructions, 0 "can become" or "rules allow". About 3,600 words. Most of the structure is tables and callouts.</li>
+  </ul>
+
+  <h3>Open for you</h3>
+  <ol>
+    <li><span class="pill">Done</span> On your yes, the bios (now v7) and the website copy were refreshed. Both lead with listings and use "potential" and "zoning and local ordinances" throughout, with no "can become", "allow", or "rules" left. The fact-checker checked the changed lines and found 3 errors, all fixed: each bio had limited Jim's buyer work to redevelopment buyers. Bios run 182 to 199 words, and all titles and metas are within length. The Blueprint's Phase 1 and Phase 2 now name both as ready.</li>
+    <li><span class="pill flag">Client</span> Jim confirms before delivery: the brokerage line, the Spindrift side and permission, one volume figure and one years figure (more than $365 million and more than 25 years are test guesses), whether the volume figure is personal or team, the canonical phone, office, and license number, and who controls each login.</li>
+    <li><span class="pill">Eval</span> Passed: weighted 4.07, rated Useful. You agreed with every CMO score.</li>
+  </ol>
+  <p><strong>Recommended Next Step in the Blueprint:</strong> Approve the positioning and Brand Platform, confirm the canonical facts, and begin Phase 1 with the portal bios and the website cleanup.</p>
+</section>
+
+
+<article class="report">
+  <header class="cover">
+    <span class="eyebrow">Real Estate Branding Blueprint</span>
+    <h1>Jim McInerney</h1>
+    <p class="sub">Brand Positioning &amp; Visibility Strategy for La Jolla Luxury Sellers</p>
+    <div class="meta">
+      <div><span>PREPARED FOR</span><b>Jim McInerney</b></div>
+      <div><span>BY</span><b>Real Talk Media</b></div>
+      <div><span>DATE</span><b>November 2026</b></div>
+    </div>
+  </header>
+  <nav class="contents" aria-label="Contents"><span class="eyebrow">What's inside</span><ol><li><a href="#s1"><span class="n">01</span>Brand Diagnosis</a></li><li><a href="#s2"><span class="n">02</span>Brand Direction</a></li><li><a href="#s3"><span class="n">03</span>Channel Strategy</a></li><li><a href="#s4"><span class="n">04</span>Visibility Strategy</a></li><li><a href="#s5"><span class="n">05</span>Phased Action Plan</a></li><li><a href="#s6"><span class="n">06</span>Closing Direction</a></li></ol></nav>
+  <div class="tiles" role="list"><div class="tile"><b>LA JOLLA</b><span>Primary market</span></div><div class="tile"><b>LISTINGS</b><span>Lead business</span></div><div class="tile"><b>$75M to $100M</b><span>New listings goal</span></div><div class="tile"><b>POTENTIAL</b><span>Core promise</span></div><div class="tile"><b>SELLERS</b><span>Primary audience</span></div><div class="tile"><b>DISCOVER LA JOLLA</b><span>Community engine</span></div><div class="tile"><b>SINCE 2001</b><span>Licensed</span></div><div class="tile"><b>4 PHASES</b><span>Roadmap</span></div></div>
+  <aside class="callout"><span class="label">REPORT OBJECTIVE</span><p>Organize Jim's La Jolla roots, redevelopment knowledge, and community platform into one clear public brand, align every profile behind it, and build the visibility system that brings 75 to 100 million dollars in new listings to market.</p></aside>
+<h3>Executive Snapshot</h3>
+<div class="tbl"><table><tbody><tr><th scope="row"><strong>Current Impression</strong></th><td>A well-known La Jolla native with real proof, presented through three separate stories (luxury sales, building, community media) and a public record that disagrees with itself</td></tr><tr><th scope="row"><strong>Recommended Position</strong></th><td>The La Jolla listing agent who sees a property's full potential and knows how zoning and local ordinances shape it</td></tr><tr><th scope="row"><strong>Primary Market</strong></th><td>La Jolla, with coastal San Diego as the wider service area</td></tr><tr><th scope="row"><strong>Primary Audience</strong></th><td>Owners of La Jolla luxury homes and lots preparing to sell</td></tr><tr><th scope="row"><strong>Supporting Audiences</strong></th><td>Developers and builders; luxury buyers, mostly through referral</td></tr><tr><th scope="row"><strong>Primary Brand</strong></th><td>Jim McInerney</td></tr><tr><th scope="row"><strong>Supporting Identities</strong></th><td>eXp Realty of Southern California as the brokerage line; Discover La Jolla as Jim's community platform</td></tr><tr><th scope="row"><strong>Growth Goal</strong></th><td>75 to 100 million dollars in new listings brought to market</td></tr><tr><th scope="row"><strong>Core Opportunity</strong></th><td>Make the redevelopment knowledge the reason sellers list with Jim, and let Discover La Jolla make him the name they remember</td></tr><tr><th scope="row"><strong>Highest-Leverage First Move</strong></th><td>One set of facts on every profile, the new portal bios live, and the template content off the website</td></tr></tbody></table></div>
+<div class="sec-open" id="s1"><span class="eyebrow">01 &nbsp;SECTION ONE</span><h2>Brand Diagnosis</h2></div>
+<h4>Executive Diagnosis</h4>
+<p>Jim starts from strength. He is a La Jolla native, licensed since 2001, with 59 closed sales on Homes.com's five-year view and a 5.0 rating across 73 reviews on his team's Google listing. He also owns a community platform, Discover La Jolla, built around the town he sells.</p>
+<p>The public footprint presents all of it at once and resolves none of it. A homeowner who searches Jim finds him immediately, then meets three different stories and conflicting basics: which brokerage, how many years, how much volume, which phone number. The website, in our view his most important owned asset, still shows template filler and template awards.</p>
+<aside class="callout"><span class="label">CORE PROBLEM</span><p>Jim is easy to find and hard to summarize. In our October 16 check, ChatGPT and Gemini identified him correctly by name, and neither named him when asked who to hire to sell a La Jolla home.</p></aside>
+<h4>Business Model Summary</h4>
+<p>Jim leads the business personally, with a team in the background. Luxury listings carry the growth goal of 75 to 100 million dollars in new listings brought to market. Redevelopment, land, and new construction are the edge that wins those listings and brings developer clients with them. Buyer work continues, mostly through referrals and past clients.</p>
+<h4>Ideal Client and Market Definition</h4>
+<div class="tbl"><table><thead><tr><th>Audience</th><th>Who they are</th><th>What they need from Jim</th></tr></thead><tbody><tr><td>Primary: La Jolla sellers</td><td>Owners of luxury homes and lots deciding when and how to sell</td><td>A price and a plan grounded in what the property's potential is worth to the next owner</td></tr><tr><td>Supporting: developers and builders</td><td>Buyers and owners of lots and teardowns planning a project</td><td>Early clarity on zoning, local ordinances, Coastal Commission review, and entitlement</td></tr><tr><td>Supporting: luxury buyers</td><td>Referral and past-client buyers</td><td>A local guide who sees issues and upside before the offer</td></tr></tbody></table></div>
+<p>La Jolla is the center. Coastal San Diego stays available as context, and the public brand leads with La Jolla every time.</p>
+<h4>Major Brand Gaps and Misalignments</h4>
+<div class="tbl"><table><thead><tr><th>Gap</th><th>What the public sees today</th></tr></thead><tbody><tr><td>No hierarchy</td><td>Luxury sales, "dirt to dream" building, and Discover La Jolla each appear as the lead story depending on the profile</td></tr><tr><td>Conflicting facts</td><td>Four brokerage names, three years figures, three volume figures, at least three phone numbers, and a second license number in nine recent captions</td></tr><tr><td>Owned hub undermined</td><td>Website hero says "San Diego" with no service or client problem; Latin placeholder text and template awards remain</td></tr><tr><td>Portals out of date</td><td>Zillow has no bio; Realtor.com names a brokerage Jim left in 2020 and a past roster</td></tr><tr><td>Edge buried</td><td>Zoning, Coastal Commission, and entitlement knowledge sits on a website sub-page, is missing from Zillow and Realtor.com, and reads as renovation advice on Homes.com</td></tr><tr><td>Recognition unconverted</td><td>Personal Facebook draws a median of 25 responses with no business signal; the business Page draws 2</td></tr><tr><td>Referral engine missing</td><td>No client recognition, anniversaries, or past-client stories in any feed we reviewed</td></tr></tbody></table></div>
+<h4>Strategic Implications</h4>
+<p>When a seller searches Jim before calling, each conflicting figure, stale bio, or placeholder block costs confidence at the moment a listing decision is forming. The same inconsistency gives AI tools nothing specific to recommend him on. Fixing the record is the fastest path to more listing conversations, and the redevelopment story is what turns those conversations into signed listings.</p>
+<h4>Current vs Recommended Positioning</h4>
+<div class="tbl"><table><thead><tr><th>Dimension</th><th>Current Public Impression</th><th>Recommended Direction</th></tr></thead><tbody><tr><td>Primary identity</td><td>Jim, "The Jim McInerney Real Estate Team", and "Team McInerney" used interchangeably</td><td>Jim McInerney leads; the team supports in the background</td></tr><tr><td>Market</td><td>San Diego framing, portal service areas from Carlsbad to San Diego</td><td>La Jolla first; coastal San Diego as context</td></tr><tr><td>Service focus</td><td>Six specialties and renovation advice in one Homes.com bio</td><td>Luxury listings, won through redevelopment knowledge</td></tr><tr><td>Differentiator</td><td>Generic service language ("white glove", "dedicated, personalized service")</td><td>Seeing a property's full potential through zoning and local ordinances</td></tr><tr><td>Discover La Jolla</td><td>A separate brand with its own audience</td><td>Jim's community platform, visibly tied to his name</td></tr><tr><td>Website role</td><td>Template site with placeholder content</td><td>The seller's validation hub</td></tr><tr><td>Portals</td><td>Stale and inconsistent</td><td>One aligned proof network</td></tr><tr><td>Social</td><td>Professional-heavy own posts; community content supplied by collaborators</td><td>Audience-first content in Jim's own voice, real estate woven through</td></tr><tr><td>Search and AI</td><td>Identified by name, not recommended</td><td>Paired everywhere with La Jolla, listings, and redevelopment</td></tr></tbody></table></div>
+<div class="sec-open" id="s2"><span class="eyebrow">02 &nbsp;SECTION TWO</span><h2>Brand Direction</h2></div>
+<h4>Positioning Direction</h4>
+<p>The position in the Snapshot holds every asset to one test: does it show a seller what Jim sees in a property? For a seller, that shapes the price and the plan. For a developer, it answers the first question before purchase. For a buyer, it prevents an expensive surprise. Native roots make the claim believable.</p>
+<h4>What Jim Should Become Known For</h4>
+<blockquote class="quote">"The La Jolla native who sees a property's full potential, and knows how zoning and local ordinances shape it, before you buy or sell."</blockquote>
+<h4>Core Differentiators</h4>
+<div class="tbl"><table><thead><tr><th>Differentiator</th><th>Why it is believable</th></tr></thead><tbody><tr><td>Redevelopment knowledge</td><td>Works through La Jolla zoning, local ordinances, Coastal Commission review, and entitlement with architects, builders, and contractors; his own phrase is "taking dirt to dream"</td></tr><tr><td>Personal leadership</td><td>Jim leads each transaction himself through closing</td></tr><tr><td>Native roots</td><td>About 50 years in La Jolla, La Jolla High School, licensed since 2001</td></tr><tr><td>Community platform</td><td>Publisher of Discover La Jolla magazine, host of its podcast, producer of the annual La Jolla Sky Show</td></tr></tbody></table></div>
+<h4>Brand Architecture Direction</h4>
+<p>Jim McInerney is the public brand on the website, portals, Google, and social. The team works behind him and appears where a client meets them. eXp Realty of Southern California appears as the brokerage line wherever brokerage identification is required. Discover La Jolla stays its own masthead and carries a consistent "published by Jim McInerney" line that ties its audience back to him. Team-name advertising, brokerage identification, and license display follow California DRE rules; confirm final usage with the broker.</p>
+<h4>Brand Platform</h4>
+<div class="tbl"><table><thead><tr><th>Element</th><th>Recommendation</th></tr></thead><tbody><tr><td>Primary Brand</td><td>Jim McInerney</td></tr><tr><td>Supporting Identities</td><td>eXp Realty of Southern California (brokerage line); Discover La Jolla (community platform)</td></tr><tr><td>Primary Audience</td><td>La Jolla luxury home and lot owners preparing to sell</td></tr><tr><td>Supporting Audiences</td><td>Developers and builders; luxury buyers by referral</td></tr><tr><td>Primary Market</td><td>La Jolla</td></tr><tr><td>Adjacent Market</td><td>Coastal San Diego</td></tr><tr><td>Core Promise</td><td>A clear read of a property's full potential before you buy or sell, with Jim leading the sale himself</td></tr><tr><td>Proof Points</td><td>Licensed since 2001; La Jolla native; 59 closed sales in five years (Homes.com); 5.0 on 73 reviews on the team's Google listing; publisher of Discover La Jolla</td></tr><tr><td>Tone</td><td>Understated, local, direct, confident</td></tr><tr><td>De-emphasize</td><td>"San Diego's most distinctive real estate", generic service language, the team name as the lead, unverified rankings and awards</td></tr></tbody></table></div>
+<h4>Messaging Direction</h4>
+<p>Lead with the seller's question, then show Jim's edge. A La Jolla owner wants to know what the home is really worth and who will see it clearly. Jim answers with his own read of the property and his own hand on the sale. Discover La Jolla content speaks to the community; Jim's own posts connect that community to his work.</p>
+<h4>Example Messaging Territory</h4>
+<p>Directional lines, refined later for each channel:</p>
+<ul><li>See your La Jolla property's full potential before you sell.</li><li>La Jolla listings, priced on potential.</li><li>Zoning, local ordinances, and Coastal Commission review, handled before they cost you.</li><li>A La Jolla native who leads every sale himself.</li></ul>
+<div class="sec-open" id="s3"><span class="eyebrow">03 &nbsp;SECTION THREE</span><h2>Channel Strategy</h2></div>
+<h4>Channel Strategy Overview</h4>
+<p>The website validates. The portals prove. Google confirms. Instagram and Discover La Jolla build the memory that makes Jim the first call when an owner decides to sell. Real Talk Media serves as Jim's strategic content partner, giving the system the continuity, frequency, and consistency it lacks today across the platforms he is underusing.</p>
+<h4>Channel Role Matrix</h4>
+<div class="tbl"><table><thead><tr><th>Channel</th><th>Role</th><th>Priority</th><th>Content or Messaging Focus</th></tr></thead><tbody><tr><td>Website</td><td>Seller validation hub</td><td>High</td><td>La Jolla listings, redevelopment knowledge, proof, one consultation CTA</td></tr><tr><td>Zillow, Realtor.com, Homes.com</td><td>Third-party proof</td><td>High</td><td>The approved bios, led by listings: same facts, varied phrasing</td></tr><tr><td>Google Business Profile</td><td>Local trust layer</td><td>High</td><td>Current description, one contact stack, review requests, owner responses</td></tr><tr><td>Instagram</td><td>Primary audience channel</td><td>High</td><td>Audience-first La Jolla content with property reels in Jim's voice</td></tr><tr><td>Discover La Jolla (magazine, podcast, Instagram)</td><td>Community engine</td><td>High</td><td>Local businesses, people, and events, tied back to Jim</td></tr><tr><td>YouTube</td><td>Search-based authority</td><td>Medium</td><td>La Jolla selling, neighborhood, and redevelopment explainers</td></tr><tr><td>Facebook personal profile</td><td>Sphere of Influence</td><td>Medium</td><td>Life as it is, plus occasional soft professional proof</td></tr><tr><td>LinkedIn</td><td>Developer and referral network</td><td>Medium</td><td>Redevelopment insight, project updates, Discover La Jolla episodes</td></tr><tr><td>Facebook business Page</td><td>Cleanup</td><td>Low</td><td>Stop raw Instagram cross-posts; keep only native posts or reduce to a contact listing</td></tr><tr><td>Email</td><td>Retention and referral</td><td>Medium</td><td>Past-client touches, home anniversaries, Discover La Jolla highlights</td></tr><tr><td>Birdeye and legacy listings</td><td>Cleanup</td><td>Low</td><td>Claim or correct</td></tr></tbody></table></div>
+<h4>Website Role</h4>
+<p>The approved homepage and service pages (sell, buy, redevelop) give the site its structure. The homepage leads on sellers to match the listings-first position, and the headlines speak to a property's potential. The template content comes down in Phase 1, before the rebuild.</p>
+<h4>Portal and Profile Role</h4>
+<p>The portal bios are written and approved, and they state one set of facts across Zillow, Realtor.com, and Homes.com. Their openings lead with listings and the same "potential" language. Once the client confirms brokerage, volume, years, and contact details, they publish.</p>
+<h4>Google Business Profile Role</h4>
+<p>Google's role is the local trust layer that confirms Jim after a referral or a Discover La Jolla encounter. The description, phone, address, and brokerage must match the website, with a steady flow of new reviews and owner responses.</p>
+<h4>Social Media Role</h4>
+<p>Jim's audience responds to him personally and to La Jolla life: Birdstock and his on-site property reels earn the most attention. By our classification, about three-quarters of his own posts are professional. The direction flips that balance toward the 75/25 standard, with community and lifestyle content leading and real estate woven through. Three Spheres guide the mix: personal Facebook protects his Sphere of Influence, Discover La Jolla and the Sky Show build his Sphere of Recognition, and Discover La Jolla interviews expand his Sphere of Proximity. Real Talk's collaborator posts move to first-party posts in Jim's own voice.</p>
+<h4>Other Media Role</h4>
+<p>In our judgment, Discover La Jolla magazine and podcast are Jim's most distinctive asset. Each episode and issue carries a clear "published by Jim McInerney" link back to him, and the best moments become Instagram reels, YouTube clips, and email features. YouTube shifts from address-titled listing videos to search-style topics such as selling in La Jolla and what zoning and local ordinances mean for a lot.</p>
+<h4>Cross-Channel Consistency Direction</h4>
+<p>One name, one brokerage line, one license number, one phone, one office address, one volume figure, one years figure. The same pairing everywhere: Jim McInerney, La Jolla, luxury listings, redevelopment.</p>
+<div class="sec-open" id="s4"><span class="eyebrow">04 &nbsp;SECTION FOUR</span><h2>Visibility Strategy</h2></div>
+<h4>Public Search Impression Direction</h4>
+<p>A search for Jim's name in our October 16 check returned his own site, social accounts, and portals. The next step is category clarity: each of those assets repeats the same service and geography, so a searcher reads one story.</p>
+<h4>Google Business Profile Direction</h4>
+<p>Rewrite the description around La Jolla listings and redevelopment, remove the Compass reference, match the contact stack to the website, and ask recent clients for reviews that mention the work they hired him for.</p>
+<h4>AI Recommendation-Readiness Direction</h4>
+<p>ChatGPT and Gemini already identify Jim, and their answers repeated conflicting figures from his own profiles. One specialty sentence and one set of proof, repeated across the website, portals, Google, LinkedIn, and YouTube, gives those summaries a consistent public record to draw on. The namesake risk (other James McInerneys) shrinks as "Jim McInerney, La Jolla" appears consistently.</p>
+<h4>Service Plus Geography Standardization</h4>
+<div class="tbl"><table><thead><tr><th>Phrase Territory</th><th>Where It Is Used</th></tr></thead><tbody><tr><td>La Jolla luxury listing agent</td><td>Website title, Google description, portal bios</td></tr><tr><td>Selling a La Jolla home or lot</td><td>Seller page, YouTube titles, email</td></tr><tr><td>La Jolla redevelopment, land, and new construction</td><td>Redevelop page, LinkedIn, YouTube</td></tr><tr><td>Zoning and local ordinances in La Jolla</td><td>YouTube explainers, Discover La Jolla segments, seller consultations</td></tr><tr><td>La Jolla native and publisher of Discover La Jolla</td><td>About page, bios, podcast intros</td></tr></tbody></table></div>
+<p>Use the phrases with natural variation.</p>
+<h4>Authority and Proof Visibility Direction</h4>
+<p>Lead with proof the client confirms: years licensed, closed sales, Google reviews, native roots, and Discover La Jolla. Once the client confirms the side and permission, the Spindrift sale can lead. Unverified rankings, awards, and the template awards stay out until they are confirmed.</p>
+<h4>Relationship, Referral, and Recognition Strategy</h4>
+<p>Recognition is already strong: Birdstock and his on-site property reels earn his highest engagement. The gap is the bridge from recognition to referral: past-client stories, home anniversaries, client recognition posts, and reviews shared with permission. Each turns an audience that knows Jim into one that recommends him.</p>
+<h4>Visibility Flywheel</h4>
+<div class="tbl"><table><thead><tr><th>Stage</th><th>Purpose</th><th>Primary Channels</th></tr></thead><tbody><tr><td>Recognition</td><td>Keep Jim present before an owner is ready</td><td>Discover La Jolla, Sky Show, Instagram, personal Facebook</td></tr><tr><td>Search</td><td>Let the owner confirm him by name</td><td>Google, website, portals</td></tr><tr><td>Validation</td><td>Build confidence quickly</td><td>Website, portal bios, Google reviews, YouTube</td></tr><tr><td>Engagement</td><td>Make the next step simple</td><td>Consultation CTA, phone, email</td></tr><tr><td>Reinforcement</td><td>Stay close until timing changes</td><td>Email, Discover La Jolla, past-client content</td></tr><tr><td>Referral</td><td>Turn clients into advocates</td><td>Client stories, anniversaries, review requests</td></tr></tbody></table></div>
+<div class="sec-open" id="s5"><span class="eyebrow">05 &nbsp;SECTION FIVE</span><h2>Phased Action Plan</h2></div>
+<h4>Roadmap Overview</h4>
+<div class="tbl"><table><thead><tr><th>Phase</th><th>Focus</th><th>Highest-Leverage Move</th><th>Intended Outcome</th></tr></thead><tbody><tr><td>Phase 1</td><td>Clean the public record</td><td>Confirm one set of facts and publish the approved portal bios</td><td>Every search confirms one credible La Jolla agent</td></tr><tr><td>Phase 2</td><td>Rebuild the owned hub</td><td>Launch the approved website copy on a clean site</td><td>A website that turns validation into consultations</td></tr><tr><td>Phase 3</td><td>Build the content rhythm</td><td>Audience-first Instagram and Discover La Jolla content in Jim's voice, with Real Talk as content partner</td><td>Consistent recognition with the homeowners who sell next</td></tr><tr><td>Phase 4</td><td>Convert recognition into referrals</td><td>A past-client and referral engine, reviewed quarterly</td><td>A growing share of listings from people who already know Jim</td></tr></tbody></table></div>
+<h4>Phase 1: Clean the Public Record</h4>
+<p>The fastest gains are on the profiles sellers already check. Each one should state the same facts and the same position before any new content goes out.</p>
+<p><strong>Priority Actions</strong></p>
+<ol><li><strong>Primary:</strong> Confirm the canonical facts with Jim: brokerage line, career volume, years, license number, phone, and office address.</li><li><strong>Primary:</strong> Publish the approved portal bios on Zillow, Realtor.com, and Homes.com, replacing the Pacific Sotheby's bio and filling the empty Zillow bio.</li><li><strong>Primary:</strong> Remove the template placeholder text and template awards from the current website and replace the hero with La Jolla listing language.</li><li>Update the Google Business Profile description, phone, and brokerage; claim and correct Birdeye.</li><li>Correct the license number in caption templates; broker review recommended.</li><li>Stop raw Instagram cross-posts to the Facebook Page.</li><li>Confirm who controls each login so changes stick.</li></ol>
+<p><strong>Intended Outcome</strong></p>
+<p>A seller who searches Jim finds one name, one set of facts, and one clear position on every profile.</p>
+<h4>Phase 2: Rebuild the Owned Hub</h4>
+<p>With the record clean, the website becomes the place where a referral or a Discover La Jolla reader decides to call.</p>
+<p><strong>Priority Actions</strong></p>
+<ol><li><strong>Primary:</strong> Launch the approved homepage and sell, buy, and redevelop pages.</li><li><strong>Primary:</strong> Add confirmed proof: years licensed, closed sales, reviews quoted with permission, and the Spindrift sale once confirmed.</li><li>Connect Discover La Jolla to the site with a working link and a "published by Jim McInerney" section.</li><li>Point every portal, Google, social, and email link to the new site.</li><li>Align YouTube and LinkedIn descriptions with the same service and geography language.</li></ol>
+<p><strong>Intended Outcome</strong></p>
+<p>The website states Jim's position clearly, proves it, and asks for one next step.</p>
+<h4>Phase 3: Build the Content Rhythm</h4>
+<p>Real Talk Media works with Jim as his strategic content partner to give each platform a steady cadence and one voice.</p>
+<p><strong>Priority Actions</strong></p>
+<ol><li><strong>Primary:</strong> Rebalance Jim's own Instagram toward audience-first La Jolla content, with on-site property and redevelopment reels in his own voice.</li><li><strong>Primary:</strong> Move Real Talk collaborator posts to first-party posts published by Jim.</li><li>Tie every Discover La Jolla episode and issue back to Jim, and cut the best moments into reels and clips.</li><li>Restart YouTube with search-style topics: selling in La Jolla, neighborhood guides, zoning and local ordinances.</li><li>Revive LinkedIn lightly for developers and referral partners.</li><li>Add occasional soft professional proof to personal Facebook.</li></ol>
+<p><strong>Intended Outcome</strong></p>
+<p>Jim shows up every week with content La Jolla homeowners want, in his voice, across the channels he has been underusing.</p>
+<h4>Phase 4: Convert Recognition into Referrals</h4>
+<p>The last phase turns familiarity into listings and reviews into proof.</p>
+<p><strong>Priority Actions</strong></p>
+<ol><li><strong>Primary:</strong> Start a past-client program: home anniversaries, client recognition, and stories shared with permission.</li><li><strong>Primary:</strong> Ask every recent client for a Google review and respond to each one.</li><li>Feature client and community stories across Discover La Jolla and email.</li><li>Review the footprint quarterly: profiles, search results, AI answers, and which channels lead to consultations.</li><li>Retire claims, links, and listings that pull away from the position.</li></ol>
+<p><strong>Intended Outcome</strong></p>
+<p>A growing share of new listings comes from people who already know, trust, and recommend Jim.</p>
+<div class="sec-open" id="s6"><span class="eyebrow">06 &nbsp;SECTION SIX</span><h2>Closing Direction</h2></div>
+<p>Jim's brand already has its raw material: a native's knowledge of La Jolla, a working command of zoning and local ordinances, a record of closed sales, and a community platform of his own. The work ahead is organization.</p>
+<p>Aligned, the brand does three things at once. It makes Jim easy to understand. It makes him the obvious choice for a seller who wants a property's full potential priced into the sale. And it makes him the name La Jolla homeowners remember when the time comes.</p>
+<p>That is the path to 75 to 100 million dollars in new listings: a brand that is easier to find, easier to trust, easier to recommend, and easier to choose, built on what Jim already does every day.</p>
+<aside class="callout"><span class="label">RECOMMENDED NEXT STEP</span><p>Approve the positioning and Brand Platform, confirm the canonical facts, and begin Phase 1 with the portal bios and the website cleanup.</p></aside>
+<p><em>Prepared by Real Talk Media. This document is confidential and intended solely for the named recipient. The strategy outlined in this blueprint reflects the current understanding of the business and is intended as a directional framework, not a guaranteed outcome.</em></p>
+</article>
+
+<section class="email">
+  <span class="eyebrow">Cover Email (Brett sends)</span>
+  <p><strong>Subject:</strong> Your Branding Blueprint</p>
+<p>Hi Jim,</p>
+<p>Thanks again for the time on discovery. Your Real Estate Branding Blueprint's attached.</p>
+<p>It turns what we talked about into one direction: you as the La Jolla listing agent who sees a property's full potential and knows how zoning and local ordinances shape it, with Discover La Jolla keeping your name in front of the owners who sell next. The plan runs in four phases toward your goal of 75 to 100 million dollars in new listings.</p>
+<p>The first decision's yours: approve the positioning and Brand Platform and confirm the facts we flagged, starting with your brokerage line, volume figure, years, phone, and office address. With those, we'll start Phase 1 with your portal bios and the website cleanup.</p>
+<p>Leave comments right in the document wherever something feels off. That's how we'll sharpen it.</p>
+<p>Brett</p>
+</section>
+</div>

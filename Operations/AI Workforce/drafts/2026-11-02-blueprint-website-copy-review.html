@@ -1,0 +1,273 @@
+<title>Website Copy Skill Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: a single review column, decisions first, then what was built, then the staged file in full. */
+:root {
+  --bg: #f4f6f3; --surface: #ffffff; --sunk: #e9ede7; --fg: #1b2420; --muted: #5b6862; --line: #d2dbd5;
+  --accent: #2f6b4f; --accent-soft: #dcebe2; --warn: #8a5a00; --warn-soft: #f6ebd3;
+  --display: "Fraunces", Georgia, serif; --body: "Public Sans", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121815; --surface: #19211d; --sunk: #1f2924; --fg: #e3ebe6; --muted: #98a8a0; --line: #2d3a34;
+  --accent: #74c79c; --accent-soft: #1d3329; --warn: #e9b860; --warn-soft: #3a2e16; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121815; --surface: #19211d; --sunk: #1f2924; --fg: #e3ebe6; --muted: #98a8a0; --line: #2d3a34;
+  --accent: #74c79c; --accent-soft: #1d3329; --warn: #e9b860; --warn-soft: #3a2e16; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.55 var(--body); }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 36px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+.eyebrow { font: 600 12px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 600 clamp(28px, 5vw, 40px)/1.1 var(--display); margin: 6px 0 8px; text-wrap: balance; }
+h2 { font: 600 22px/1.2 var(--display); margin: 0 0 10px; text-wrap: balance; }
+p { margin: 0 0 10px; max-width: 68ch; }
+.lede { color: var(--muted); }
+section { display: grid; gap: 6px; min-width: 0; }
+.decide { background: var(--warn-soft); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.decide ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+th { background: var(--sunk); font-weight: 600; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+code, .path { font: 13px/1.4 var(--mono); overflow-wrap: anywhere; }
+.tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.tag.staged { background: var(--warn-soft); color: var(--warn); }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; font: 13px/1.5 var(--mono); margin: 12px 0 0; color: var(--fg); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 68ch; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Branding Blueprint · 4 of 6</div>
+    <h1>blueprint-website-copy</h1>
+    <p class="lede">The skill is built, written by the CMO in one pass, on the same pattern as the portal-bio skill that passed. This page lists what is waiting on you, what was built, and the staged website standard in full. Nothing has run on a client.</p>
+  </header>
+
+  <section class="decide">
+    <h2>Waiting on you</h2>
+    <ol>
+      <li><strong>Approve the expanded website standard.</strong> It is staged, not saved. On your yes it replaces <span class="path">.claude/blueprint/reference/website-standard.md</span>. The changes and the full text are below.</li>
+      <li><strong>Four added rules: approved</strong> (2026-11-02), with your change: the seven homepage sections are the default, not a requirement.</li>
+      <li><strong>Jim McInerney test</strong> runs once the standard is saved. The test reuses the portal-bio test 1 facts sheet and approved bios, so the facts gate only asks about what the site needs that the bios did not: service focuses, Jim's real workflow, and the CTAs.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>How the skill runs</h2>
+    <div class="tbl"><table>
+      <tr><th>Step</th><th>Who</th><th>What happens</th></tr>
+      <tr><td>1 Facts sheet</td><td>CMO</td><td><code>site-facts.md</code>, carried forward from <code>bio-facts.md</code>, plus service focuses, the real workflow, and the CTAs. Facts gate: eight core inputs are asked through the question tool, never inferred.</td></tr>
+      <tr><td>2 Site audit</td><td>CMO</td><td>Each page against audit areas A to G, citing <code>site.md</code>, with a fix-first line.</td></tr>
+      <tr><td>3 Write</td><td>CMO, one pass, Opus</td><td>The homepage plus one service page per confirmed service focus, as a copy deck: SEO title and meta, labeled sections, H1 and H2, buttons, and where each testimonial goes. Read beside the Christa Foss example.</td></tr>
+      <tr><td>4 Hard rules</td><td>Editor (Sonnet, client-voice mode)</td><td>Em dashes, banned phrases, slogans in the hero, urgency, business-model wording, facts. Style and flow are your call, not the editor's.</td></tr>
+      <tr><td>5 Fact-check</td><td>Fact-checker (Opus)</td><td>Every claim, including consistency across pages and against <code>bios.md</code>. One fix pass, one re-run.</td></tr>
+      <tr><td>6 CMO check</td><td>CMO</td><td>Title and meta lengths by script, em dash grep, service plus geography in every H1 and title, process steps against the workflow row, compliance named and sent to broker review.</td></tr>
+      <tr><td>Return</td><td>CMO</td><td>A private review page for you. On your approval, a .docx to <code>_Outbox/</code>. The skill never publishes.</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>What changes in the website standard</h2>
+    <div class="tbl"><table>
+      <tr><th>Section</th><th>Change</th><th>Source</th></tr>
+      <tr><td>Modes</td><td>New: audit, blueprint, create or rewrite, each with its rule</td><td>Playbook 2, 10</td></tr>
+      <tr><td>Principles</td><td>Now a list, with the priorities line added (clarity over creativity, specificity over cleverness, conversion over aesthetics)</td><td>Playbook 3, 14</td></tr>
+      <tr><td>Required inputs</td><td>The ten creation inputs as a numbered list with their options; test runs use labeled guesses</td><td>Playbook 4; portal-bio rule</td></tr>
+      <tr><td>Audit framework</td><td>Area G gains "supports recommendation-readiness"</td><td>Playbook 5</td></tr>
+      <tr><td>Homepage</td><td>Table of the seven sections with must-do and avoid columns, including the full differentiation categories and closing examples</td><td>Playbook 6</td></tr>
+      <tr><td>Homepage</td><td><span class="tag">Approved</span> The seven sections are the default, not a requirement; fewer is fine; the hero and one next step always stay; any section left out is named</td><td>You, 2026-11-02</td></tr>
+      <tr><td>Service pages</td><td>The seven requirements as a list; one page per confirmed service focus; CTA matched to intent</td><td>Playbook 7; you, 2026-11-02</td></tr>
+      <tr><td>Service pages</td><td><span class="tag staged">Added</span> A page of downloads is not a service page</td><td>Mine, from the Christa seller page</td></tr>
+      <tr><td>SEO title and meta</td><td><span class="tag staged">Added</span> One of each per page; title 60 characters or fewer, service plus geography first; meta 155 or fewer</td><td>You, 2026-11-02 (the lengths are mine)</td></tr>
+      <tr><td>Rewrite and create output</td><td>New</td><td>Playbook 9</td></tr>
+      <tr><td>Consistency</td><td>New: aligns with bios, Google Business Profile, social; same facts as <code>bios.md</code></td><td>Playbook 11</td></tr>
+      <tr><td>Tone, data integrity</td><td>Each gets its own heading; tone bands carried from the portal standard</td><td>Playbook 12, 13</td></tr>
+      <tr><td>Checklist</td><td>Expanded to match everything above</td><td>All</td></tr>
+    </table></div>
+    <p class="lede">In the skill: testimonials are quoted exactly from reviews in the facts sheet, otherwise marked "[testimonial: client to supply]".</p>
+  </section>
+
+  <section>
+    <h2>Files</h2>
+    <div class="tbl"><table>
+      <tr><th>File</th><th>State</th></tr>
+      <tr><td class="path">.claude/skills/blueprint-website-copy/SKILL.md</td><td><span class="tag">Created</span></td></tr>
+      <tr><td class="path">.claude/blueprint/reference/examples/website-christa-foss.md</td><td><span class="tag">Created</span> Section-by-section breakdown, what to take, five overrides</td></tr>
+      <tr><td class="path">Operations/AI Workforce/evals/blueprint-website-copy-eval.md</td><td><span class="tag">Created</span> v1.0, eight criteria, pass bar 4.0</td></tr>
+      <tr><td class="path">Operations/AI Workforce/drafts/2026-11-02-website-standard-proposed.md</td><td><span class="tag staged">Staged</span> Replaces website-standard.md on your yes</td></tr>
+      <tr><td class="path">.claude/skills/cmo/SKILL.md</td><td><span class="tag">Changed</span> Blueprint copy skills: the CMO writes, not the copywriter</td></tr>
+      <tr><td class="path">Operations/AI Workforce/drafts/2026-10-14-branding-blueprint-scope.md</td><td><span class="tag">Changed</span> Same correction in the skills table and Who does what</td></tr>
+      <tr><td>Asana: "Build the Branding Blueprint skills" (AI Workforce)</td><td><span class="tag">Changed</span> Same correction in the notes</td></tr>
+      <tr><td class="path">Operations/AI Workforce/systems-registry.md</td><td><span class="tag">Changed</span> New row; registry page republished (Version 73)</td></tr>
+    </table></div>
+  </section>
+
+  <details>
+    <summary>Staged website-standard.md, full text</summary>
+    <pre># Branding Blueprint: website standard
+
+_Shared reference. Source: Website StoryBrand Playbook (Drive 1ZFXHofcByaHvtevGLQq3wGUBTns5vNuyhXhVTyXLzVM), read in full 2026-11-02. StoryBrand SB7 itself is cited from content-frameworks.md (sections 3.1 and 12), not restated here. blueprint-audit reads the audit framework; blueprint-website-copy reads all of it. Built 2026-10-14; expanded 2026-11-02 with the blueprint-website-copy build (the 10/14 summary dropped parts of Playbook sections 6 to 9 and 11). Model of finished work: `examples/website-christa-foss.md`._
+
+## Modes (Playbook section 2)
+
+| Mode | Use | Rule |
+|---|---|---|
+| Audit | Evaluate an existing homepage or service page | Evaluate what is visible; name what could not be read |
+| Blueprint | Define what the site must communicate, its gaps, and what to emphasize | Lives in the Real Estate Branding Blueprint (blueprint-strategy); site work may land in Phase 1, 2, or 3 by impact and effort |
+| Create or rewrite | Write homepage and service page copy | Gather the required inputs first; never assume missing positioning |
+
+## Principles (Playbook section 3)
+
+- The client is the hero; the agent is the guide.
+- The problem is clear before the solution.
+- Authority is demonstrated, not declared.
+- Process reduces perceived client risk.
+- Differentiation is concrete.
+- Service plus geography is explicit.
+- Copy is easy to understand and summarize.
+- No em dashes, ever.
+
+**Priorities (Playbook section 14):** clarity over creativity, specificity over cleverness, conversion over aesthetics. The goal is not a visually impressive site; it is a clear, credible, effective one.
+
+## Required inputs (Playbook section 4)
+
+**Audit:** homepage URL or copy, service page URLs or copy, market served, service focus, known proof points, business model. Missing: evaluate the visible messaging and note the limits.
+
+**Create or rewrite (minimum):**
+
+1. Market or markets served
+2. Service focus (listings, buyers, balanced, luxury, relocation, investment, other)
+3. Business model (solo, team lead, team-based, brokerage owner, other)
+4. Primary audience
+5. Differentiators
+6. Proof points (experience, volume, transactions, reviews, certifications, media, specialization)
+7. Risk reducer (access, structure, process, niche expertise)
+8. Primary CTA
+9. Rewrite or create from scratch
+10. Tone or brand voice reference, if available
+
+Materially incomplete: stop and ask (engagement). A test run uses labeled best guesses instead (blueprint-website-copy SKILL.md).
+
+## Audit framework (Playbook section 5)
+
+| Area | Questions |
+|---|---|
+| A. Hero clarity | Is the market clear? The service? The client problem? The outcome? Is the headline specific or generic? |
+| B. Story structure | Is the client the hero and the agent the guide? Does the page move from problem to authority to action? |
+| C. Authority | Is proof visible and early? Is credibility demonstrated or claimed? |
+| D. Process | Is there a simple, believable process? Does it reduce risk? |
+| E. Differentiation | Is there a real, concrete edge? Would it hold up side by side with competitors? |
+| F. Conversion | Is there a clear next step? Is friction minimized? |
+| G. Search and AI readiness | Is service plus geography explicit? Are headings clear? Is the page easy to summarize? Does it support recommendation-readiness? |
+
+Audit output (section 9A): what is weak, vague, or missing; the clarity, authority, differentiation, and conversion gaps.
+
+## Writing standard (blueprint-website-copy)
+
+### Homepage (Playbook section 6)
+
+| Section | Must do | Avoid |
+|---|---|---|
+| I. Hero | Clear market and service; the client problem; the outcome; primary CTA; optional secondary CTA | Slogans, vague branding, empty adjectives |
+| II. Problem | Real client stakes: pricing uncertainty, negotiation pressure, timing stress, inventory constraints, transaction complexity, risk of costly mistakes. The client is the hero; tie it to real friction | Fear tactics, stakes the agent&#x27;s market does not have |
+| III. Authority | Proof: experience, volume, transactions, reviews, credentials, specialization, media presence | Vague superlatives, unsupported claims |
+| IV. Process | A customized three-step structure from the agent&#x27;s actual workflow that reinforces the differentiation and reduces risk | Generic steps (&quot;clarity, strategy, execution&quot;) |
+| V. Differentiation | Specific and defensible: marketing (exposure, media, targeting), negotiation (offer strategy, bidding management), data (pricing analysis, market modeling), network (off-market access, connections), systems (structured process, oversight) | Abstract positioning |
+| VI. Risk reduction | Communication standards, oversight level, process clarity, timeline management | &quot;Client-focused&quot;, &quot;dedicated service&quot;, and their cousins |
+| VII. Closing | One clear next step (schedule a consultation, request a pricing review, discuss your timeline) | Urgency manipulation |
+
+The seven sections are the default, not a requirement (Brett, 2026-11-02). Use fewer, merge, or reorder when the page reads better for this agent (the example folds authority into the guide section); the hero and one clear next step are always there. Name any section left out, and why, in the return to Brett.
+
+### Service pages (Playbook section 7)
+
+One page per service focus the facts sheet confirms (Brett, 2026-11-02): for example selling in a named market, buying in a named market, luxury, relocation. Each page:
+
+- pairs service plus geography explicitly (in the H1 and the SEO title)
+- defines the audience
+- defines the problem
+- outlines the process
+- reinforces the differentiation
+- includes proof
+- ends with a CTA matched to the page&#x27;s intent (a seller page asks for a pricing review, a buyer page for a search consultation)
+
+Service pages are more specific than the homepage. A page of downloads is not a service page.
+
+### SEO title and meta description (Brett, 2026-11-02)
+
+One of each per page. Title: service plus geography first, then the agent or team name, 60 characters or fewer. Meta description: the page&#x27;s promise and next step in plain words, 155 characters or fewer, no keyword stuffing. Counted by script.
+
+### Structure for search and AI (Playbook section 8)
+
+Clear headings; explicit market references; service plus geography repeated naturally; low ambiguity; easy to summarize; supports recommendation-style search. FAQ sections may be used when helpful. Never reference LLM or search mechanics in the copy.
+
+### Rewrite and create output (Playbook section 9)
+
+Rewrite: follow the homepage or service page structure, correct every weakness the audit named, align with this standard. Create from scratch: confirm the inputs, then write structured copy.
+
+### Consistency (Playbook section 11)
+
+The site aligns with the portal bios, Google Business Profile, social profiles, and the overall positioning. Inconsistency weakens clarity and recommendation-readiness. When `bios.md` exists, the site states the same facts with the same values.
+
+### Tone (Playbook section 12)
+
+Professional, clear, confident by default; adjusted to the brand voice, market tier, and audience (luxury understated, high-volume teams structured and decisive, community-driven warmer). No hype, clichés, or exaggerated claims.
+
+### Data integrity (Playbook section 13)
+
+Never fabricate proof, results, or differentiators. Ask when missing (integrity.md).
+
+## Checklist
+
+Hero names market, service, problem, outcome, and CTA, with no slogan; any of the seven sections left out is named with the reason; the client is the hero and the agent the guide; the problem comes before the solution; proof is early and demonstrated; the three steps are the agent&#x27;s own; differentiation is defensible; risk reducers are specific and true; one clear CTA per page, repeated, no urgency manipulation; one service page per confirmed service focus, each more specific than the homepage; service plus geography in every H1 and SEO title; titles and metas within length; consistent with the portals, Google Business Profile, and social; nothing fabricated; no LLM mechanics in the copy; no em dashes.
+</pre>
+  </details>
+
+  <details>
+    <summary>Christa Foss example file, full text</summary>
+    <pre># Example: homepage, Christa Foss
+
+_Model of finished work for blueprint-website-copy (Brett, 2026-11-02). Source: https://www.christafoss.com/ (homepage), read 2026-11-02 in the built-in browser. A section-by-section breakdown with short excerpts, not a copy of the page. Read it for structure, warmth, and pacing; never reuse its facts, phrases, or headlines for another agent. Where it and website-standard.md disagree, the standard wins (the overrides below). Her seller page is a page of downloads, not a service page, so it is not a model for service pages._
+
+## The page, in order
+
+| # | Section | What it does | Standard section it serves |
+|---|---|---|---|
+| 1 | Hero | A warm line, &quot;When you&#x27;re ready to buy or sell, I&#x27;m your realtor girl&quot;, a one-sentence promise of support, one button (&quot;Connect with Christa&quot;) | I. Hero (partly: see override 1) |
+| 2 | Problem | Opens &quot;Home buying &amp; selling doesn&#x27;t have to be stressful&quot;, then four questions the client asks at night: is now the right time, how do rates affect me, will I overpay or undervalue, does my agent have my best interest in mind. Ends on the stakes: the right agent is the difference between a smooth and a bumpy ride | II. Problem |
+| 3 | Services | Three short blocks (buying, selling, staging), two sentences each, then the button again | Bridge to the service pages |
+| 4 | Testimonial | A headline pulled from the review (&quot;You definitely need Christa in your corner!&quot;), the quote, the client type in brackets (&quot;First-time buyers&quot;) | III. Authority (social proof) |
+| 5 | Guide | Empathy first (&quot;I know how personal home is to you&quot;), then one human detail that explains how she works (hospitality background from retail, guest relations, ministry), then her style in plain words (&quot;equal parts grit and grace&quot;) and a communication promise (&quot;You&#x27;ll never be in the dark&quot;) | Guide, VI. Risk reduction |
+| 6 | Track record | A scrolling strip of 36 recent sales and purchases labeled Sold or Purchased | III. Authority (demonstrated) |
+| 7 | Awards | Specific, dated awards with what each means (&quot;comprised of the top 20% of agents in each office&quot;), plus her coaching role | III. Authority |
+| 8 | Two testimonials | One from a mortgage partner, one from sellers with a concrete outcome (sold in three days, multiple offers over asking) | III. Authority, V. Differentiation |
+| 9 | Plan | &quot;Here&#x27;s how to get the ball rolling&quot;: three numbered steps, with &quot;no pressure, just a conversation&quot; | IV. Process |
+| 10 | Testimonial | Buyers and sellers on how she walked beside them | Success |
+| 11 | Close | &quot;Ready to make your move? Let&#x27;s talk, coffee&#x27;s on me!&quot; and the button | VII. Closing |
+
+## What to take from it
+
+- **The problem is the client&#x27;s own voice.** Four questions the reader has actually asked themselves do more than any statement about the market.
+- **Empathy before proof.** The guide section starts with how the client feels and only then turns to her background.
+- **The human detail explains the method.** Hospitality is why she runs a welcoming, communicative process, not a bio fact.
+- **Proof is shown, not claimed.** A strip of real transactions, dated awards with their meaning, and testimonials tagged by client type.
+- **Testimonials do structural work.** Each is placed between sections and carries its own headline drawn from the quote.
+- **One CTA, repeated.** The same button appears after every major section, so the reader never has to look for it.
+- **Low-pressure close.** The next step is small and human.
+- **Short blocks.** No paragraph runs past four lines on screen; nothing is stacked or listed except the three steps.
+
+## Overrides (website-standard.md wins)
+
+1. **Hero.** Hers is a slogan (&quot;There&#x27;s no place like home&quot;) and never names her market or service in the hero; the market appears only in the page title (South Metro Minnesota). Our hero names market, service, the client&#x27;s problem, and the outcome above the button.
+2. **Process.** Her three steps (schedule time, start exploring, make your move) are generic and could belong to any agent. Ours come from the agent&#x27;s actual workflow and carry the differentiation.
+3. **Differentiation.** She has no section that would hold up side by side with a competitor; it lives in testimonials only. Ours names one defensible edge from the five categories.
+4. **Search and AI readiness.** Service plus geography appears in the title tag only. Ours repeats it naturally in headings and body.
+5. **Personal branding lines.** &quot;Realtor girl&quot; fits her brand voice; a line like it is used only when the client&#x27;s voice reference supports it.
+</pre>
+  </details>
+</div>
