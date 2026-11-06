@@ -2,6 +2,17 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-06 15:10 PT
+
+Threads seen: 4. Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 4.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Ruben Hassid | Money. | RULE-KEPT | keep (Ruben Hassid rule; read, not surfaced) |
+| Kim Kelly | Re: coming Q1 | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Five Star Escrow Benefits Management | Important online benefit enrollment information | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Kurt Iuli Kinsey | Re: Launch party tonight 17348 Via Del Campo | RESPONSE-WORTHY | keep (read, not surfaced) |
+
 ## 2026-11-06 11:10 PT
 
 Threads seen: 11. Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 11.
