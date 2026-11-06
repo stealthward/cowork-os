@@ -42,8 +42,7 @@ _Chief of staff, Fri 11/6, run from the cloud test session. Read before the Mon 
 - **Cloud test (11/5 to 11/12) vs the pilot loop:** the loop's blocker is a desktop browser sign-in, and the loop itself runs on the office PC. Do you want the sign-in done this week, or the rule edits held until the cloud test ends?
 
 ## Fix these?
-- **Factory show prep** (1219511375670614) is due Tue 11/10, but the calendar has the prep call Wed 11/11 3:00 to 3:30. Move the task to 11/11?
-- **Upgrade to Claude Team** (1219342602318655): clear the date and assignee to match its held Prerequisite, or confirm you dated it today on purpose?
+- None from this run. Brett (11/6): task moves happen in his local planning thread, not from the cloud. Factory show prep on 11/10 is correct (he preps the day before the call). The Claude Team date vs its held Prerequisite goes to the local thread.
 
 ## Seats this week
 - **Chief of staff:** Dailies 11/2, 11/3, 11/4 (evening plans for Wed and Thu), REACH chapter schedule (11 subtasks dated), Ch 6 subtask rewrites.

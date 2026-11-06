@@ -465,3 +465,4 @@ Writes: 11 chapter subtasks assigned to Brett, dated (Ch 2 11/6 to Ch 1 2027-01-
 - Asana writes: completed "Friday Report" (1220068917169740) per Brett's standing instruction (10/16).
 - Registry: rendered, not republished (brief); snapshot left at 10/30. Push to GitHub refused (403), commits local.
 - Report: logs/2026-11-06-friday-report.md
+- Brett's answers (question tool): prep the day before a call (memory); no task moves from the cloud while he plans locally, and the description-reading catch goes to memory; Claude Team date, positioning interview, and show prep handled in his local thread. Asked why he needs to sign in to Asana for the pilot loop (explained in thread). Report Fix these updated.
