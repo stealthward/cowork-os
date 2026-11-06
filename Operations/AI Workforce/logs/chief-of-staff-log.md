@@ -466,3 +466,10 @@ Writes: 11 chapter subtasks assigned to Brett, dated (Ch 2 11/6 to Ch 1 2027-01-
 - Registry: rendered, not republished (brief); snapshot left at 10/30. Push to GitHub refused (403), commits local.
 - Report: logs/2026-11-06-friday-report.md
 - Brett's answers (question tool): prep the day before a call (memory); no task moves from the cloud while he plans locally, and the description-reading catch goes to memory; Claude Team date, positioning interview, and show prep handled in his local thread. Asked why he needs to sign in to Asana for the pilot loop (explained in thread). Report Fix these updated.
+
+## 2026-11-06 (Process pull-forward, cloud test session, report-only)
+- Request: "I've got some extra time in my day. Take a look at my process section on my tasks and let me know what we can move into today."
+- Sources: own memory and log; Asana My Tasks (all open, by section); get_task on the 4 Process tasks (Intro Brandon & Jakob 1220285004124155, FOR SALE sign for the Jeep 1220287831710103, Client marketing framework: positioning interview 1220231161851881, Jalyn Strat comm plan 1219670859036367); Google Calendar 11/6 (DLJ interview 11:30 to 12:00). Not read: Max Income content, apriliapeace, email, the Jalyn Google Doc.
+- Verified: 4 by get_task; could not verify: 0.
+- Recommended into today: Intro Brandon & Jakob (10m), positioning interview (45m, if the local thread has not already placed it), Jeep sign (10m, Felicia-assigned, Brett sorts). Jalyn Strat comm plan: no estimate or description, 17 days in Process; asked Brett for scope.
+- Asana writes: none (cloud report-only; Brett is planning locally, memory 11/06).
