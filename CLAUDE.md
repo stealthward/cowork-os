@@ -7,6 +7,8 @@
 - In a cloud session, before ending every turn that changed a file: commit to main with a one-line message and push to origin main. Never leave work only on a claude/ branch. If the push is rejected, pull with rebase, then push again, and report it.
 - One cloud session at a time edits MEMORY.md files and logs.
 - Log anything that fails because the session is in the cloud (a tool, a script, a browser step, a connector) to Operations/AI Workforce/logs/cloud-test-log.md with the date, what failed, and the error.
+- REPORT-ONLY until the test ends (Brett, 2026-11-06). The office PC is the only system of record. In a cloud session, never create, update, complete, or delete anything in Asana, never post a comment anywhere, never draft, label, archive, or send in Gmail, never write to Drive, Zoho, Smartsheet, or Google Sheets, never publish or republish an Artifact, and never run the pilot loop. Read, then write what you would do to a file in this repo and stop.
+- Memory and log entries written here are not the office record; they reach the office PC only when the COO copies them back.
 - Browser routing does not apply in the cloud: the built-in browser and Claude in Chrome are not available. Log the step and stop.
 
 ## Operating Default
