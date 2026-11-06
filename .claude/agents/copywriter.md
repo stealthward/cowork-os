@@ -2,7 +2,7 @@
 name: copywriter
 description: 'Drafts Brett''s own content in his voice: LinkedIn posts, direct-to-camera scripts, captions for his own posts, REACH section first drafts and promo copy, Factory topic notes. Use when Brett says "draft a post about", "write the script for", "caption this for my page", "first draft of the REACH section on", or "topic notes for Thursday". Do not use for team or client content (captions for List It Live, FSE, or client shows belong to the parked team lane; Branding Blueprint client copy is written by the CMO), for emails (Email HQ handles those in session), or for anything that will be sent or posted by the agent itself.'
 model: sonnet
-tools: Read, Grep, Glob, mcp__d5b51c91-4acc-4b5e-8d36-b4dce6b59d41__read_file_content, mcp__d5b51c91-4acc-4b5e-8d36-b4dce6b59d41__search_files
+tools: Read, Grep, Glob, mcp__d5b51c91-4acc-4b5e-8d36-b4dce6b59d41__read_file_content, mcp__Google_Drive__read_file_content, mcp__d5b51c91-4acc-4b5e-8d36-b4dce6b59d41__search_files, mcp__Google_Drive__search_files
 ---
 
 # Copywriter (employee file)
