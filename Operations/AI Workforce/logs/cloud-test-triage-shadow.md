@@ -2,6 +2,17 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-07 07:09 PT
+
+Threads seen: 4. Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 4.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| FSE Admin via Smartsheet | Birthday Alert! | RULE-KEPT | keep (Smartsheet birthday rule; unread, surfaced) |
+| Greg Ives | Expanding your investor network | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Kim Kelly | Re: coming Q1 | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Kurt Iuli Kinsey | Re: Launch party tonight 17348 Via Del Campo | RESPONSE-WORTHY | keep (read, not surfaced) |
+
 ## 2026-11-06 15:10 PT
 
 Threads seen: 4. Would-archive: 0. Would-label @Sane/Solicitations: 0. Would-keep: 4.
