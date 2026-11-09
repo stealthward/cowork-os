@@ -2,6 +2,17 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-09 07:09 PT
+
+Threads seen: 4. Would-archive: 1. Would-label @Sane/Solicitations: 0. Would-keep: 3.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Zoho Team | Your domain is about to expire. | COMPLIANCE | keep (domain expires Nov 9; unread, surfaced first) |
+| Google | Security alert for nylapward@gmail.com | FYI | archive (unread; no register keep rule) |
+| FSE Admin via Smartsheet | Birthday Alert! | RULE-KEPT | keep (Smartsheet birthday rule; unread, surfaced) |
+| Greg Ives | Expanding your investor network | RESPONSE-WORTHY | keep (read, not surfaced) |
+
 ## 2026-11-08 15:09 PT
 
 Threads seen: 5. Would-archive: 1. Would-label @Sane/Solicitations: 0. Would-keep: 4.
