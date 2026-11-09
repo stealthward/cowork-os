@@ -2,6 +2,23 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-09 15:12 PT
+
+Threads seen: 10 (in scope; Promotions and Social excluded). Would-archive: 2. Would-label @Sane/Solicitations: 0. Would-keep: 8.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Zoho Team | Your domain is about to expire. | COMPLIANCE | keep (domain expires Nov 9; unread, surfaced first) |
+| Felicia Ward | Fwd: Additional Questions on Current Documents | COMPLIANCE | keep (attorney correspondence; read, not surfaced) |
+| Sydney Rohlfs | RE: Re: RE: New Escrow and Escrow Lookup: please work in the Hub starting today | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Five Star Escrow Benefits Management | Important online benefit enrollment information | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Cassie Pellegrini | Fwd: RTM Website Inquiry | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Bryan Devore | Re: Studio Conversation | RESPONSE-WORTHY | keep (read; Brett sent latest reply, not surfaced) |
+| Greg Ives | Expanding your investor network | RESPONSE-WORTHY | keep (read, not surfaced) |
+| FSE Admin via Smartsheet | Birthday Alert! | RULE-KEPT | keep (Smartsheet birthday rule; unread, surfaced) |
+| Elizabeth Eidbo | Weekly Ops & Optimization Summary, November 2 - 6, 2026 | FYI | archive (unread; no register keep rule) |
+| Google | Security alert for nylapward@gmail.com | FYI | archive (unread; no register keep rule) |
+
 ## 2026-11-09 11:08 PT
 
 Threads seen: 7 (in scope; 11 more in Promotions are out of scope and never touched). Would-archive: 2. Would-label @Sane/Solicitations: 0. Would-keep: 5.
