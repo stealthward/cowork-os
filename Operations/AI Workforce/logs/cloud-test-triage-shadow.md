@@ -2,6 +2,20 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-09 11:08 PT
+
+Threads seen: 7 (in scope; 11 more in Promotions are out of scope and never touched). Would-archive: 2. Would-label @Sane/Solicitations: 0. Would-keep: 5.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Zoho Team | Your domain is about to expire. | COMPLIANCE | keep (domain expires Nov 9; unread, surfaced first) |
+| Cassie Pellegrini | Fwd: RTM Website Inquiry | RESPONSE-WORTHY | keep (unread, surfaced) |
+| Five Star Escrow Benefits Management | Important online benefit enrollment information | RESPONSE-WORTHY | keep (unread, enrollment incomplete) |
+| FSE Admin via Smartsheet | Birthday Alert! | RULE-KEPT | keep (Smartsheet birthday rule; unread, surfaced) |
+| Greg Ives | Expanding your investor network | RESPONSE-WORTHY | keep (read, not surfaced) |
+| Elizabeth Eidbo | Weekly Ops & Optimization Summary, November 2 - 6, 2026 | FYI | archive (unread; no register keep rule) |
+| Google | Security alert for nylapward@gmail.com | FYI | archive (unread; no register keep rule) |
+
 ## 2026-11-09 07:09 PT
 
 Threads seen: 4. Would-archive: 1. Would-label @Sane/Solicitations: 0. Would-keep: 3.
