@@ -482,3 +482,12 @@ Writes: 11 chapter subtasks assigned to Brett, dated (Ch 2 11/6 to Ch 1 2027-01-
 - Would recommend (not applied): ops first, Daly email before writing, Ch 2 last; to fit 360, move Ch 2 to Tue 11/10 and Ch 3 to Fri 11/13 (his Tue/Fri REACH rhythm), or keep Ch 2 and move Edit LinkedIn headline. Would fix: Rank 2 hole; Ch 2 and Weekly Asana Review unranked.
 - In your way: Asana sign-in for pilot loop rule edits (handoff open since 11/4).
 - Asana writes: none (cloud report-only; Brett plans on the PC after this run per the Cloud test task).
+
+## 2026-11-10 (Daily for Tue 11/10, cloud test session, report-only)
+- Request: "chief of staff, what should I work on today?"
+- Sources: root MEMORY.md, own memory and log, handoffs.md, cloud-test-log.md; Asana My Tasks (all open, 2 pages); get_task on Cloud test (1220363696185789), Edit LinkedIn headline (1219122746065391), Hub guide (1220179171008528), CMO PoC master (1219342714813882), Brian Daly REInvest email (1220236635035844), Ch 2 (1219917308945580), 9 of 10 (1219342644489288), Factory show prep (1219511375670614); Google Calendar 11/10 (no events). Not read: Max Income content, apriliapeace, email.
+- Verified: 8 by get_task, 0 by Gmail, 1 by log (Asana sign-in handoff); could not verify: 0.
+- Today as scheduled: 475 min against 360. Top three (his Ranks): Cloud test (1), Brian Daly email (3), Edit LinkedIn headline (4).
+- Would recommend (not applied): ops block first (Cloud test, Daly, Factory prep), then content, Ch 2 last as the deep block; to fit, move 9 of 10 and Hub guide kickoff to Wed 11/11 (Wed shows 75 min of tasks), bringing today to 415. Would fix: Rank 2 hole again; Hub guide, Factory prep, Ch 2 unranked; Daly email has no description.
+- In your way: Asana sign-in handoff (open since 11/4); Jalyn Strat comm plan undated in Process.
+- Asana writes: none (cloud report-only).
