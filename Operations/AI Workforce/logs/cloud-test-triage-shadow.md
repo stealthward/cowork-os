@@ -2,6 +2,26 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-10 07:09 PT
+
+Threads seen: 28 | would-archive: 1 | would-label: 0 | would-keep: 16 | out of scope, untouched (Promotions): 11. The read rule suppresses 4 read threads from the table (3 kept, 1 archived).
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Zoho Team | Your domain is about to expire (fivestarescrow.com, expired Nov 9) | RESPONSE-WORTHY | keep in inbox |
+| Real Report | Declining trend lines | RULE-KEPT | keep in inbox (client rule) |
+| Ruben Hassid | Claude 101. | RULE-KEPT | keep in inbox (register rule) |
+| Melissa Goldstein Tucci | Re: 2014 ESPN video | RESPONSE-WORTHY | keep in inbox |
+| Neil Dutta | Re: follow-up | RESPONSE-WORTHY | keep in inbox |
+| Elizabeth Eidbo | Fwd: Following Up | RESPONSE-WORTHY | keep in inbox |
+| Cole Samaroo | Re: Studio Conversation | RESPONSE-WORTHY | keep in inbox |
+| Kim Kelly | Re: coming Q1 | RESPONSE-WORTHY | keep in inbox |
+| MyScripps | You have a new message in MyScripps | RESPONSE-WORTHY | keep in inbox |
+| Elizabeth Eidbo | Weekly Ops & Optimization Summary | AMBIGUOUS | keep in inbox |
+| Torrey Pines High School | Attendance Notice | AMBIGUOUS | keep in inbox |
+| Google | Security alert for nylapward@gmail.com (11/10) | AMBIGUOUS | keep in inbox |
+| Google | Security alert for nylapward@gmail.com (11/8) | AMBIGUOUS | keep in inbox |
+
 ## 2026-11-09 15:12 PT
 
 Threads seen: 10 (in scope; Promotions and Social excluded). Would-archive: 2. Would-label @Sane/Solicitations: 0. Would-keep: 8.
