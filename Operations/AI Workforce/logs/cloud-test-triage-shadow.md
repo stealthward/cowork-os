@@ -1,6 +1,16 @@
 # Cloud Test Triage Shadow (report-only)
 
 Newest run at top. Gmail untouched by this shadow.
+## 2026-11-10 15:09 PT
+
+Threads seen: 11 (in scope; Promotions and Social excluded) | would-archive: 1 | would-label: 0 | would-keep: 10. The read rule suppresses 8 read threads from the table (7 kept, 1 archived).
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| RJS Law Firm (Clio) | A bill from RJS Law Firm | RULE-KEPT | keep in inbox (register rule: Barmaksezian case, leave in place) |
+| Brooke Lenander | FSE cash position | AMBIGUOUS | keep in inbox |
+| Elizabeth Eidbo | Weekly Ops & Optimization Summary | AMBIGUOUS | keep in inbox |
+
 
 ## 2026-11-10 11:09 PT
 
