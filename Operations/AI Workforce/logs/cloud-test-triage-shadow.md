@@ -2,6 +2,14 @@
 
 Newest run at top. Gmail untouched by this shadow.
 
+## 2026-11-10 11:09 PT
+
+Threads seen: 8 (in scope; Promotions and Social excluded) | would-archive: 1 | would-label: 0 | would-keep: 7. The read rule suppresses 7 read threads from the table (6 kept, 1 archived).
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Elizabeth Eidbo | Weekly Ops & Optimization Summary | AMBIGUOUS | keep in inbox |
+
 ## 2026-11-10 07:09 PT
 
 Threads seen: 28 | would-archive: 1 | would-label: 0 | would-keep: 16 | out of scope, untouched (Promotions): 11. The read rule suppresses 4 read threads from the table (3 kept, 1 archived).
