@@ -1,6 +1,18 @@
 # Cloud Test Triage Shadow (report-only)
 
 Newest run at top. Gmail untouched by this shadow.
+## 2026-11-11 07:09 PT
+
+Threads seen: 11 (in scope; Promotions and Social excluded, 5 promo threads skipped) | would-archive: 1 | would-label: 0 | would-keep: 10. The read rule suppresses 8 read threads from the table (7 kept, 1 archived).
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| Ring Team | Your Driveway is offline | RULE-KEPT | keep in inbox (register rule: Ring offline notices) |
+| FSE Admin via Smartsheet | REMINDER: Birthday in 3 Days | RULE-KEPT | keep in inbox (register rule: Smartsheet birthday reminders) |
+| Elizabeth Eidbo | Weekly Ops & Optimization Summary | AMBIGUOUS | keep in inbox |
+
+Suppressed (read): RJS Law Firm (Clio) bill, RULE-KEPT, keep | Ruben Hassid newsletter, RULE-KEPT, keep | Melissa Goldstein Tucci, RESPONSE-WORTHY, keep | Elizabeth Eidbo fwd, RESPONSE-WORTHY, keep | Cole Samaroo (SR Tech Connect) studio thread, RESPONSE-WORTHY, keep | Felicia Ward fwd of attorney questions, COMPLIANCE, keep | Five Star Escrow Benefits (Ease), AMBIGUOUS, keep | Hub escrow-guide thread (latest message sent by Brett), FYI, archive.
+
 ## 2026-11-10 15:09 PT
 
 Threads seen: 11 (in scope; Promotions and Social excluded) | would-archive: 1 | would-label: 0 | would-keep: 10. The read rule suppresses 8 read threads from the table (7 kept, 1 archived).
