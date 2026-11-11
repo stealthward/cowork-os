@@ -1,6 +1,15 @@
 # Cloud Test Triage Shadow (report-only)
 
 Newest run at top. Gmail untouched by this shadow.
+## 2026-11-11 11:09 PT
+
+Threads seen: 5 (in scope; Promotions and Social excluded, 4 promo threads skipped) | would-archive: 1 | would-label: 0 | would-keep: 4. The read rule suppresses all 5 from the table (no UNREAD label on any latest message), so no new items.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+
+Suppressed (read): Ruben Hassid, Claude 101, RULE-KEPT, keep | Melissa Goldstein Tucci, 2014 ESPN video, RESPONSE-WORTHY, keep | Felicia Ward fwd of attorney questions, COMPLIANCE, keep | Elizabeth Eidbo, Weekly Ops & Optimization Summary, AMBIGUOUS, keep | Hub escrow-guide thread (latest message sent by Brett), FYI, archive.
+
 ## 2026-11-11 07:09 PT
 
 Threads seen: 11 (in scope; Promotions and Social excluded, 5 promo threads skipped) | would-archive: 1 | would-label: 0 | would-keep: 10. The read rule suppresses 8 read threads from the table (7 kept, 1 archived).
