@@ -517,3 +517,4 @@ One line per run, every agent and skill, appended by the run itself when it can 
 2026-11-06 | chief-of-staff | opus | Process pull-forward: 4 Process tasks read, 3 recommended into today, report-only
 2026-11-09 | chief-of-staff | claude-opus-5-5 | Cloud Daily for 11/9, report-only: 490 of 360 scheduled, recommended Ch 2 to Tue, no writes
 2026-11-10 | chief-of-staff | session model | Daily for 11/10 from cloud, report-only: 475 of 360 min scheduled, recommended moving 9 of 10 and Hub guide to Wed
+2026-11-11 | chief-of-staff | opus | Daily for Thu 11/12 (cloud, report-only): 370 min plan recommended, Ch 2 to Fri, Ch 3 to Tue 11/17, no Asana writes

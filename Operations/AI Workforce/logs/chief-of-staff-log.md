@@ -491,3 +491,12 @@ Writes: 11 chapter subtasks assigned to Brett, dated (Ch 2 11/6 to Ch 1 2027-01-
 - Would recommend (not applied): ops block first (Cloud test, Daly, Factory prep), then content, Ch 2 last as the deep block; to fit, move 9 of 10 and Hub guide kickoff to Wed 11/11 (Wed shows 75 min of tasks), bringing today to 415. Would fix: Rank 2 hole again; Hub guide, Factory prep, Ch 2 unranked; Daly email has no description.
 - In your way: Asana sign-in handoff (open since 11/4); Jalyn Strat comm plan undated in Process.
 - Asana writes: none (cloud report-only).
+
+## 2026-11-11 (Daily for Thu 11/12, cloud test session, report-only)
+- Request: "Chief of staff, what should I work on tomorrow?"
+- Sources: root MEMORY.md, own memory and log, handoffs.md, cloud-test-log.md, initiatives.md, asana-conventions.md (Daily planning); Asana My Tasks open due through 11/13, completed since 11/10; get_task on Approve the cloud transition design (1220317449950031), Confirm two experts (1218963080306728), Partner whisper kit (1218963080309017), Hold 2/18 at The Hive (1218963080229798), Studio (1220250956712987), Send Factory show topics (1220317098130907), Whisper and tease plan (1218963104761403, prerequisite, complete), Brian Daly REInvest email (1220236635035844), Ch 2 (1219917308945580); search for the founding table prerequisite (Secure founding partners 1218246612327631, complete); Google Calendar 11/12 (no events). Not read: Max Income content, apriliapeace, email.
+- Verified: 9 by get_task, 0 by Gmail, 1 by log (Asana sign-in handoff); could not verify: 0.
+- Thu 11/12 as scheduled: 310 min; with the two 11/10 carry-overs (Daly email 60, Ch 2 240) 610.
+- Would recommend (not applied): ops block before Studio (Boost LiL, @Sane, show topics, Hive hold, Daly email), Studio 10:35 to 12:40, then cloud design approval, two experts, whisper kit kickoff, reel post; 370 min. Move Ch 2 to Fri 11/13 and Ch 3 to Tue 11/17 (chapter order, Tue/Fri REACH rhythm). Would fix: Ranks 3 to 5 empty on Thursday; Daly email still has no description.
+- In your way: Asana sign-in handoff (open since 11/4); cloud design approval needs the COO write-up from the office PC first.
+- Asana writes: none (cloud report-only).
