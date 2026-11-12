@@ -510,5 +510,5 @@ Writes: 11 chapter subtasks assigned to Brett, dated (Ch 2 11/6 to Ch 1 2027-01-
 - Verified: 9 by get_task, 0 by Gmail, 1 by log (Asana sign-in handoff); could not verify: 0.
 - Thu as scheduled: 215 min (banner review estimated 15). Top three: Cloud test (Rank 1), Partner whisper kit, Approve the cloud transition design (needs the COO write-up on the PC first).
 - Would recommend (not applied): ops block 9:10 to 10:30, Studio 10:35 to 12:40, then COO write-up and design approval, reel, whisper kit, and 2 h of Ch 3 pulled forward from Fri (Fri shows 350 min); 335 min. Would fix: Ranks 2 to 5 empty; Cloud test weekday repeat still on (today's instance spawned after the 11/11 end); Studio calendar 11:15 to 12:15 vs description shoot 11:30 to 12:30.
-- In your way: Asana sign-in handoff (open since 11/4).
+- In your way: Asana sign-in handoff (open since 11/4). Wrong: Brett flagged it as resolved; get_task on 1220161258870253 shows Done with the COO's 11/9 comment that the edits are in. The handoff row was never closed and the 11/9 to 11/12 runs repeated it from the log. Row closed.
 - Asana writes: none (cloud report-only).
