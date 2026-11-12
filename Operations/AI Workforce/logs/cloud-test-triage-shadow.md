@@ -1,6 +1,16 @@
 # Cloud Test Triage Shadow (report-only)
 
 Newest run at top. Gmail untouched by this shadow.
+## 2026-11-12 07:10 PT
+
+Threads seen: 7 (in scope; Promotions and Social excluded) | would-archive: 1 | would-label: 0 | would-keep: 6. The read rule suppresses 6 read threads from the table (5 kept, 1 archived); 1 unread thread shown. Same 7 threads as the 2026-11-11 15:09 run.
+
+| from | subject | class | would-do |
+|---|---|---|---|
+| GuardianLife | A new login detected | AMBIGUOUS | keep in inbox (security alert, flag for Brett) |
+
+Suppressed (read): Cassie Pellegrini, Invitation: Factory Studio Shoot, RULE-KEPT, keep | Ruben Hassid, Claude 101, RULE-KEPT, keep | Melissa Goldstein Tucci, 2014 ESPN video, RESPONSE-WORTHY, keep | Felicia Ward fwd of attorney questions, COMPLIANCE, keep | Elizabeth Eidbo, Weekly Ops & Optimization Summary, AMBIGUOUS, keep | Hub escrow-guide thread (latest message sent by Brett), FYI, archive.
+
 ## 2026-11-11 15:09 PT
 
 Threads seen: 7 (in scope; Promotions and Social excluded, 7 promo threads skipped) | would-archive: 1 | would-label: 0 | would-keep: 6. The read rule suppresses 5 read threads from the table (4 kept, 1 archived); 2 unread threads shown.
