@@ -521,3 +521,4 @@ One line per run, every agent and skill, appended by the run itself when it can 
 2026-11-10 | chief-of-staff | opus | Re-plan for Wed 11/11 after the UTC date error (cloud, report-only): Wed 370, Thu 355, no Asana writes
 2026-11-10 | chief-of-staff | opus | Wed 11/11 re-plan: Research guests off, prep call canceled, Kim Kelly 2 to 3 added; 385 min, report-only
 2026-11-10 | chief-of-staff | opus | Wed 11/11 final order: Daly Rank 3, Ch 2 split around Kim Kelly; report-only
+2026-11-12 | chief-of-staff | session model (cloud) | Daily for Thu 11/12, report-only: 215 min scheduled, recommended Ch 3 pull-forward to 335
